@@ -1,0 +1,24 @@
+.card, .card-1 {
+  background: rgb(202, 240, 88);
+  background: linear-gradient(
+    90deg,
+    rgb(202, 240, 88),
+    rgb(121, 112, 112)
+  );
+    border: none;
+    width: 450px;
+    margin-bottom: 1.5rem;
+    /* padding: 40px;
+    position: absolute;
+    top: 70%;
+    transform: translate(-50%, -50%); */
+  }
+  
+  .field, .buttons
+  {
+      margin-top: 1rem;
+  }
+  
+  form {
+      width: 400px;
+  }

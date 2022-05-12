@@ -1,0 +1,89 @@
+<div class="container mt-5">
+  <div class="card mx-auto">
+    <div class="card-header">
+      <h1 class="text-center text-light">User Sign-up Form</h1>
+    </div>
+    <div class="card-body mx-auto">
+      <form class="myform" [formGroup]="registerform">
+        <div class="field">
+          <label for="username" class="text-light">User Name :</label>
+          <input
+            type="text"
+            formControlName="username"
+            id="username"
+            class="form-control"
+            placeholder="Enter your Name here"
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              registerform.controls['username'].touched &&
+              registerform.hasError('required', 'username')
+            "
+          >
+            *Name is required!!</span
+          >
+        </div>
+
+        <div class="field">
+          <label for="phone" class="text-light">Phone Number :</label>
+          <input
+            type="tel"
+            formControlName="phone"
+            id="phone"
+            class="form-control"
+            placeholder="Enter Mobile Number"
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              registerform.controls['phone'].touched &&
+              registerform.hasError('required', 'phone')
+            "
+          >
+            *Phone Number must be in 10 Digits!!</span
+          >
+        </div>
+
+        <div class="field">
+          <label for="gmail" class="text-light">Gmail :</label>
+          <input
+            type="text"
+            name="gmail"
+            id="gmail"
+            class="form-control"
+            placeholder="Enter your gmail"
+          />
+        </div>
+
+        <div class="field">
+          <label for="password" class="text-light">Password :</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="form-control"
+            placeholder="Enter your password"
+          />
+        </div>
+
+        <div class="field">
+          <label for="confirmpassword" class="text-light"
+            >Confirm Password :</label
+          >
+          <input
+            type="password"
+            name="confirmpassword"
+            id="confirmpassword"
+            class="form-control"
+            placeholder="Enter your Confirm password"
+          />
+        </div>
+
+        <div class="buttons text-center">
+          <button id="btn">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
