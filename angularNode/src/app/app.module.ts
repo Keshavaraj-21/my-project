@@ -9,8 +9,10 @@ import { UserloginComponent } from './userlogin/userlogin.component';
 import { HomeComponent } from './home/home.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
-import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomepageComponent } from './homepage/homepage.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,10 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     ContactusComponent,
     AboutusComponent,
-    AdmindashboardComponent,
+
+    HomepageComponent,
+    DashboardComponent,
+    UserdashboardComponent,
   ],
   imports: [
     BrowserModule,

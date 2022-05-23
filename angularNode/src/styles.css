@@ -1,3 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-@import url("../node_modules/bootstrap/dist/css/bootstrap.css")
-
+@import url("../node_modules/bootstrap/dist/css/bootstrap.css");
+body{
+    /* background-image: url('https://us.123rf.com/450wm/vinsalow/vinsalow1705/vinsalow170500021/78645151-grunge-texture-blue-and-green-background-hd-photo-dark-sky-concept.jpg?ver=6'); */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x:hidden;
+    margin:0;
+    /* background-image: linear-gradient(to right top,rgb(144, 196, 62), rgb(107, 104, 104)); */
+}

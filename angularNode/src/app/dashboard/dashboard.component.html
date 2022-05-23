@@ -1,0 +1,66 @@
+<!-- <body>
+  <div id="mySidenav" class="sidenav">
+    <a href="#" id="about">About</a>
+    <a href="#" id="blog">Blog</a>
+    <a href="#" id="projects">Projects</a>
+    <a href="#" id="contact">Contact</a>
+  </div>
+
+  <div style="margin-left: 80px">
+    <h2>Hoverable Sidenav Buttons</h2>
+    <p>Hover over the buttons in the left side navigation to open them.</p>
+   </div>
+  <br /> -->
+<body>
+  <br />
+  <br />
+  <h1 style="text-align: center">User Sign-up Credentials</h1>
+  <br />
+  <br />
+  <br />
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>UserName</th>
+          <th>Phone</th>
+          <th>Gmail</th>
+          <th>Society</th>
+          <th>Password</th>
+          <th>ConfirmPassword</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of store">
+          <td>{{ user.username }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.gmail }}</td>
+          <td>{{ user.society }}</td>
+          <td>{{ user.password }}</td>
+          <td>{{ user.confirmpassword }}</td>
+          <td>
+            <button
+              type="button"
+              (click)="onEdit(user)"
+              class="btn btn-warning"
+            >
+              Update</button
+            >&nbsp;&nbsp;
+          </td>
+          <td>
+            <button
+              type="button"
+              (click)="delete(user, user)"
+              class="btn btn-primary"
+            >
+              Remove
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" (click)="getuser()" class="btn btn-dark">show</button>
+  </div>
+</body>

@@ -1,0 +1,56 @@
+ body{
+    background-image:linear-gradient(to right top,rgb(144, 196, 62), rgb(107, 104, 104));
+    height: 91.5vh;
+    margin-left: 0px;
+    margin-right: 10px;
+    width: 100vw;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+  }
+
+  .h1{
+    text-align: center;
+    color: black;
+    font-size:large;
+  }
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  } 
+
+  /* #mySidenav a:hover {
+    left: 0;
+  }
+  
+  #about {
+    top: 20px;
+    background-color: #04AA6D;
+  }
+  
+  #blog {
+    top: 80px;
+    background-color: #2196F3;
+  }
+  
+  #projects {
+    top: 140px;
+    background-color: #f44336;
+  }
+  
+  #contact {
+    top: 200px;
+    background-color: #555
+  } */
