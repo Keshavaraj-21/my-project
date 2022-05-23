@@ -41,7 +41,7 @@ app.post("/post_query", (request, response) => {
 app.get("/get_query", (request, response) => {
   console.log("start");
 
-  dbconnection.get("housing-software").then((res) => {
+  dbconnection.get("housing-society").then((res) => {
     if (res) {
       response.send(res);
     } else {
@@ -68,7 +68,7 @@ app.get("/get_all_query/:id", (request, response) => {
 
 app.delete("/delete_query/:id/:id1", (request, response) => {
   dbconnection
-    .deleted(request.params.id, request.params.id1, "housing-software")
+    .deletes(request.params.id, request.params.id1, "housing-software")
     .then((res) => {
       if (res) {
         console.log("deleted success");
@@ -86,10 +86,12 @@ app.put("/update_query", (request, response) => {
   var object = {
     _id: request.body._id,
     _rev: request.body._rev,
-    name: request.body.name,
     username: request.body.username,
-    age: request.body.age,
-    date: request.body.date,
+    phonenumber: request.body.phone,
+    gmail: request.body.gmail,
+    society: request.body.society,
+    password: request.body.password,
+    confirmpassword: request.body.confirmpassword,
   }; // console.log(object);
   dbconnection.update(object, "housing-software").then((res) => {
     if (res) {

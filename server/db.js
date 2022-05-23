@@ -12,7 +12,7 @@ insert = function (paramsvalue) {
   return cloudant.use("housing-software").insert(paramsvalue);
 };
 
-get = function (dbname) {
+get = function (paramsvalue) {
   console.log(paramsvalue);
   return cloudant.use("housing-software").list(paramsvalue);
 };
@@ -27,4 +27,4 @@ destroy = function (_id, _rev) {
   return cloudant.use("housing-software").destroy(paramsvalue);
 };
 
-module.exports = { housing, insert };
+module.exports = { housing, insert, get, update, destroy };

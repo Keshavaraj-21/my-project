@@ -77,7 +77,7 @@ export class DashboardComponent implements OnInit {
         }
       },
       (rej) => {
-        console.log('opps! Somthing went wrong' + rej);
+        console.log('opps! Something went wrong' + rej);
       }
     );
   }
@@ -98,10 +98,12 @@ export class DashboardComponent implements OnInit {
   }
 
   onEdit(row: any) {
-    this.form.controls['name'].setValue(row.name);
     this.form.controls['username'].setValue(row.username);
-    this.form.controls['age'].setValue(row.age);
-    this.form.controls['date'].setValue(row.date);
+    this.form.controls['phone'].setValue(row.phone);
+    this.form.controls['gmail'].setValue(row.gmail);
+    this.form.controls['society'].setValue(row.society);
+    this.form.controls['password'].setValue(row.password);
+    this.form.controls['confirmPassword'].setValue(row.confirmPassword);
     this.form.controls['_id'].setValue(row._id);
     this.form.controls['_rev'].setValue(row._rev);
   }
