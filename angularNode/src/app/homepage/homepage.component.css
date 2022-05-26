@@ -44,7 +44,9 @@
   .header__description {
     margin: 0;
   }
-  
+  .socials__icon-container{
+    color:blue
+  }
   .main-content {
     margin: 0 3rem;
     max-width: calc(840px - 3rem);

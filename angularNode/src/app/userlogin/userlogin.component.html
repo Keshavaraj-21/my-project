@@ -5,7 +5,7 @@
         <h1 class="text-center text-light">User Login</h1>
       </div>
       <div class="card-body mx-auto">
-        <form class="myform" [formGroup]="userform" (ngSubmit)="login()">
+        <form class="myform" [formGroup]="userform">
           <div class="field">
             <label for="username" class="text-light">Username :</label>
             <input
@@ -13,11 +13,14 @@
               formControlName="username"
               class="form-control"
               id="username"
-              placeholder="Enter your username"
+              placeholder="Enter your username or email"
             />
             <span
               class="text-danger"
-              *ngIf="userform.controls['username'].touched"
+              *ngIf="
+                userform.controls['username'].touched &&
+                userform.hasError('required', 'username')
+              "
               >* Name is required!!</span
             >
           </div>
@@ -33,18 +36,27 @@
             />
             <span
               class="text-danger"
-              *ngIf="userform.controls['password'].dirty"
+              *ngIf="
+                userform.controls['password'].dirty &&
+                userform.hasError('required', 'password')
+              "
             >
               *Password is required!!</span
             >
           </div>
 
           <div class="buttons text-center">
-            <button id="btn" class="btn btn-dark">Login</button>
+            <button
+              id="btn"
+              class="btn btn-dark"
+              (click)="userFormData(this.userform.value)"
+            >
+              Login
+            </button>
           </div>
-          <div class="text-center text-success" *ngIf="successMessage">
+          <!-- <div class="text-center text-success" *ngIf="successMessage">
             {{ successMessage }}
-          </div>
+          </div> -->
 
           <div class="signup text-center">
             <label for="signup" class="text-light"

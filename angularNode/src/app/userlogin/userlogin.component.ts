@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ApiserviceService } from '../apiservice.service';
 
 @Component({
   selector: 'app-userlogin',
@@ -7,27 +9,55 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./userlogin.component.css'],
 })
 export class UserloginComponent implements OnInit {
-  successMessage: string = '';
+  alldata: any;
+  flag = 0;
+  object: any = [];
   userform!: FormGroup;
-  constructor(private formbuilder: FormBuilder) {}
+  constructor(
+    private formbuilder: FormBuilder,
+    private api: ApiserviceService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.userform = this.formbuilder.group({
-      username: [
-        '',
-        Validators.required,
-        // Validators.pattern('[A-Za-z0-9]*@gmail.com'),
-      ],
-      password: [
-        '',
-        Validators.required,
-        // Validators.pattern('[A-Za-z0-9@!_]{6,}'),
-      ],
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+    });
+
+    this.api.getUser().subscribe((data) => {
+      console.log(data);
+      console.log('Data was fetching');
+      this.alldata = data;
+      this.alldata = this.alldata.rows;
+      console.log(this.alldata);
+      for (const i in this.alldata) {
+        const elt = this.alldata[i];
+        console.log(elt.id);
+        this.api.getUserId(elt.id).subscribe((res) => {
+          console.log(res);
+          this.object.push(res);
+          console.log('Fetched successfuly');
+        });
+      }
     });
   }
-  login() {
-    this.successMessage = 'Successfully Loggined In...';
-    console.log(this.userform);
-    // console.log(this.successMessage);
+
+  userFormData(formvalue: any) {
+    console.log(formvalue);
+    for (const i of this.object) {
+      if (
+        i.username == formvalue.username &&
+        i.password == formvalue.password
+      ) {
+        this.flag = 1;
+      }
+    }
+    if (this.flag == 1) {
+      this.router.navigate(['/userdashboard']);
+    } else {
+      alert('Invalid user');
+      location.reload();
+    }
   }
 }

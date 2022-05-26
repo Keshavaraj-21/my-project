@@ -8,7 +8,7 @@
         <form
           class="myform"
           [formGroup]="adminform"
-          (ngSubmit)="alogin(this.adminform.value)"
+          (ngSubmit)="adminFormsData(this.adminform.value)"
         >
           <div class="field">
             <label for="adminname" class="text-light">Username :</label>
@@ -50,11 +50,18 @@
           </div>
 
           <div class="buttons text-center">
-            <button id="btn" type="submit" class="btn btn-dark">Login</button>
+            <button
+              id="btn"
+              type="submit"
+              class="btn btn-dark"
+              [disabled]="!adminform.valid"
+            >
+              Login
+            </button>
           </div>
-          <div class="text-center text-success" *ngIf="successMessage">
+          <!-- <div class="text-center text-success" *ngIf="successMessage">
             {{ successMessage }}
-          </div>
+          </div> -->
 
           <!-- <div class="form-group">
                 <br />

@@ -9,52 +9,55 @@ import { ApiserviceService } from '../apiservice.service';
   styleUrls: ['./adminlogin.component.css'],
 })
 export class AdminloginComponent implements OnInit {
-  successMessage: string = '';
+  object: any = [];
+  alldata: any;
+  flag = 0;
   adminform!: FormGroup;
 
   constructor(
     private formbuilder: FormBuilder,
     private api: ApiserviceService,
     private router: Router
-  ) {
+  ) {}
+
+  ngOnInit(): void {
     this.adminform = this.formbuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
-  }
-
-  ngOnInit(): void {
-    // this.adminform = this.formbuilder.group({
-    //   username: ['', Validators.required],
-    //   password: ['', Validators.required],
-    // });
-  }
-
-  // alogin() {
-  //   this.successMessage = 'Successfully Loggined In...';
-  // }
-
-  alogin(FormValue: any) {
-    console.log(FormValue.username);
-    this.api.getdata(FormValue.username).subscribe((data: any) => {
+    this.api.getadmin().subscribe((data) => {
       console.log(data);
-      if (
-        data.id == FormValue.username &&
-        data.password == FormValue.password
-      ) {
-        this.router.navigate(['dashboard']);
-        alert('Verified');
-      } else {
-        alert('err');
+      console.log('Data was fetching....');
+      this.alldata = data;
+      this.alldata = this.alldata.rows;
+      console.log(this.alldata);
+      for (const i in this.alldata) {
+        if (Object.prototype.hasOwnProperty.call(this.alldata, i)) {
+          const elt = this.alldata[i];
+          console.log(elt.id);
+          this.api.getadminId(elt.id).subscribe((res) => {
+            console.log(res);
+            this.object.push(res);
+          });
+        }
       }
     });
-    console.log(FormValue);
   }
 
-  get username() {
-    return this.adminform.get('username');
-  }
-  get password() {
-    return this.adminform.get('password');
+  adminFormsData(formvalue: any) {
+    for (const i of this.object) {
+      if (
+        i.username == formvalue.username &&
+        i.password == formvalue.password
+      ) {
+        this.flag = 1;
+      }
+    }
+    if (this.flag == 1) {
+      this.router.navigate(['/dashboard']);
+    } else {
+      alert('Invalid user');
+      location.reload();
+    }
   }
 }

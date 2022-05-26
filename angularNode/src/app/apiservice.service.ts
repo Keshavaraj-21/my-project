@@ -8,29 +8,29 @@ import { NgForm } from '@angular/forms';
 export class ApiserviceService {
   constructor(private http: HttpClient) {}
 
-  logindata(formObject: any) {
-    console.log(formObject);
-    return this.http.post('http://localhost:8000/post_query/', formObject);
+  //  getconnecting()
+  //  {
+  //     return this.http.get('http://localhost:8000/senddata');
+  //  }
+
+  signupdata(formobject: any) {
+    return this.http.post('http://localhost:8000/postquery', formobject);
   }
-  getdata(id: any) {
-    return this.http.get(`http://localhost:8000/get_all_query/${id}`);
+  getUser() {
+    return this.http.get('http://localhost:8000/getUser/');
+  }
+  getUserId(id: any) {
+    return this.http.get(`http://localhost:8000/getUserId/${id}`);
+  }
+  remove(id: any, id1: any) {
+    return this.http.delete(`http://localhost:8000/delete/${id}/${id1}`);
   }
 
-  getData() {
-    return this.http.get('http://localhost:8000/get_query/');
+  //admin
+  getadmin() {
+    return this.http.get('http://localhost:8000/getadmin/');
   }
-  getAllData(id: any) {
-    return this.http.get(`http://localhost:8000/get_all_query/${id}`);
+  getadminId(id: any) {
+    return this.http.get(`http://localhost:8000/getadminId/${id}`);
   }
-  deleteData(id: any, id1: any) {
-    return this.http.delete(`http://localhost:8000/delete_query/${id}/${id1}`);
-  }
-  updateData(doc: any) {
-    console.log(doc);
-    return this.http.put('http://localhost:8000/update_query/', doc);
-  }
-
-  // logindata(formObject: any) {
-  //   return this.http.post('http://localhost:8000/dashboard', formObject);
-  // }
 }

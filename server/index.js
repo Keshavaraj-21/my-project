@@ -4,8 +4,14 @@ const bodyparser = require("body-parser");
 const app = connection();
 app.use(express.static("public"));
 const port = 8000;
+var login = {};
+const file = require("fs");
+const { request } = require("http");
+const { response } = require("express");
+const { nextTick } = require("process");
 const cors = require("cors");
 const dbconnection = require("./db");
+app.use(express.static("public"));
 app.use(connection.static("public"));
 app.use(bodyparser.json());
 app.use(
@@ -14,33 +20,53 @@ app.use(
   })
 );
 
-//User--------------------------------------------------------
-//To post the user data to the database
-app.post("/post_query", (request, response) => {
+app.post("/postquery", (request, response, next) => {
+  console.log(request);
   var object = {
     username: request.body.username,
-    phonenumber: request.body.phone,
-    gmail: request.body.gmail,
-    society: request.body.society,
+    phone: request.body.phone,
+    email: request.body.email,
+    blockname: request.body.blockname,
     password: request.body.password,
     confirmpassword: request.body.confirmpassword,
   };
-  dbconnection.insert(object, "housing-software").then((res) => {
+
+  dbconnection.insert(object);
+});
+
+app.get("/getUser", (request, response) => {
+  console.log(request);
+  dbconnection.get("housing-software").then((res) => {
     if (res) {
-      console.log("Data Posted");
       response.send(res);
     } else {
-      console.log("Data cannot be Posted");
       response.send("error");
     }
   });
-  console.log("Data added");
+});
+app.get("/getUserId/:id", (request, response) => {
+  dbconnection.getId(request.params.id, "housing-software").then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send("error");
+    }
+  });
+});
+app.delete("/delete/:id/:id1", (request, response) => {
+  dbconnection
+    .del_id(request.params.id, request.params.id1, "housing-software")
+    .then((res) => {
+      if (res) {
+        response.send(res);
+      } else {
+        response.send("error");
+      }
+    });
 });
 
-//To get all the _id,_rev... form database
-app.get("/get_query", (request, response) => {
-  console.log("start");
-
+app.get("/getadmin", (request, response) => {
+  console.log(request);
   dbconnection.get("housing-society").then((res) => {
     if (res) {
       response.send(res);
@@ -49,56 +75,11 @@ app.get("/get_query", (request, response) => {
     }
   });
 });
-
-//To get the all user data value from database
-app.get("/get_all_query/:id", (request, response) => {
-  dbconnection.housing.get(request.params.id).then((res) => {
+app.get("/getadminId/:id", (request, response) => {
+  dbconnection.getId(request.params.id, "housing-society").then((res) => {
     if (res) {
-      console.log(res);
-      response.json(res);
-    } else {
-      response.send("error");
-    }
-  });
-
-  console.log("end");
-});
-
-//To delete particular user from database
-
-app.delete("/delete_query/:id/:id1", (request, response) => {
-  dbconnection
-    .deletes(request.params.id, request.params.id1, "housing-software")
-    .then((res) => {
-      if (res) {
-        console.log("deleted success");
-        response.send(res);
-      } else {
-        console.log("can not deleted...");
-        response.send("error");
-      }
-    });
-});
-
-// To update the particular user data using id
-app.put("/update_query", (request, response) => {
-  console.log("hey");
-  var object = {
-    _id: request.body._id,
-    _rev: request.body._rev,
-    username: request.body.username,
-    phonenumber: request.body.phone,
-    gmail: request.body.gmail,
-    society: request.body.society,
-    password: request.body.password,
-    confirmpassword: request.body.confirmpassword,
-  }; // console.log(object);
-  dbconnection.update(object, "housing-software").then((res) => {
-    if (res) {
-      console.log("updated....");
       response.send(res);
     } else {
-      console.log("can not updated....");
       response.send("error");
     }
   });
@@ -108,5 +89,6 @@ app.listen(port, (err) => {
   if (err) {
     return console.log("something bad happened", err);
   }
+
   console.log(`server is listening on http://localhost:${port}`);
 });

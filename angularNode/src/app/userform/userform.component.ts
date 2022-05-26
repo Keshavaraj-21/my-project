@@ -8,67 +8,34 @@ import { ApiserviceService } from '../apiservice.service';
   styleUrls: ['./userform.component.css'],
 })
 export class UserformComponent implements OnInit {
-  successMessage: string = '';
+  registerform!: FormGroup;
+  value: boolean = true;
 
-  signupform!: FormGroup;
-
-  empRecord: any = {
-    username: '',
-    phonenumber: '',
-    gmail: '',
-    society: '',
-    password: '',
-    confirmpassword: '',
-  };
   constructor(
     private formbuilder: FormBuilder,
     private api: ApiserviceService
-  ) {}
+  ) {
+    // this.api.getconnecting().subscribe(data =>{
+    //   console.log(data)
+    // } )
+  }
 
   ngOnInit(): void {
-    this.signupform = this.formbuilder.group({
+    this.registerform = this.formbuilder.group({
       username: ['', Validators.required],
       phone: ['', Validators.required],
-      gmail: ['', Validators.required],
-      society: ['', Validators.required],
+      email: ['', Validators.required],
+      blockname: ['', Validators.required],
       password: ['', Validators.required],
       confirmpassword: ['', Validators.required],
     });
+    // console.log(this.registerform);
   }
-  // login() {
-  //   this.successMessage = 'Successfully Registered...';
-  //   console.log(this.signupform);
-  // }
+  register(Formvalue: NgForm) {
+    console.log(Formvalue);
 
-  get username() {
-    return this.signupform.get('username');
-  }
-  get phone() {
-    return this.signupform.get('phone');
-  }
-  get gmail() {
-    return this.signupform.get('gmail');
-  }
-  // get society() {
-  //   return this.society.get('society');
-  // }
-  get password() {
-    return this.signupform.get('password');
-  }
-  get confirmpassword() {
-    return this.signupform.get('confirmpassword');
-  }
-
-  login(FormValue: NgForm) {
-    this.api.logindata(FormValue).subscribe(
-      (data: any) => {
-        console.log(alert('Data posted'));
-        this.signupform.reset();
-      },
-      (rej) => {
-        console.log('Error' + rej);
-      }
-    );
-    console.log(FormValue);
+    this.api.signupdata(Formvalue).subscribe((data) => {
+      console.log(data);
+    });
   }
 }
