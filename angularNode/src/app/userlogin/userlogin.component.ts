@@ -29,16 +29,16 @@ export class UserloginComponent implements OnInit {
       console.log(data);
       console.log('Data was fetching');
       this.alldata = data;
-      this.alldata = this.alldata.rows;
+      this.alldata = this.alldata.docs;
       console.log(this.alldata);
-      for (const i in this.alldata) {
-        const elt = this.alldata[i];
-        console.log(elt.id);
-        this.api.getUserId(elt.id).subscribe((res) => {
-          console.log(res);
-          this.object.push(res);
-          console.log('Fetched successfuly');
-        });
+      for (const i of this.alldata) {
+        // const elt = this.alldata[i];
+        // console.log(elt.id);
+        // this.api.getUserId(elt.id).subscribe((res) => {
+        //   console.log(res);
+        this.object.push(i);
+        console.log('Fetched successfuly');
+        // });
       }
     });
   }
@@ -54,9 +54,9 @@ export class UserloginComponent implements OnInit {
       }
     }
     if (this.flag == 1) {
-      this.router.navigate(['/userdashboard']);
+      this.router.navigate(['/billingdetails']);
     } else {
-      alert('Invalid user');
+      alert('Not a valid user');
       location.reload();
     }
   }

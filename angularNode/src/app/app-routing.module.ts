@@ -9,8 +9,10 @@ import { UserformComponent } from './userform/userform.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
+import { BillingComponent } from './billing/billing.component';
+import { BillingdetailsComponent } from './billingdetails/billingdetails.component';
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  // { path: '', component: HomeComponent },
   { path: 'homepage', component: HomepageComponent },
   { path: 'home', component: HomeComponent },
   { path: 'admin', component: AdminloginComponent },
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'about', component: AboutusComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'userdashboard', component: UserdashboardComponent },
+  { path: 'billing', component: BillingComponent },
+  { path: 'billingdetails', component: BillingdetailsComponent },
 ];
 
 @NgModule({

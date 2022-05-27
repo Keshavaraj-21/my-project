@@ -14,6 +14,9 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 // import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
+import { BillingComponent } from './billing/billing.component';
+import { BillingdetailsComponent } from './billingdetails/billingdetails.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +30,9 @@ import { UserdashboardComponent } from './userdashboard/userdashboard.component'
     HomepageComponent,
     DashboardComponent,
     UserdashboardComponent,
+    BillingComponent,
+    BillingdetailsComponent,
+    AdmindashboardComponent,
   ],
   imports: [
     BrowserModule,

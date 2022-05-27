@@ -1,0 +1,144 @@
+<body>
+  <div class="container mt-5">
+    <div class="card mx-auto">
+      <div class="card-header">
+        <h1 class="text-center text-light">User Billing Form</h1>
+      </div>
+      <div class="card-body mx-auto">
+        <form class="myform" [formGroup]="billingform">
+          <div class="field">
+            <label for="block" class="text-light">Block Name :</label>
+
+            <select
+              name="block"
+              id="block"
+              class="form-control"
+              formControlName="block"
+            >
+              <option value="A-Block">A-Block</option>
+              <option value="B-Block">B-Block</option>
+              <option value="C-Block">C-Block</option>
+            </select>
+
+            <span
+              class="text-danger"
+              *ngIf="
+                billingform.controls['block'].touched &&
+                billingform.hasError('required', 'block')
+              "
+            >
+              *Block Name is required!!</span
+            >
+          </div>
+          <div>
+            <label for="maintainance" class="text-light"
+              >Maintainance Charges :</label
+            >
+            <input
+              type="text"
+              formControlName="maintainance"
+              id="maintainance"
+              class="form-control"
+              placeholder="Enter Maintainance Charges here"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                billingform.controls['maintainance'].touched &&
+                billingform.hasError('required', 'maintainance')
+              "
+            >
+              *Maintainance is required!!</span
+            >
+          </div>
+          <div>
+            <label for="housetax" class="text-light">House Tax :</label>
+            <input
+              type="text"
+              formControlName="housetax"
+              id="housetax"
+              class="form-control"
+              placeholder="Enter Housetax here"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                billingform.controls['housetax'].touched &&
+                billingform.hasError('required', 'housetax')
+              "
+            >
+              *Housetax is required!!</span
+            >
+          </div>
+          <div>
+            <label for="watertax" class="text-light">Water Tax :</label>
+            <input
+              type="text"
+              formControlName="watertax"
+              id="watertax"
+              class="form-control"
+              placeholder="Enter Watertax here"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                billingform.controls['watertax'].touched &&
+                billingform.hasError('required', 'watertax')
+              "
+            >
+              *Watertax is required!!</span
+            >
+          </div>
+
+          <div>
+            <label for="parking" class="text-light">Parking Charges :</label>
+            <input
+              type="text"
+              formControlName="parking"
+              id="parking"
+              class="form-control"
+              placeholder="Enter Parking Charges here"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                billingform.controls['parking'].touched &&
+                billingform.hasError('required', 'parking')
+              "
+            >
+              *Parking Charges is required!!</span
+            >
+          </div>
+          <div>
+            <label for="charity" class="text-light">Charity Fund :</label>
+            <input
+              type="text"
+              formControlName="charity"
+              id="charity"
+              class="form-control"
+              placeholder="Enter Charity Fund here"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                billingform.controls['charity'].touched &&
+                billingform.hasError('required', 'charity')
+              "
+            >
+              *Charity fund is required!!</span
+            >
+          </div>
+          <div class="buttons text-center">
+            <button
+              type="submit"
+              id="btn btn-dark"
+              (click)="post(this.billingform.value)"
+            >
+              submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

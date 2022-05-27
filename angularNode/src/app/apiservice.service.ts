@@ -16,12 +16,21 @@ export class ApiserviceService {
   signupdata(formobject: any) {
     return this.http.post('http://localhost:8000/postquery', formobject);
   }
+  billingdata(formobject: any) {
+    return this.http.post('http://localhost:8000/post_query', formobject);
+  }
+
   getUser() {
     return this.http.get('http://localhost:8000/getUser/');
   }
   getUserId(id: any) {
     return this.http.get(`http://localhost:8000/getUserId/${id}`);
   }
+
+  getbill() {
+    return this.http.get('http://localhost:8000/getbill/');
+  }
+
   remove(id: any, id1: any) {
     return this.http.delete(`http://localhost:8000/delete/${id}/${id1}`);
   }

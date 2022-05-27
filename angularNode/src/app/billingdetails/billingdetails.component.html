@@ -1,0 +1,30 @@
+<br />
+<h1 style="text-align: center">User Billing Details</h1>
+<br />
+<table class="table bg-light">
+  <thead>
+    <tr>
+      <th scope="col">BlockName</th>
+      <th scope="col">MaintainaceCharges</th>
+      <th scope="col">HouseTax</th>
+      <th scope="col">WaterTax</th>
+      <th scope="col">ParkingCharges</th>
+      <th scope="col">CharityFund</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let obj of object">
+      <td scope="row">{{ obj.block }}</td>
+      <td scope="row">{{ obj.maintainance }}</td>
+      <td scope="row">{{ obj.housetax }}</td>
+      <td scope="row">{{ obj.watertax }}</td>
+      <td scope="row">{{ obj.parking }}</td>
+      <td scope="row">{{ obj.charity }}</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+<div class="buttons text-center">
+  <button (click)="getdetails()">Get Data</button>
+</div>

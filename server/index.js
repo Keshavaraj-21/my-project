@@ -29,14 +29,34 @@ app.post("/postquery", (request, response, next) => {
     blockname: request.body.blockname,
     password: request.body.password,
     confirmpassword: request.body.confirmpassword,
+    type: "userid",
   };
 
   dbconnection.insert(object);
 });
 
+app.post("/post_query", (request, response, next) => {
+  console.log(request);
+  var object = {
+    block: request.body.block,
+    maintainance: request.body.maintainance,
+    housetax: request.body.housetax,
+    watertax: request.body.watertax,
+    parking: request.body.parking,
+    charity: request.body.charity,
+  };
+
+  dbconnection.insert1(object);
+});
+
 app.get("/getUser", (request, response) => {
   console.log(request);
-  dbconnection.get("housing-software").then((res) => {
+  var data = {
+    selector: {
+      type: "userid",
+    },
+  };
+  dbconnection.get(data, "housing-software").then((res) => {
     if (res) {
       response.send(res);
     } else {
@@ -53,6 +73,18 @@ app.get("/getUserId/:id", (request, response) => {
     }
   });
 });
+
+app.get("/getbill", (request, response) => {
+  console.log(request);
+  dbconnection.get("housing-software").then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send("error");
+    }
+  });
+});
+
 app.delete("/delete/:id/:id1", (request, response) => {
   dbconnection
     .del_id(request.params.id, request.params.id1, "housing-software")
@@ -67,7 +99,12 @@ app.delete("/delete/:id/:id1", (request, response) => {
 
 app.get("/getadmin", (request, response) => {
   console.log(request);
-  dbconnection.get("housing-society").then((res) => {
+  var data = {
+    selector: {
+      type: "adminid",
+    },
+  };
+  dbconnection.get(data, "housing-software").then((res) => {
     if (res) {
       response.send(res);
     } else {
@@ -76,7 +113,7 @@ app.get("/getadmin", (request, response) => {
   });
 });
 app.get("/getadminId/:id", (request, response) => {
-  dbconnection.getId(request.params.id, "housing-society").then((res) => {
+  dbconnection.getId(request.params.id, "housing-software").then((res) => {
     if (res) {
       response.send(res);
     } else {
