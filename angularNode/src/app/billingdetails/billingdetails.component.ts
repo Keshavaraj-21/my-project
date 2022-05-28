@@ -18,20 +18,19 @@ export class BillingdetailsComponent implements OnInit {
       console.log(data);
       alert('Data was fetching....');
       this.alldata = data;
-      this.alldata = this.alldata.rows;
+      this.alldata = this.alldata.docs;
       console.log(this.alldata);
-      for (const i in this.alldata) {
-        if (Object.prototype.hasOwnProperty.call(this.alldata, i)) {
-          const elt = this.alldata[i];
-          console.log(elt.id);
-          this.api.getUserId(elt.id).subscribe((res) => {
-            console.log(res);
-            this.object.push(res);
-          });
-        }
+      for (const i of this.alldata) {
+        // if (Object.prototype.hasOwnProperty.call(this.alldata, i)) {
+        //   const elt = this.alldata[i];
+        //   console.log(elt.id);
+        //   this.api.getUserId(elt.id).subscribe((res) => {
+        console.log(i);
+        this.object.push(i);
       }
     });
   }
+  // });
 }
 
 // function getdetails() {

@@ -8,11 +8,6 @@ import { NgForm } from '@angular/forms';
 export class ApiserviceService {
   constructor(private http: HttpClient) {}
 
-  //  getconnecting()
-  //  {
-  //     return this.http.get('http://localhost:8000/senddata');
-  //  }
-
   signupdata(formobject: any) {
     return this.http.post('http://localhost:8000/postquery', formobject);
   }

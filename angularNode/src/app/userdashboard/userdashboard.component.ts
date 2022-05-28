@@ -142,13 +142,13 @@ export class UserdashboardComponent {
       },
     };
 
-    if (action === 'download') {
-      pdfMake.createPdf(docDefinition).download();
-    } else if (action === 'print') {
-      pdfMake.createPdf(docDefinition).print();
-    } else {
-      pdfMake.createPdf(docDefinition).open();
-    }
+    // if (action === 'download') {
+    //   pdfMake.createPdf(docDefinition).download();
+    // } else if (action === 'print') {
+    //   pdfMake.createPdf(docDefinition).print();
+    // } else {
+    //   pdfMake.createPdf(docDefinition).open();
+    // }
   }
 
   addProduct() {

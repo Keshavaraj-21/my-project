@@ -44,6 +44,7 @@ app.post("/post_query", (request, response, next) => {
     watertax: request.body.watertax,
     parking: request.body.parking,
     charity: request.body.charity,
+    type: "bill",
   };
 
   dbconnection.insert1(object);
