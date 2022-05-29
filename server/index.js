@@ -77,7 +77,12 @@ app.get("/getUserId/:id", (request, response) => {
 
 app.get("/getbill", (request, response) => {
   console.log(request);
-  dbconnection.get("housing-software").then((res) => {
+  var data = {
+    selector: {
+      type: "bill",
+    },
+  };
+  dbconnection.get(data, "housing-software").then((res) => {
     if (res) {
       response.send(res);
     } else {
