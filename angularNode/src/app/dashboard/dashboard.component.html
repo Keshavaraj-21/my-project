@@ -1,150 +1,197 @@
-<body>
-  <div class="sidebar">
-    <div class="logo-details">
-      <i class="bx bxl-c-plus-plus"></i>
-      <span class="logo_name">KR Housing society</span>
-    </div>
-    <ul class="nav-links">
-      <li>
-        <a href="#" class="active">
-          <i class="bx bx-grid-alt"></i>
-          <span class="links_name">Dashboard</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="bx bx-box"></i>
-          <span class="links_name"> <a routerLink="/billing">Billings</a></span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="bx bx-list-ul"></i>
-          <span class="links_name"
-            ><a routerLink="/userdashboard">Bill Generator</a></span
+<nav class="navbar navbar-expand-lg bg-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#"
+      ><span class="text-warning">INTEGRATED </span>HOUSING SOCIETY SOFTWARE</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="homepage" routerLinkActive="active"
+            >HOME</a
           >
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="bx bx-pie-chart-alt-2"></i>
-          <span class="links_name">Services</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="bx bx-coin-stack"></i>
-          <span class="links_name">HouseAllowance</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="bx bx-book-alt"></i>
-          <span class="links_name"><a routerLink="/admin">Logout</a></span>
-        </a>
-      </li>
-    </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin" routerLinkActive="active"
+            >ADMIN LOGIN</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/user" routerLinkActive="active"
+            >USER LOGIN</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/services" routerLinkActive="active"
+            >SERVICES</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active"
+            >ABOUT</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active"
+            >CONTACT</a
+          >
+        </li>
+      </ul>
+    </div>
   </div>
-  <section class="home-section">
-    <!-- <nav>
-      <div class="sidebar-button">
-        <i class="bx bx-menu sidebarBtn"></i>
-        <span class="dashboard">Dashboard</span>
-      </div>
-      <div class="search-box">
-        <input type="text" placeholder="Search..." />
-        <i class="bx bx-search"></i>
-      </div>
-      <div class="profile-details">
-        <img src="images/profile.jpg" alt="">
-        <span class="admin_name">Keshavaraj</span>
-        <i class="bx bx-chevron-down"></i>
-      </div>
-    </nav> -->
-    <br />
-    <h1 style="text-align: center">User Sign-up Credentials</h1>
-    <br />
-    <table class="table bg-light">
-      <thead>
-        <tr>
-          <th scope="col">Username</th>
-          <th scope="col">Contact Number</th>
-          <th scope="col">Email</th>
-          <th scope="col">Block name</th>
-          <!-- <th scope="col">Password</th> -->
-          <!-- <th scope="col">Confirm Password</th> -->
-          <th scope="col">Remove User</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let obj of object">
-          <td scope="row">{{ obj.username }}</td>
-          <td scope="row">{{ obj.phone }}</td>
-          <td scope="row">{{ obj.email }}</td>
-          <td scope="row">{{ obj.blockname }}</td>
-          <!-- <td scope="row">{{ obj.password }}</td> -->
-          <!-- <td scope="row">{{ obj.confirmpassword }}</td> -->
-          <td scope="row">
-            <button class="btn btn-dark" (click)="deluser(obj, obj)">
-              Delete
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <br />
+</nav>
 
-    <div class="buttons text-center">
-      <button (click)="getuser()">Get Data</button>
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+    ></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../../assets/home-1.jpg" class="d-block w-100" alt="..." />
+      <div class="carousel-caption">
+        <h5>KR HOUSING SOCIETY</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+        <p>asdftyuiofuiodfghjfghjkl</p>
+        <p><a href="#" class="btn btn-warning mt-3">Learn more</a></p>
+      </div>
     </div>
+    <div class="carousel-item">
+      <img src="../../assets/home-2.jpg" class="d-block w-100" alt="..." />
+      <div class="carousel-caption">
+        <h5>Always dedicated</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+        <p>asdftyuiofuiodfghjfghjkl</p>
+        <p><a href="#" class="btn btn-warning mt-3"></a></p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../../assets/home-3.jpg" class="d-block w-100" alt="..." />
+      <div class="carousel-caption">
+        <h5>True Construction</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+        <p>asdftyuiofuiodfghjfghjkl</p>
+        <p><a href="#" class="btn btn-warning mt-3"></a></p>
+      </div>
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
-    <div class="home-content">
-      <div class="overview-boxes">
-        <div class="box">
-          <div class="right-side">
-            <div class="box-topic">Total Houses</div>
-            <div class="number">300</div>
-            <div class="indicator">
-              <i class="bx bx-up-arrow-alt"></i>
-              <span class="text">Up from yesterday</span>
-            </div>
-          </div>
-          <i class="bx bx-cart-alt cart"></i>
+<section id="about-section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-12 col-12">
+        <div class="about-img">
+          <img src="../../assets/about.jpg" alt="" class="img-fluid" />
         </div>
-        <div class="box">
-          <div class="right-side">
-            <div class="box-topic">Currently Occupied</div>
-            <div class="number">150</div>
-            <div class="indicator">
-              <i class="bx bx-up-arrow-alt"></i>
-              <span class="text">Up from yesterday</span>
-            </div>
-          </div>
-          <i class="bx bxs-cart-add cart two"></i>
-        </div>
-        <div class="box">
-          <div class="right-side">
-            <div class="box-topic">Free Houses</div>
-            <div class="number">100</div>
-            <div class="indicator">
-              <i class="bx bx-up-arrow-alt"></i>
-              <span class="text">Up from yesterday</span>
-            </div>
-          </div>
-          <i class="bx bx-cart cart three"></i>
-        </div>
-        <div class="box">
-          <div class="right-side">
-            <div class="box-topic">Total People</div>
-            <div class="number">439</div>
-            <div class="indicator">
-              <i class="bx bx-down-arrow-alt down"></i>
-              <span class="text">Last year</span>
-            </div>
-          </div>
-          <i class="bx bxs-cart-download cart four"></i>
+      </div>
+      <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
+        <div class="about-text">
+          <h2>
+            We provide best quality <br />
+            services ever
+          </h2>
+          <p>................</p>
+          <a href="#" class="btn btn-warning">Learn more</a>
         </div>
       </div>
     </div>
-  </section>
-</body>
+  </div>
+</section>
+<section id="services" class="services section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-header text-center pb-5">
+          <h2>Our Services</h2>
+          <p>...................................</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-4">
+        <div class="card text-white text-center bg-dark pb-2">
+          <div class="card-body">
+            <i class="bi bi-subtract"></i>
+            <h3 class="card-title">Best Quality</h3>
+            <p class="lead">........</p>
+            <button class="btn btn-warning text-dark">Read More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-4">
+        <div class="card text-white text-center bg-dark pb-2">
+          <div class="card-body">
+            <i class="bi bi-slack"></i>
+            <h3 class="card-title">Sustainability</h3>
+            <p class="lead">........</p>
+            <button class="btn btn-warning text-dark">Read More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-4">
+        <div class="card text-white text-center bg-dark pb-2">
+          <div class="card-body">
+            <i class="bi bi-playstation"></i>
+            <h3 class="card-title">Integrity</h3>
+            <p class="lead">........</p>
+            <button class="btn btn-warning text-dark">Read More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

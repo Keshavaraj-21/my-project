@@ -11,6 +11,7 @@ const { response } = require("express");
 const { nextTick } = require("process");
 const cors = require("cors");
 const dbconnection = require("./db");
+const mailService = require("./mail");
 app.use(express.static("public"));
 app.use(connection.static("public"));
 app.use(bodyparser.json());

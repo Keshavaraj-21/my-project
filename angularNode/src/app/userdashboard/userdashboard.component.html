@@ -1,194 +1,185 @@
-<form #invoiceForm="ngForm">
-  <div class="container-fluid pt-2 mb-5">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="card border-secondary">
-          <div class="card-body">
-            <h4 class="card-title">Society Member details</h4>
-            <div class="row">
-              <div class="col-md-8">
-                <div class="form-group">
-                  <label for="name">Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="name"
-                    id="name"
-                    [ngClass]="{
-                      'is-invalid': invoiceForm.submitted && CustName.invalid
-                    }"
-                    [(ngModel)]="invoice.customerName"
-                    #CustName="ngModel"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="address">Flat name and block</label>
-                  <input
-                    class="form-control"
-                    name="address"
-                    id="address"
-                    row="2"
-                    [ngClass]="{
-                      'is-invalid': invoiceForm.submitted && Address.invalid
-                    }"
-                    [(ngModel)]="invoice.address"
-                    #Address="ngModel"
-                    required
-                  />
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label for="email">Email Id</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    name="email"
-                    id="email"
-                    [(ngModel)]="invoice.email"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="contactNo">Contact No.</label>
-                  <input
-                    type="number"
-                    class="form-control"
-                    name="contactNo"
-                    id="contactNo"
-                    [ngClass]="{
-                      'is-invalid': invoiceForm.submitted && ContactNo.invalid
-                    }"
-                    [(ngModel)]="invoice.contactNo"
-                    #ContactNo="ngModel"
-                    required
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card border-secondary mt-2">
-          <div class="card-body">
-            <h4 class="card-title d-flex justify-content-between">
-              Description
-              <button
-                type="button"
-                class="btn btn-secondary"
-                (click)="addProduct()"
-              >
-                +
-              </button>
-            </h4>
-            <div class="row">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th width="25%">Name of charges</th>
-                    <th width="25%">Cost</th>
-                    <th width="25%">Number of months</th>
-                    <th width="25%">Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td> -->
-                  <tr *ngFor="let product of invoice.products; let i = index">
-                    <td scope="row">
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="productName{{ i }}"
-                        [ngClass]="{
-                          'is-invalid':
-                            invoiceForm.submitted && ProductName.invalid
-                        }"
-                        id="productName"
-                        [(ngModel)]="product.name"
-                        #ProductName="ngModel"
-                        required
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="number"
-                        class="form-control"
-                        name="price{{ i }}"
-                        id="price"
-                        [ngClass]="{
-                          'is-invalid':
-                            invoiceForm.submitted && ProductPrice.invalid
-                        }"
-                        [(ngModel)]="product.price"
-                        #ProductPrice="ngModel"
-                        required
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="number"
-                        class="form-control"
-                        name="quantity{{ i }}"
-                        id="quantity"
-                        [ngClass]="{
-                          'is-invalid':
-                            invoiceForm.submitted && ProductQty.invalid
-                        }"
-                        [(ngModel)]="product.qty"
-                        #ProductQty="ngModel"
-                        required
-                      />
-                    </td>
-                    <td>
-                      {{ product.price * product.qty || "" }}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <!-- <div class="card border-secondary mt-2">
-          <div class="card-body">
-            <h4 class="card-title">Additional Details</h4>
-            <div class="form-group">
-              <textarea
-                class="form-control"
-                name="additionalDetails"
-                rows="3"
-                [(ngModel)]="invoice.additionalDetails"
-              ></textarea>
-            </div>
-          </div> -->
-        <!-- </div> -->
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar -->
+  <div class="bg-white" id="sidebar-wrapper">
+    <div
+      class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"
+    >
+      <i class="fas fa-user-secret me-2"></i>KR Housing Society
+    </div>
+    <div class="list-group list-group-flush my-3">
+      <a
+        href="#"
+        class="list-group-item list-group-item-action bg-transparent second-text active"
+        ><i class="fas fa-tachometer-alt me-2"></i
+        ><a routerLink="/userdashboard">Dashboard</a></a
+      >
+      <a
+        href="#"
+        class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+        ><i class="fas fa-project-diagram me-2"></i>Billing Register</a
+      >
+      <a
+        href="#"
+        class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+        ><i class="fas fa-chart-line me-2"></i>Bill Generator</a
+      >
+      <a
+        href="#"
+        class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+        ><i class="fas fa-paperclip me-2"></i>Services</a
+      >
+      <a
+        href="#"
+        class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+        ><i class="fas fa-shopping-cart me-2"></i>Feedback from users</a
+      >
+
+      <a
+        href="#"
+        class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"
+        ><i class="fas fa-power-off me-2"></i
+        ><a routerLink="/user">Logout</a></a
+      >
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+      <div class="d-flex align-items-center">
+        <i
+          class="fas fa-align-left primary-text fs-4 me-3"
+          id="menu-toggle"
+        ></i>
+        <h2 class="fs-2 m-0">Dashboard</h2>
       </div>
-      <div class="col-md-4">
-        <button
-          type="button"
-          class="btn btn-secondary btn-lg btn-block"
-          (click)="invoiceForm.valid ? generatePDF('download') : ''"
-        >
-          Download Invoice
-        </button>
-        <button
-          type="button"
-          class="btn btn-secondary btn-lg btn-block"
-          (click)="invoiceForm.valid ? generatePDF('print') : ''"
-        >
-          Print Invoice
-        </button>
-        <button
-          type="submit"
-          class="btn btn-secondary btn-lg btn-block"
-          (click)="invoiceForm.valid ? generatePDF() : ''"
-        >
-          Open Invoice
-        </button>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle second-text fw-bold"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fas fa-user me-2"></i>USER
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid px-4">
+      <div class="row g-3 my-2">
+        <div class="col-md-3">
+          <div
+            class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded"
+          >
+            <div>
+              <h3 class="fs-2">720</h3>
+              <p class="fs-5">Houses</p>
+            </div>
+            <!-- <i
+              class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"
+            ></i> -->
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div
+            class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded"
+          >
+            <div>
+              <h3 class="fs-2">3</h3>
+              <p class="fs-5">Blocks</p>
+            </div>
+            <i
+              class="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"
+            ></i>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div
+            class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded"
+          >
+            <div>
+              <h3 class="fs-2">2103</h3>
+              <p class="fs-5">People</p>
+            </div>
+            <i
+              class="fas fa-truck fs-1 primary-text border rounded-full secondary-bg p-3"
+            ></i>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div
+            class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded"
+          >
+            <div>
+              <h3 class="fs-2">%25</h3>
+              <p class="fs-5">Increase</p>
+            </div>
+            <i
+              class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"
+            ></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row my-5">
+      <h3 class="fs-4 mb-3">Recent Orders</h3>
+      <div class="col">
+        <table class="table bg-white rounded shadow-sm table-hover">
+          <thead>
+            <tr>
+              <th scope="col">BlockName</th>
+              <th scope="col">MaintainaceCharges</th>
+              <th scope="col">HouseTax</th>
+              <th scope="col">WaterTax</th>
+              <th scope="col">ParkingCharges</th>
+              <th scope="col">CharityFund</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let obj of object">
+              <td scope="row">{{ obj.block }}</td>
+              <td scope="row">{{ obj.maintainance }}</td>
+              <td scope="row">{{ obj.housetax }}</td>
+              <td scope="row">{{ obj.watertax }}</td>
+              <td scope="row">{{ obj.parking }}</td>
+              <td scope="row">{{ obj.charity }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+
+        <div class="buttons text-center">
+          <button (click)="getdetails()">Get Data</button>
+        </div>
       </div>
     </div>
   </div>
-</form>
+</div>

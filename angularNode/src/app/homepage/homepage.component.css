@@ -1,243 +1,95 @@
+*{
+  font-family: montserrat;
+}
+body{
+  background: #f1fbff;
+}
+.section-padding{
+  padding: 100px 0;
+}
+.carousel-item{
+  height: 100vh;
+  min-height: 300px;
+}
+.carousel-caption{
+  bottom: 220px;
+  z-index:2;
+}
+.carousel-caption h5{
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 25px;
+}
+.carousel-caption p{
+  width: 60%;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.9;
+}
+.carousel-inner::before{
+  content:'';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 1 ;
+}
+.navbar-nav a{
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.navbar-light .navbar-brand{
+  color: #000;
+  font-size: 25px;
+  text-transform : uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover{
+ color:#000;
+}
+.navbar-light .navbar-nav .navbar-link{
+ color:#000;
+}
+.w-100{
+ height: 100vh;
+}
+.services .card-body i {
+ font-size: 50px;
+}
 
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+ .carousel-caption-caption{
+   bottom: 370px;
+ }
+ .carousel-caption p{
+   width: 100%;
 
-/* :root {
-    --primary-accent-color: hsl(223, 87%, 63%);
-    --primary-accent-color-hover: hsl(224, 87%, 70%);
-    --secondary-accent-color: hsl(223, 100%, 88%);
-  
-    --error-color: hsl(354, 100%, 66%);
-  
-    --default-font-color: hsl(209, 33%, 12%);
-    --gray-font-color: hsl(0, 0%, 59%);
-  
-    --default-transition: 0.3s ease-in-out;
-  } */
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-  
-  html {
-    font-size: 13px;
-    font-family: "Libre Franklin", sans-serif;
-    color: var(--default-font-color);
-  }
-  
-  .header {
-    margin: 5rem 0 2rem;
-    text-align: center;
-  }
-  
-  .header__logo {
-    display: inline-block;
-    margin: 0 0 3rem;
-  }
-  
-  .header__title {
-    margin: 0 0 1.5rem;
-    font-size: 2em;
-    font-weight: 700;
-  }
-  
-  .header__description {
-    margin: 0;
-  }
-  .socials__icon-container{
-    color:blue
-  }
-  .main-content {
-    margin: 0 3rem;
-    max-width: calc(840px - 3rem);
-  }
-  
-  .main-content__image {
-    width: 277%;
-    margin-right: 111px;
-    margin-left: -243px;
-    margin-top: -35px;
-    height: 80vh;
-  }
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 5rem;
-  }
-  
-  .form__input {
-    margin: 0 0 0.5rem;
-    padding: 1rem 2rem;
-    /* border: 1px solid var(--secondary-accent-color); */
-    border-radius: 50px;
-    /* transition: border-color var(--secondary-accent-color); */
-  }
-  
-  .form__input::placeholder {
-    color: var(--gray-font-color);
-  }
-  
-  .form__error {
-    margin: 0;
-    font-style: italic;
-    text-align: center;
-    color: var(--error-color);
-  }
-  
-  .quotes{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: 100;
-    font-size: 25px;
+ }
+}
 
-  }
-  .form__error ~ .form__button {
-    transform: translateY(2rem);
-  }
-  
-  .form__button {
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 50px;
-    background-color: var(--primary-accent-color);
-    font-weight: 600;
-    color: black;
-    box-shadow: 0 0.5rem 1rem -1rem var(--primary-accent-color);
-    transform: translateY(0);
-    transition: background-color var(--default-transition),
-      transform var(--default-transition);
-  }
-  
-  .form__button:hover {
-    background-color: var(--primary-accent-color-hover);
-  }
-  
-  .footer {
-    margin-top: 5rem;
-    text-align: center;
-  }
-  
-  .socials {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto 1.5rem;
-    width: 150px;
-  }
-  
-  .socials__icon-container {
-    position: relative;
-    display: block;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    color:black;
-    font-size: 1.1em;
-    transition: color var(--default-transition);
-  }
-  
-  .socials__icon-container::before,
-  .socials__icon-container::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    z-index: -1;
-    transition: opacity var(--default-transition);
-  }
-  
-  .socials__icon-container::before {
-    border: 1px solid var(--primary-accent-color);
-    opacity: 1;
-  }
-  
-  .socials__icon-container::after {
-    background-color:black;
-    opacity: 0;
-  }
-  
-  .socials__icon-container:hover {
-    color: #fff;
-  }
-  
-  .socials__icon-container:hover::before {
-    opacity: 0;
-  }
-  
-  .socials__icon-container:hover::after {
-    opacity: 1;
-  }
-  
-  .socials__icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    text-decoration: none;
-    transform: translate(-50%, -50%);
-  }
-  
-  .copyright {
-    font-size: 0.6em;
-    color: var(--gray-font-color);
-  }
-  
-  .attribution {
-    font-size: 0.733em;
-  }
-  
-  .attribution__anchor {
-    color: hsl(228, 45%, 44%);
-  }
-  
-  .light-font {
-    font-weight: 300;
-    color: var(--gray-font-color);
-  }
-  
-  .invalid-input {
-    border-color: var(--error-color);
-  }
-  
-  @media (min-width: 570px) {
-    html {
-      font-size: 20px;
-    }
-  
-    .header__title {
-      font-size: 2.5em;
-    }
-  }
-  
-  @media (min-width: 840px) {
-    .form {
-      flex-flow: row wrap;
-      justify-content: space-between;
-    }
-  
-    .main-content {
-      margin: 0 auto;
-    }
-  
-    .form__input {
-      margin-bottom: 0;
-      margin-right: 1rem;
-      flex-basis: 65%;
-    }
-  
-    .form__error {
-      order: 1;
-      margin-left: 2rem;
-      margin-top: 0.5rem;
-    }
-  
-    .form__error ~ .form__button {
-      transform: translateY(0);
-    }
-  
-    .form__button {
-      flex-grow: 1;
-    }
-  }
-  
+@media only screen and (max-width: 767px){
+ .navbar-nav{
+   text-align: center;
+ }
+ .carousel-caption{
+   bottom:125px;
+ }
+ .carousel-caption h5{
+   font-size: 17px;
+ }
+ .carousel-caption a{
+   padding: 10px 15px;
+ }
+ .carousel-caption p {
+   width: 100%;
+   line-height: 1.6;
+   font-size: 12px;
+
+ }
+}

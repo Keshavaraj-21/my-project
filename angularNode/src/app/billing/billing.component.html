@@ -133,6 +133,7 @@
               type="submit"
               id="btn btn-dark"
               (click)="post(this.billingform.value)"
+              [disabled]="!billingform.valid"
             >
               submit
             </button>

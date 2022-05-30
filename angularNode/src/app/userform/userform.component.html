@@ -116,6 +116,7 @@
               type="submit"
               id="btn btn-dark"
               (click)="register(this.registerform.value)"
+              [disabled]="!registerform.valid"
             >
               Register
             </button>

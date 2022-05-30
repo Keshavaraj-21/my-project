@@ -17,6 +17,7 @@ import { UserdashboardComponent } from './userdashboard/userdashboard.component'
 import { BillingComponent } from './billing/billing.component';
 import { BillingdetailsComponent } from './billingdetails/billingdetails.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { BillgeneratorComponent } from './billgenerator/billgenerator.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
     BillingComponent,
     BillingdetailsComponent,
     AdmindashboardComponent,
+    BillgeneratorComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,9 +10,11 @@ body{
   background-attachment: fixed;
   background-size: cover;
   overflow-x: hidden;
+  margin-top: 4%;
 }
 .container mt-5{
   background-color: antiquewhite;
+  margin-top: 10%;
 }
 .card,
 .card-1 {

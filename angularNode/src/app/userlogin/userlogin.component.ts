@@ -54,7 +54,7 @@ export class UserloginComponent implements OnInit {
       }
     }
     if (this.flag == 1) {
-      this.router.navigate(['/billingdetails']);
+      this.router.navigate(['/userdashboard']);
     } else {
       alert('Not a valid user');
       location.reload();

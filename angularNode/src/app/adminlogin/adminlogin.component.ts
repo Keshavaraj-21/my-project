@@ -48,7 +48,7 @@ export class AdminloginComponent implements OnInit {
       }
     }
     if (this.flag == 1) {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/admindashboard']);
     } else {
       alert('Not a valid user');
       location.reload();

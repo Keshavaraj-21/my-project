@@ -11,10 +11,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 import { BillingComponent } from './billing/billing.component';
 import { BillingdetailsComponent } from './billingdetails/billingdetails.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { BillgeneratorComponent } from './billgenerator/billgenerator.component';
 const routes: Routes = [
-  // { path: '', component: HomeComponent },
+  { path: '', component: HomepageComponent },
   { path: 'homepage', component: HomepageComponent },
-  { path: 'home', component: HomeComponent },
+  // { path: '', component: HomeComponent },
   { path: 'admin', component: AdminloginComponent },
   { path: 'user', component: UserloginComponent },
   { path: 'signup', component: UserformComponent },
@@ -24,6 +26,8 @@ const routes: Routes = [
   { path: 'userdashboard', component: UserdashboardComponent },
   { path: 'billing', component: BillingComponent },
   { path: 'billingdetails', component: BillingdetailsComponent },
+  { path: 'admindashboard', component: AdmindashboardComponent },
+  { path: 'billgenerator', component: BillgeneratorComponent },
 ];
 
 @NgModule({
