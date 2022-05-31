@@ -11,6 +11,8 @@ import { ApiserviceService } from '../apiservice.service';
 export class AdmindashboardComponent implements OnInit {
   object: any = [];
   alldata: any;
+  objects: any = [];
+  alldatas: any;
 
   constructor(private api: ApiserviceService) {}
 
@@ -24,6 +26,21 @@ export class AdmindashboardComponent implements OnInit {
       this.alldata = this.alldata.docs;
       console.log(this.alldata);
       for (const i of this.alldata) {
+        console.log(i);
+        this.object.push(i);
+      }
+    });
+  }
+
+  getblockuser() {
+    var id = 'C';
+    this.api.getblockid(id).subscribe((data) => {
+      console.log(data);
+      alert('id fetching...');
+      this.alldatas = data;
+      this.alldatas = this.alldatas.docs;
+      console.log(this.alldatas);
+      for (const i of this.alldatas) {
         console.log(i);
         this.object.push(i);
       }

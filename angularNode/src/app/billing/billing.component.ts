@@ -27,6 +27,10 @@ export class BillingComponent implements OnInit {
   }
   post(Formvalue: NgForm) {
     console.log(Formvalue);
+    alert('Bill details posted');
+    this.billingform.reset();
+    console.log('data get reloaded');
+    window.location.reload();
 
     this.api.billingdata(Formvalue).subscribe((data) => {
       console.log(data);

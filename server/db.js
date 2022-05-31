@@ -1,4 +1,5 @@
 const Cloudant = require("@cloudant/cloudant");
+const { data } = require("./logger/logger");
 var url =
   "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud";
 var username = "apikey-v2-1kdtmo28t5uulevcbb5m8mifmj5bd962vbuc18qwa0m4";
@@ -31,6 +32,23 @@ insert1 = function (paramsvalue) {
       console.log(err);
     });
 };
+
+insert2 = function (paramsvalue) {
+  console.log(paramsvalue);
+  cloudant
+    .use("housing-software")
+    .insert(paramsvalue)
+    .then((data) => {
+      console.log("Feedback posted to cloud database" + data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+find = function (blockdata, dbname) {
+  return cloudant.use(dbname).find(blockdata);
+};
+
 get = function (admindata, dbname) {
   return cloudant.use(dbname).find(admindata);
 };
@@ -43,4 +61,13 @@ getId = function (id, dbname) {
 del_id = function (id, id1, dbname) {
   return cloudant.use(dbname).destroy(id, id1);
 };
-module.exports = { get, getId, insert, getbill, insert1, del_id };
+module.exports = {
+  get,
+  getId,
+  insert,
+  getbill,
+  insert1,
+  insert2,
+  find,
+  del_id,
+};

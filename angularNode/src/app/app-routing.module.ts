@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
@@ -13,10 +13,11 @@ import { BillingComponent } from './billing/billing.component';
 import { BillingdetailsComponent } from './billingdetails/billingdetails.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { BillgeneratorComponent } from './billgenerator/billgenerator.component';
+import { FeedbackformComponent } from './feedbackform/feedbackform.component';
+import { FeedbackreceComponent } from './feedbackrece/feedbackrece.component';
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'homepage', component: HomepageComponent },
-  // { path: '', component: HomeComponent },
   { path: 'admin', component: AdminloginComponent },
   { path: 'user', component: UserloginComponent },
   { path: 'signup', component: UserformComponent },
@@ -28,6 +29,8 @@ const routes: Routes = [
   { path: 'billingdetails', component: BillingdetailsComponent },
   { path: 'admindashboard', component: AdmindashboardComponent },
   { path: 'billgenerator', component: BillgeneratorComponent },
+  { path: 'feedback', component: FeedbackformComponent },
+  { path: 'receivefeedback', component: FeedbackreceComponent },
 ];
 
 @NgModule({

@@ -14,6 +14,9 @@ export class ApiserviceService {
   billingdata(formobject: any) {
     return this.http.post('http://localhost:8000/post_query', formobject);
   }
+  feedbackdata(formobject: any) {
+    return this.http.post('http://localhost:8000/post__query', formobject);
+  }
 
   getUser() {
     return this.http.get('http://localhost:8000/getUser/');
@@ -24,6 +27,13 @@ export class ApiserviceService {
 
   getbill() {
     return this.http.get('http://localhost:8000/getbill/');
+  }
+
+  getFeedback() {
+    return this.http.get('http://localhost:8000/getFeedback/');
+  }
+  getblockid(id: any) {
+    return this.http.get('http://localhost:8000/get_block/' + id);
   }
 
   remove(id: any, id1: any) {

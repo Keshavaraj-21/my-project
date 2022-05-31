@@ -3,18 +3,18 @@ import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
 
 @Component({
-  selector: 'app-userdashboard',
-  templateUrl: './userdashboard.component.html',
-  styleUrls: ['./userdashboard.component.css'],
+  selector: 'app-feedbackrece',
+  templateUrl: './feedbackrece.component.html',
+  styleUrls: ['./feedbackrece.component.css'],
 })
-export class UserdashboardComponent implements OnInit {
+export class FeedbackreceComponent implements OnInit {
   object: any = [];
   alldata: any;
   constructor(private api: ApiserviceService) {}
 
   ngOnInit(): void {}
-  getdetails() {
-    this.api.getbill().subscribe((data) => {
+  getfeedback() {
+    this.api.getFeedback().subscribe((data) => {
       console.log(data);
       alert('Data was fetching....');
       this.alldata = data;

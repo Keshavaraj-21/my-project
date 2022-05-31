@@ -1,0 +1,32 @@
+<body>
+  <div class="row my-5">
+    <h3 class="fs-4 mb-3 text-center">Customer Feedbacks</h3>
+    <div class="col">
+      <table class="table bg-white rounded shadow-sm table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Category</th>
+            <th scope="col">Message</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let obj of object">
+            <td scope="row">{{ obj.name }}</td>
+            <td scope="row">{{ obj.email }}</td>
+            <td scope="row">{{ obj.category }}</td>
+            <td scope="row">{{ obj.msg }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+
+      <div class="buttons text-center">
+        <button (click)="getfeedback()" class="btn btn-dark">
+          GetFeedbackDetails
+        </button>
+      </div>
+    </div>
+  </div>
+</body>

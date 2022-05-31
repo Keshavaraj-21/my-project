@@ -12,12 +12,13 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomepageComponent } from './homepage/homepage.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-// import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 import { BillingComponent } from './billing/billing.component';
 import { BillingdetailsComponent } from './billingdetails/billingdetails.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { BillgeneratorComponent } from './billgenerator/billgenerator.component';
+import { FeedbackformComponent } from './feedbackform/feedbackform.component';
+import { FeedbackreceComponent } from './feedbackrece/feedbackrece.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,8 @@ import { BillgeneratorComponent } from './billgenerator/billgenerator.component'
     BillingdetailsComponent,
     AdmindashboardComponent,
     BillgeneratorComponent,
+    FeedbackformComponent,
+    FeedbackreceComponent,
   ],
   imports: [
     BrowserModule,

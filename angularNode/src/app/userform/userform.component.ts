@@ -14,11 +14,7 @@ export class UserformComponent implements OnInit {
   constructor(
     private formbuilder: FormBuilder,
     private api: ApiserviceService
-  ) {
-    // this.api.getconnecting().subscribe(data =>{
-    //   console.log(data)
-    // } )
-  }
+  ) {}
 
   ngOnInit(): void {
     this.registerform = this.formbuilder.group({
@@ -33,7 +29,10 @@ export class UserformComponent implements OnInit {
   }
   register(Formvalue: NgForm) {
     console.log(Formvalue);
-
+    alert('Your Data Posted....');
+    this.registerform.reset();
+    console.log('data get reloaded');
+    window.location.reload();
     this.api.signupdata(Formvalue).subscribe((data) => {
       console.log(data);
     });
