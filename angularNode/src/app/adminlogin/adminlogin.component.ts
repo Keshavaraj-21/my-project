@@ -27,7 +27,7 @@ export class AdminloginComponent implements OnInit {
     });
     this.api.getadmin().subscribe((data) => {
       console.log(data);
-      console.log('Data was fetching....');
+      // console.log('Data was fetching....');
       this.alldata = data;
       this.alldata = this.alldata.docs;
       console.log(this.alldata);

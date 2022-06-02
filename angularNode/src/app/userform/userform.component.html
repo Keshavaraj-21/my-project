@@ -65,16 +65,22 @@
               *Enter Valid Gmail!!</span
             >
           </div>
-
           <div class="field">
-            <label for="blockname" class="text-light">Block Name :</label>
-            <input
-              type="text"
-              formControlName="blockname"
+            <label for="block" class="text-light">Block Name :</label>
+
+            <select
+              name="blockname"
               id="blockname"
               class="form-control"
-              placeholder="Enter your Block Name here"
-            />
+              formControlName="blockname"
+              placeholder="select block name"
+              (change)="blocknameChange($event)"
+            >
+              <option value="A-Block">A-Block</option>
+              <option value="B-Block">B-Block</option>
+              <option value="C-Block">C-Block</option>
+            </select>
+
             <span
               class="text-danger"
               *ngIf="

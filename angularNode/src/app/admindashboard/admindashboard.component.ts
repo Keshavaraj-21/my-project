@@ -11,8 +11,8 @@ import { ApiserviceService } from '../apiservice.service';
 export class AdmindashboardComponent implements OnInit {
   object: any = [];
   alldata: any;
-  objects: any = [];
-  alldatas: any;
+  objectss: any = [];
+  alldatass: any;
 
   constructor(private api: ApiserviceService) {}
 
@@ -21,7 +21,7 @@ export class AdmindashboardComponent implements OnInit {
   getuser() {
     this.api.getUser().subscribe((data) => {
       console.log(data);
-      alert('Data was fetching....');
+      // alert('Data was fetching....');
       this.alldata = data;
       this.alldata = this.alldata.docs;
       console.log(this.alldata);
@@ -32,17 +32,49 @@ export class AdmindashboardComponent implements OnInit {
     });
   }
 
-  getblockuser() {
+  getblockuserA() {
+    var id = 'A';
+    this.api.getblockid(id).subscribe((data) => {
+      console.log(data);
+      alert('id fetching...');
+      this.alldatass = data;
+      this.alldatass = this.alldatass.docs;
+      console.log(this.alldatass);
+      for (const i of this.alldatass) {
+        console.log(i);
+        this.objectss.push(i);
+      }
+    });
+  }
+
+  getblockuserB() {
+    var id = 'B';
+
+    this.api.getblockid(id).subscribe((data) => {
+      console.log(data);
+      alert('id fetching...');
+
+      this.alldatass = data;
+      this.alldatass = this.alldatass.docs;
+      console.log(this.alldatass);
+      for (const i of this.alldatass) {
+        console.log(i);
+        this.objectss.push(i);
+      }
+    });
+  }
+
+  getblockuserC() {
     var id = 'C';
     this.api.getblockid(id).subscribe((data) => {
       console.log(data);
       alert('id fetching...');
-      this.alldatas = data;
-      this.alldatas = this.alldatas.docs;
-      console.log(this.alldatas);
-      for (const i of this.alldatas) {
+      this.alldatass = data;
+      this.alldatass = this.alldatass.docs;
+      console.log(this.alldatass);
+      for (const i of this.alldatass) {
         console.log(i);
-        this.object.push(i);
+        this.objectss.push(i);
       }
     });
   }

@@ -19,6 +19,9 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
 import { BillgeneratorComponent } from './billgenerator/billgenerator.component';
 import { FeedbackformComponent } from './feedbackform/feedbackform.component';
 import { FeedbackreceComponent } from './feedbackrece/feedbackrece.component';
+import { BillofuserComponent } from './billofuser/billofuser.component';
+import { ToastrModule } from 'ngx-toastr';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +41,7 @@ import { FeedbackreceComponent } from './feedbackrece/feedbackrece.component';
     BillgeneratorComponent,
     FeedbackformComponent,
     FeedbackreceComponent,
+    BillofuserComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,9 @@ import { FeedbackreceComponent } from './feedbackrece/feedbackrece.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    // BrowserAnimationsModule,
+    // BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

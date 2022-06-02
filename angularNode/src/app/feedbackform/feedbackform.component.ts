@@ -28,7 +28,7 @@ export class FeedbackformComponent implements OnInit {
 
   sendFeedback(Formvalue: NgForm) {
     console.log(Formvalue);
-    alert('Your feedback Posted..!');
+    // alert('Your feedback Posted..!');
     this.feedbackForm.reset();
     console.log('Feedback posted..!');
     window.location.reload();

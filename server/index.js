@@ -25,13 +25,18 @@ app.use(
 
 app.post("/postquery", (request, response, next) => {
   console.log(request);
+
+  // console.log(blocknamefetched);
   var object = {
-    username: request.body.username,
-    phone: request.body.phone,
-    email: request.body.email,
-    blockname: request.body.blockname,
-    password: request.body.password,
-    confirmpassword: request.body.confirmpassword,
+    username: request.body.formobject.username,
+    phone: request.body.formobject.phone,
+    email: request.body.formobject.email,
+    blockname: request.body.formobject.blockname,
+    blockid: request.body.blockdetails,
+    // blockname: request.body.blockdetails,
+    // block_id: request.body.
+    password: request.body.formobject.password,
+    confirmpassword: request.body.formobject.confirmpassword,
     type: "userid",
   };
 
@@ -65,6 +70,24 @@ app.post("/post__query", (request, response, next) => {
   };
 
   dbconnection.insert2(object);
+});
+
+app.post("/billquery", (request, response, next) => {
+  console.log(request);
+  var object = {
+    username: request.body.username,
+    phone: request.body.phone,
+    email: request.body.email,
+    blockname: request.body.blockname,
+    maintainance: request.body.maintainance,
+    housetax: request.body.housetax,
+    watertax: request.body.watertax,
+    parking: request.body.parking,
+    charity: request.body.charity,
+    type: "userbill",
+  };
+
+  dbconnection.insert3(object);
 });
 
 app.get("/getUser", (request, response) => {
@@ -125,7 +148,7 @@ app.get("/getFeedback", (request, response) => {
 });
 
 app.get("/get_block/:id", (request, response) => {
-  console.log("function calling");
+  // console.log("function calling");
   var getBlock = {
     selector: {
       type: "userid",
@@ -133,6 +156,23 @@ app.get("/get_block/:id", (request, response) => {
     },
   };
   dbconnection.find(getBlock, "housing-software").then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send("error");
+    }
+  });
+});
+
+app.get("/get_block_id/:id", (request, response) => {
+  console.log("function calling");
+  var getBlocks = {
+    selector: {
+      type: "bill",
+      block: request.params.id,
+    },
+  };
+  dbconnection.find(getBlocks, "housing-software").then((res) => {
     if (res) {
       response.send(res);
     } else {

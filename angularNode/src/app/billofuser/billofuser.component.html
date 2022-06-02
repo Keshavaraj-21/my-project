@@ -1,0 +1,207 @@
+<body>
+  <div class="container mt-5">
+    <div class="card mx-auto">
+      <div class="card-header">
+        <h1 class="text-center text-light">User Billing Form</h1>
+      </div>
+      <div class="card-body mx-auto">
+        <form class="myform" [formGroup]="billform">
+          <div class="field">
+            <label for="username" class="text-light">User Name :</label>
+            <input
+              type="text"
+              formControlName="username"
+              id="username"
+              class="form-control"
+              placeholder="Enter your Name here"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                billform.controls['username'].touched &&
+                billform.hasError('required', 'username')
+              "
+            >
+              *Name is required!!</span
+            >
+          </div>
+
+          <div class="field">
+            <label for="phone" class="text-light">Phone Number :</label>
+            <input
+              type="tel"
+              formControlName="phone"
+              id="phone"
+              class="form-control"
+              placeholder="Enter Mobile Number"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                billform.controls['phone'].touched &&
+                billform.hasError('required', 'phone')
+              "
+            >
+              *Phone Number must be in 10 Digits!!</span
+            >
+          </div>
+
+          <div class="field">
+            <label for="gmail" class="text-light">Gmail :</label>
+            <input
+              type="text"
+              formControlName="email"
+              id="email"
+              class="form-control"
+              placeholder="Enter your gmail"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                billform.controls['email'].touched &&
+                billform.hasError('required', 'email')
+              "
+            >
+              *Enter Valid Gmail!!</span
+            >
+          </div>
+
+          <div class="field">
+            <label for="block" class="text-light">Block Name :</label>
+
+            <select
+              name="blockname"
+              id="blockname"
+              class="form-control"
+              formControlName="blockname"
+              placeholder="select block name"
+            >
+              <option value="A-Block">A-Block</option>
+              <option value="B-Block">B-Block</option>
+              <option value="C-Block">C-Block</option>
+            </select>
+
+            <span
+              class="text-danger"
+              *ngIf="
+                billform.controls['blockname'].touched &&
+                billform.hasError('required', 'blockname')
+              "
+            >
+              *Block Name is required!!</span
+            >
+          </div>
+          <div>
+            <label for="maintainance" class="text-light"
+              >Maintainance Charges :</label
+            >
+            <input
+              type="text"
+              formControlName="maintainance"
+              id="maintainance"
+              class="form-control"
+              placeholder="Enter Maintainance Charges here"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                billform.controls['maintainance'].touched &&
+                billform.hasError('required', 'maintainance')
+              "
+            >
+              *Maintainance is required!!</span
+            >
+          </div>
+          <div>
+            <label for="housetax" class="text-light">House Tax :</label>
+            <input
+              type="text"
+              formControlName="housetax"
+              id="housetax"
+              class="form-control"
+              placeholder="Enter Housetax here"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                billform.controls['housetax'].touched &&
+                billform.hasError('required', 'housetax')
+              "
+            >
+              *Housetax is required!!</span
+            >
+          </div>
+          <div>
+            <label for="watertax" class="text-light">Water Tax :</label>
+            <input
+              type="text"
+              formControlName="watertax"
+              id="watertax"
+              class="form-control"
+              placeholder="Enter Watertax here"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                billform.controls['watertax'].touched &&
+                billform.hasError('required', 'watertax')
+              "
+            >
+              *Watertax is required!!</span
+            >
+          </div>
+
+          <div>
+            <label for="parking" class="text-light">Parking Charges :</label>
+            <input
+              type="text"
+              formControlName="parking"
+              id="parking"
+              class="form-control"
+              placeholder="Enter Parking Charges here"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                billform.controls['parking'].touched &&
+                billform.hasError('required', 'parking')
+              "
+            >
+              *Parking Charges is required!!</span
+            >
+          </div>
+          <div>
+            <label for="charity" class="text-light">Charity Fund :</label>
+            <input
+              type="text"
+              formControlName="charity"
+              id="charity"
+              class="form-control"
+              placeholder="Enter Charity Fund here"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                billform.controls['charity'].touched &&
+                billform.hasError('required', 'charity')
+              "
+            >
+              *Charity fund is required!!</span
+            >
+          </div>
+
+          <div class="buttons text-center">
+            <button
+              type="submit"
+              class="btn btn-dark"
+              (click)="postBill(this.billform.value)"
+              [disabled]="!billform.valid"
+            >
+              PostBill
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

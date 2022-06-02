@@ -45,8 +45,26 @@ insert2 = function (paramsvalue) {
       console.log(err);
     });
 };
+
+insert3 = function (paramsvalue) {
+  console.log(paramsvalue);
+  cloudant
+    .use("housing-software")
+    .insert(paramsvalue)
+    .then((data) => {
+      console.log("Feedback posted to cloud database" + data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 find = function (blockdata, dbname) {
   return cloudant.use(dbname).find(blockdata);
+};
+
+find1 = function (blockid, dbname) {
+  return cloudant.use(dbname).find(blockid);
 };
 
 get = function (admindata, dbname) {
@@ -68,6 +86,8 @@ module.exports = {
   getbill,
   insert1,
   insert2,
+  insert3,
   find,
+  find1,
   del_id,
 };

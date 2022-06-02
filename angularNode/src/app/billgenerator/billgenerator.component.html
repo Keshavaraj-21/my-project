@@ -93,11 +93,6 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <!-- <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td> -->
                     <tr *ngFor="let product of invoice.products; let i = index">
                       <td scope="row">
                         <input
@@ -153,19 +148,6 @@
               </div>
             </div>
           </div>
-          <!-- <div class="card border-secondary mt-2">
-            <div class="card-body">
-              <h4 class="card-title">Additional Details</h4>
-              <div class="form-group">
-                <textarea
-                  class="form-control"
-                  name="additionalDetails"
-                  rows="3"
-                  [(ngModel)]="invoice.additionalDetails"
-                ></textarea>
-              </div>
-            </div> -->
-          <!-- </div> -->
         </div>
         <div class="col-md-4">
           <button
@@ -175,8 +157,9 @@
           >
             Download Invoice
           </button>
-        </div>
-        <div>
+          <br />
+          <br />
+          <br />
           <button
             type="button"
             class="btn btn-secondary btn-lg btn-block"
@@ -184,8 +167,9 @@
           >
             Print Invoice
           </button>
-        </div>
-        <div>
+          <br />
+          <br />
+          <br />
           <button
             type="submit"
             class="btn btn-secondary btn-lg btn-block"

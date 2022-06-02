@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
 @Component({
-  selector: 'app-billing',
-  templateUrl: './billing.component.html',
-  styleUrls: ['./billing.component.css'],
+  selector: 'app-billofuser',
+  templateUrl: './billofuser.component.html',
+  styleUrls: ['./billofuser.component.css'],
 })
-export class BillingComponent implements OnInit {
-  billingform!: FormGroup;
+export class BillofuserComponent implements OnInit {
+  billform!: FormGroup;
   value: boolean = true;
   constructor(
     private formbuilder: FormBuilder,
@@ -15,24 +15,26 @@ export class BillingComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.billingform = this.formbuilder.group({
-      block: ['', Validators.required],
+    this.billform = this.formbuilder.group({
+      username: ['', Validators.required],
+      phone: ['', Validators.required],
+      email: ['', Validators.required],
+      blockname: ['', Validators.required],
       maintainance: ['', Validators.required],
       housetax: ['', Validators.required],
       watertax: ['', Validators.required],
       parking: ['', Validators.required],
       charity: ['', Validators.required],
     });
-    console.log(this.billingform);
+    // console.log(this.billform);
   }
-  post(Formvalue: NgForm) {
+  postBill(Formvalue: NgForm) {
     console.log(Formvalue);
-    // alert('Bill details posted');
-    this.billingform.reset();
+    alert('Your Data Posted....');
+    this.billform.reset();
     console.log('data get reloaded');
     window.location.reload();
-
-    this.api.billingdata(Formvalue).subscribe((data) => {
+    this.api.billdata(Formvalue).subscribe((data) => {
       console.log(data);
     });
   }

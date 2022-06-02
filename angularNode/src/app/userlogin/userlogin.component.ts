@@ -32,13 +32,8 @@ export class UserloginComponent implements OnInit {
       this.alldata = this.alldata.docs;
       console.log(this.alldata);
       for (const i of this.alldata) {
-        // const elt = this.alldata[i];
-        // console.log(elt.id);
-        // this.api.getUserId(elt.id).subscribe((res) => {
-        //   console.log(res);
         this.object.push(i);
         console.log('Fetched successfuly');
-        // });
       }
     });
   }

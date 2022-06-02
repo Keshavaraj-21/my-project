@@ -24,13 +24,9 @@
           href="#"
           class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
           ><i class="fas fa-chart-line me-2"></i
-          ><a routerLink="/billgenerator">Bill Generator</a></a
+          ><a routerLink="/userbill">Bill Generator</a></a
         >
-        <!-- <a
-          href="#"
-          class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
-          ><i class="fas fa-paperclip me-2"></i>Services</a
-        > -->
+
         <a
           href="#"
           class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
@@ -177,7 +173,7 @@
 
                   <td scope="row">
                     <button class="btn btn-warning">
-                      <a routerLink="/billgenerator">Generate</a>
+                      <a routerLink="/userbill">Generate</a>
                     </button>
                   </td>
 
@@ -193,7 +189,7 @@
 
             <div class="buttons text-center">
               <button (click)="getuser()" class="btn btn-dark">
-                GetUserData
+                GetUserDetails
               </button>
 
               <h3 class="fs-4 mb-3">User Signup based on blocks Credentials</h3>
@@ -206,11 +202,10 @@
                       <th scope="col">Email</th>
                       <th scope="col">Block name</th>
                       <th scope="col">BillGeneration</th>
-                      <th scope="col">Remove User</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let obje of objects">
+                    <tr *ngFor="let obje of objectss">
                       <td scope="row">{{ obje.username }}</td>
                       <td scope="row">{{ obje.phone }}</td>
                       <td scope="row">{{ obje.email }}</td>
@@ -218,7 +213,7 @@
 
                       <td scope="row">
                         <button class="btn btn-warning">
-                          <a routerLink="/billgenerator">Generate</a>
+                          <a routerLink="/userbill">Generate</a>
                         </button>
                       </td>
 
@@ -236,8 +231,14 @@
                 <br />
 
                 <div class="buttons text-center">
-                  <button (click)="getblockuser()" class="btn btn-dark">
-                    GetUserBlockData
+                  <button (click)="getblockuserA()" class="btn btn-dark">
+                    Block-A(details)
+                  </button>
+                  <button (click)="getblockuserB()" class="btn btn-dark">
+                    Block-B(details)
+                  </button>
+                  <button (click)="getblockuserC()" class="btn btn-dark">
+                    Block-C(details)
                   </button>
                 </div>
               </div>
