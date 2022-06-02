@@ -181,6 +181,22 @@ app.get("/get_block_id/:id", (request, response) => {
   });
 });
 
+app.get("/get_billofuser", (request, response) => {
+  // console.log("function calling");
+  var getBillUser = {
+    selector: {
+      type: "userbill",
+    },
+  };
+  dbconnection.find(getBillUser, "housing-software").then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send("error");
+    }
+  });
+});
+
 app.delete("/delete/:id/:id1", (request, response) => {
   dbconnection
     .del_id(request.params.id, request.params.id1, "housing-software")

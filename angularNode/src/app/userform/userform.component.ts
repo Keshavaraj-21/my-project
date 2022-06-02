@@ -33,10 +33,9 @@ export class UserformComponent implements OnInit {
   }
   register(Formvalue: NgForm) {
     console.log(Formvalue);
-    // alert('Your Data Posted....');
-    // this.registerform.reset();
+
     console.log('data get reloaded');
-    // window.location.reload();
+
     let blockid = localStorage.getItem('block');
     console.log(blockid);
     this.api.signupdata(Formvalue, blockid).subscribe((data) => {
@@ -49,7 +48,6 @@ export class UserformComponent implements OnInit {
     console.log(arg.target.value);
     this.api.getblock_id(arg.target.value).subscribe((data) => {
       console.log(data);
-      // alert('id fetching...');
       this.alldataas = data;
       this.alldataas = this.alldataas.docs;
       console.log(this.alldataas);

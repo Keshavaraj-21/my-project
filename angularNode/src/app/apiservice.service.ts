@@ -23,6 +23,7 @@ export class ApiserviceService {
     return this.http.post('http://localhost:8000/billquery', formobject);
   }
   feedbackdata(formobject: any) {
+    console.log('obj');
     return this.http.post('http://localhost:8000/post__query', formobject);
   }
 
@@ -46,7 +47,9 @@ export class ApiserviceService {
   getblock_id(id: any) {
     return this.http.get('http://localhost:8000/get_block_id/' + id);
   }
-
+  getbillofuser() {
+    return this.http.get('http://localhost:8000/get_billofuser/');
+  }
   remove(id: any, id1: any) {
     return this.http.delete(`http://localhost:8000/delete/${id}/${id1}`);
   }

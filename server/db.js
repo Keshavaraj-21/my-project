@@ -66,6 +66,9 @@ find = function (blockdata, dbname) {
 find1 = function (blockid, dbname) {
   return cloudant.use(dbname).find(blockid);
 };
+getbilluser = function (dbname) {
+  return cloudant.use(dbname).list();
+};
 
 get = function (admindata, dbname) {
   return cloudant.use(dbname).find(admindata);
@@ -87,6 +90,7 @@ module.exports = {
   insert1,
   insert2,
   insert3,
+  getbilluser,
   find,
   find1,
   del_id,

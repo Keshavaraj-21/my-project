@@ -16,6 +16,7 @@ import { BillgeneratorComponent } from './billgenerator/billgenerator.component'
 import { FeedbackformComponent } from './feedbackform/feedbackform.component';
 import { FeedbackreceComponent } from './feedbackrece/feedbackrece.component';
 import { BillofuserComponent } from './billofuser/billofuser.component';
+import { UserviewbillComponent } from './userviewbill/userviewbill.component';
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'homepage', component: HomepageComponent },
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'feedback', component: FeedbackformComponent },
   { path: 'receivefeedback', component: FeedbackreceComponent },
   { path: 'userbill', component: BillofuserComponent },
+  { path: 'billofuser', component: UserviewbillComponent },
 ];
 
 @NgModule({

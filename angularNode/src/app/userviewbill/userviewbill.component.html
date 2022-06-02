@@ -1,0 +1,37 @@
+<div class="row my-5">
+  <h3 class="fs-4 mb-3">Total User Signup Credentials</h3>
+  <div class="col">
+    <table class="table bg-white rounded shadow-sm table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Username</th>
+          <th scope="col">Email</th>
+          <th scope="col">BlockName</th>
+          <th scope="col">MaintainaceCharges</th>
+          <th scope="col">HouseTax</th>
+          <th scope="col">WaterTax</th>
+          <th scope="col">ParkingCharges</th>
+          <th scope="col">CharityFund</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let obj of object">
+          <td scope="row">{{ obj.username }}</td>
+          <td scope="row">{{ obj.email }}</td>
+          <td scope="row">{{ obj.blockname }}</td>
+          <td scope="row">{{ obj.maintainance }}</td>
+          <td scope="row">{{ obj.housetax }}</td>
+          <td scope="row">{{ obj.watertax }}</td>
+          <td scope="row">{{ obj.parking }}</td>
+          <td scope="row">{{ obj.charity }}</td>
+        </tr>
+        <div class="buttons text-center">
+          <button (click)="getbilluser()" class="btn btn-dark">
+            GetBillingDetails
+          </button>
+        </div>
+      </tbody>
+    </table>
+    <br />
+  </div>
+</div>

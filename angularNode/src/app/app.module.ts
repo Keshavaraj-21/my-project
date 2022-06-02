@@ -20,8 +20,10 @@ import { BillgeneratorComponent } from './billgenerator/billgenerator.component'
 import { FeedbackformComponent } from './feedbackform/feedbackform.component';
 import { FeedbackreceComponent } from './feedbackrece/feedbackrece.component';
 import { BillofuserComponent } from './billofuser/billofuser.component';
+// import { BrowserAnimationsModule } from '@angular/platform-browser-';
+
 import { ToastrModule } from 'ngx-toastr';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserviewbillComponent } from './userviewbill/userviewbill.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +44,7 @@ import { ToastrModule } from 'ngx-toastr';
     FeedbackformComponent,
     FeedbackreceComponent,
     BillofuserComponent,
+    UserviewbillComponent,
   ],
   imports: [
     BrowserModule,
