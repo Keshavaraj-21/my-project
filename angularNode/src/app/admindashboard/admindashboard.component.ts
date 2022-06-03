@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, NgForm } from '@angular/forms';
-import { Validators } from '@angular/forms';
+
 import { ApiserviceService } from '../apiservice.service';
 
 @Component({
@@ -21,7 +20,6 @@ export class AdmindashboardComponent implements OnInit {
   getuser() {
     this.api.getUser().subscribe((data) => {
       console.log(data);
-      // alert('Data was fetching....');
       this.alldata = data;
       this.alldata = this.alldata.docs;
       console.log(this.alldata);

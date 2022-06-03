@@ -8,12 +8,11 @@ const winlogger = require("./logger/logger");
 
 var login = {};
 const file = require("fs");
-const { request } = require("http");
+const { request, get } = require("http");
 const { response } = require("express");
 const { nextTick } = require("process");
 const cors = require("cors");
 const dbconnection = require("./db");
-// const mailservice = require("./mail");
 app.use(express.static("public"));
 app.use(connection.static("public"));
 app.use(bodyparser.json());
@@ -26,15 +25,13 @@ app.use(
 app.post("/postquery", (request, response, next) => {
   console.log(request);
 
-  // console.log(blocknamefetched);
   var object = {
     username: request.body.formobject.username,
     phone: request.body.formobject.phone,
     email: request.body.formobject.email,
     blockname: request.body.formobject.blockname,
     blockid: request.body.blockdetails,
-    // blockname: request.body.blockdetails,
-    // block_id: request.body.
+
     password: request.body.formobject.password,
     confirmpassword: request.body.formobject.confirmpassword,
     type: "userid",
@@ -76,6 +73,7 @@ app.post("/billquery", (request, response, next) => {
   console.log(request);
   var object = {
     username: request.body.username,
+    userid: request.body.userid,
     phone: request.body.phone,
     email: request.body.email,
     blockname: request.body.blockname,
@@ -164,6 +162,23 @@ app.get("/get_block/:id", (request, response) => {
   });
 });
 
+app.get("/get_user_id/:id", (request, response) => {
+  // console.log("function calling");
+  var getUserId = {
+    selector: {
+      type: "userid",
+      username: request.params.id,
+    },
+  };
+  dbconnection.find(getUserId, "housing-software").then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send("error");
+    }
+  });
+});
+
 app.get("/get_block_id/:id", (request, response) => {
   console.log("function calling");
   var getBlocks = {
@@ -181,13 +196,15 @@ app.get("/get_block_id/:id", (request, response) => {
   });
 });
 
-app.get("/get_billofuser", (request, response) => {
-  // console.log("function calling");
+app.get("/get_billofuser/:id", (request, response) => {
   var getBillUser = {
     selector: {
       type: "userbill",
+      userid: request.params.id,
     },
   };
+
+  console.log("hi", request.params.id);
   dbconnection.find(getBillUser, "housing-software").then((res) => {
     if (res) {
       response.send(res);

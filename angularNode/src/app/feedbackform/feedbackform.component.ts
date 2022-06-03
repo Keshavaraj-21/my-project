@@ -17,9 +17,20 @@ export class FeedbackformComponent implements OnInit {
     private api: ApiserviceService
   ) {
     this.feedbackForm = this.formbuilder.group({
-      name: ['', Validators.required],
-      email: ['', Validators.required],
-      blockname: ['', Validators.required],
+      username: ['', [Validators.required]],
+      phone: [
+        '',
+        [
+          Validators.required,
+          Validators.min(1000000000),
+          Validators.max(9999999999),
+        ],
+      ],
+      email: [
+        '',
+        [Validators.required, Validators.pattern('[a-zA-Z0-9]*@gmail.com')],
+      ],
+      blockname: ['', [Validators.required]],
       category: ['', Validators.required],
       msg: ['', Validators.required],
     });
@@ -36,17 +47,14 @@ export class FeedbackformComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-  // console.log(this.feedbackForm);
 
   sendFeedback(Formvalue: NgForm) {
     console.log(Formvalue);
-    // alert('Your feedback Posted..!');
     this.feedbackForm.reset();
     console.log('Feedback posted..!');
     window.location.reload();
     this.api.feedbackdata(Formvalue).subscribe((data) => {
       console.log(data);
-      // console.log(this.feedbackForm.value);
     });
   }
 }

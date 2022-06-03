@@ -27,6 +27,7 @@ const routes: Routes = [
   { path: 'about', component: AboutusComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'userdashboard', component: UserdashboardComponent },
+  // { path: 'userdashboard', component: UserdashboardComponent },
   { path: 'billing', component: BillingComponent },
   { path: 'billingdetails', component: BillingdetailsComponent },
   { path: 'admindashboard', component: AdmindashboardComponent },
@@ -34,7 +35,7 @@ const routes: Routes = [
   { path: 'feedback', component: FeedbackformComponent },
   { path: 'receivefeedback', component: FeedbackreceComponent },
   { path: 'userbill', component: BillofuserComponent },
-  { path: 'billofuser', component: UserviewbillComponent },
+  { path: 'viewbill', component: UserviewbillComponent },
 ];
 
 @NgModule({

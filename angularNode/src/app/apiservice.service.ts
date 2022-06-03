@@ -19,7 +19,12 @@ export class ApiserviceService {
   billingdata(formobject: any) {
     return this.http.post('http://localhost:8000/post_query', formobject);
   }
-  billdata(formobject: any) {
+  billdata(formobject: any, userid: any) {
+    var user: any = {
+      formobject: formobject,
+      useriddetails: userid,
+    };
+    console.log(user);
     return this.http.post('http://localhost:8000/billquery', formobject);
   }
   feedbackdata(formobject: any) {
@@ -38,6 +43,10 @@ export class ApiserviceService {
     return this.http.get('http://localhost:8000/getbill/');
   }
 
+  getuserid(id: any) {
+    return this.http.get('http://localhost:8000/get_user_id/' + id);
+  }
+
   getFeedback() {
     return this.http.get('http://localhost:8000/getFeedback/');
   }
@@ -47,9 +56,13 @@ export class ApiserviceService {
   getblock_id(id: any) {
     return this.http.get('http://localhost:8000/get_block_id/' + id);
   }
-  getbillofuser() {
-    return this.http.get('http://localhost:8000/get_billofuser/');
+  getbillofuser(id: any) {
+    return this.http.get(`http://localhost:8000/get_billofuser/${id}`);
   }
+  getbilluserid(id: any) {
+    return this.http.get('http://localhost:8000/get_billuser_id/' + id);
+  }
+
   remove(id: any, id1: any) {
     return this.http.delete(`http://localhost:8000/delete/${id}/${id1}`);
   }

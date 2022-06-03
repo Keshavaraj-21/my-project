@@ -22,26 +22,39 @@ export class UserformComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerform = this.formbuilder.group({
-      username: ['', Validators.required],
-      phone: ['', Validators.required],
-      email: ['', Validators.required],
-      blockname: ['', Validators.required],
-      password: ['', Validators.required],
-      confirmpassword: ['', Validators.required],
+      username: ['', [Validators.required]],
+      phone: [
+        '',
+        [
+          Validators.required,
+          Validators.min(1000000000),
+          Validators.max(9999999999),
+        ],
+      ],
+      email: [
+        '',
+        [Validators.required, Validators.pattern('[a-zA-Z0-9]*@gmail.com')],
+      ],
+      blockname: ['', [Validators.required]],
+      password: [
+        '',
+        [Validators.required, Validators.pattern('[a-zA-z@_]{6,}')],
+      ],
+      confirmpassword: [
+        '',
+        [Validators.required, Validators.pattern('[a-zA-z@_]{6,}')],
+      ],
     });
-    // console.log(this.registerform);
   }
   register(Formvalue: NgForm) {
     console.log(Formvalue);
-
-    console.log('data get reloaded');
 
     let blockid = localStorage.getItem('block');
     console.log(blockid);
     this.api.signupdata(Formvalue, blockid).subscribe((data) => {
       console.log(data);
     });
-    this.alert.showSuccess('Registration in success..!', 'ok..');
+    this.alert.showSuccess('Registration is success..!', 'ok..');
   }
 
   blocknameChange(arg: any) {

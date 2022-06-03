@@ -22,8 +22,11 @@ export class AdminloginComponent implements OnInit {
 
   ngOnInit(): void {
     this.adminform = this.formbuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required],
+      username: ['', [Validators.required]],
+      password: [
+        '',
+        [Validators.required, Validators.pattern('[A-Za-z0-9@!_]{6,}')],
+      ],
     });
     this.api.getadmin().subscribe((data) => {
       console.log(data);

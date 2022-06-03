@@ -16,7 +16,8 @@ export class UserviewbillComponent implements OnInit {
   ngOnInit(): void {}
 
   getbilluser() {
-    this.api.getbillofuser().subscribe((data) => {
+    let id = localStorage.getItem('user');
+    this.api.getbillofuser(id).subscribe((data) => {
       console.log(data);
       // alert('Data was fetching....');
       this.alldata = data;

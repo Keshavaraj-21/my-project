@@ -21,8 +21,11 @@ export class UserloginComponent implements OnInit {
 
   ngOnInit(): void {
     this.userform = this.formbuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required],
+      username: ['', [Validators.required]],
+      password: [
+        '',
+        [Validators.required, Validators.pattern('[A-Za-z0-9@!_]{6,}')],
+      ],
     });
 
     this.api.getUser().subscribe((data) => {
@@ -45,9 +48,13 @@ export class UserloginComponent implements OnInit {
         i.username == formvalue.username &&
         i.password == formvalue.password
       ) {
+        var id = i._id;
+        console.log(id);
+        localStorage.setItem('user', i._id);
         this.flag = 1;
       }
     }
+
     if (this.flag == 1) {
       this.router.navigate(['/userdashboard']);
     } else {

@@ -63,8 +63,8 @@ find = function (blockdata, dbname) {
   return cloudant.use(dbname).find(blockdata);
 };
 
-find1 = function (blockid, dbname) {
-  return cloudant.use(dbname).find(blockid);
+find1 = function (userid, dbname) {
+  return cloudant.use(dbname).find(userid);
 };
 getbilluser = function (dbname) {
   return cloudant.use(dbname).list();
