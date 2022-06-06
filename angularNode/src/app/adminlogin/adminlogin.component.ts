@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiserviceService } from '../apiservice.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-adminlogin',
@@ -17,7 +18,8 @@ export class AdminloginComponent implements OnInit {
   constructor(
     private formbuilder: FormBuilder,
     private api: ApiserviceService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -50,9 +52,10 @@ export class AdminloginComponent implements OnInit {
       }
     }
     if (this.flag == 1) {
+      this.toastr.success('Login success');
       this.router.navigate(['/admindashboard']);
     } else {
-      alert('Not a valid user');
+      this.toastr.error('Invalid user');
       location.reload();
     }
   }

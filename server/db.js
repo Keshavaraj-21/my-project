@@ -52,7 +52,7 @@ insert3 = function (paramsvalue) {
     .use("housing-software")
     .insert(paramsvalue)
     .then((data) => {
-      console.log("Feedback posted to cloud database" + data);
+      console.log("Data posted to cloud database" + data);
     })
     .catch((err) => {
       console.log(err);

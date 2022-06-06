@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +21,6 @@ import { FeedbackformComponent } from './feedbackform/feedbackform.component';
 import { FeedbackreceComponent } from './feedbackrece/feedbackrece.component';
 import { BillofuserComponent } from './billofuser/billofuser.component';
 import { CommonModule } from '@angular/common';
-
 import { UserviewbillComponent } from './userviewbill/userviewbill.component';
 import { HttpCallInterceptorService } from './interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

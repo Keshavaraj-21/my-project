@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
+import { ToastarserviceService } from '../toastarservice.service';
+
 @Component({
   selector: 'app-billofuser',
   templateUrl: './billofuser.component.html',
@@ -13,7 +15,8 @@ export class BillofuserComponent implements OnInit {
   alldata: any;
   constructor(
     private formbuilder: FormBuilder,
-    private api: ApiserviceService
+    private api: ApiserviceService,
+    private alert: ToastarserviceService
   ) {}
 
   ngOnInit(): void {
@@ -44,11 +47,11 @@ export class BillofuserComponent implements OnInit {
     let userid = localStorage.getItem('user');
     console.log(userid);
     Formvalue.userid = userid;
-    alert('Your Data Posted....');
-
     this.api.billdata(Formvalue, '').subscribe((data) => {
       console.log(data);
     });
+    this.alert.showSuccess('Bill posted successfully..!', '');
+    window.location.reload();
   }
 
   userid(arg: any) {

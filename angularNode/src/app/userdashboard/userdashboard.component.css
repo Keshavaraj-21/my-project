@@ -95,7 +95,7 @@ body{
   }
   
   tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: #ffff;
   } 
   
   @media (min-width: 768px) {

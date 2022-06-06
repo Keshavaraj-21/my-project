@@ -38,11 +38,11 @@ export class UserformComponent implements OnInit {
       blockname: ['', [Validators.required]],
       password: [
         '',
-        [Validators.required, Validators.pattern('[a-zA-z@_]{6,}')],
+        [Validators.required, Validators.pattern('[A-Za-z0-9@!_]{6,}')],
       ],
       confirmpassword: [
         '',
-        [Validators.required, Validators.pattern('[a-zA-z@_]{6,}')],
+        [Validators.required, Validators.pattern('[A-Za-z0-9@!_]{6,}')],
       ],
     });
   }
@@ -54,7 +54,8 @@ export class UserformComponent implements OnInit {
     this.api.signupdata(Formvalue, blockid).subscribe((data) => {
       console.log(data);
     });
-    this.alert.showSuccess('Registration is success..!', 'ok..');
+    this.alert.showSuccess('Registration is success..!', 'Thank you');
+    window.location.reload();
   }
 
   blocknameChange(arg: any) {

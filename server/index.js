@@ -58,13 +58,14 @@ app.post("/post_query", (request, response, next) => {
 app.post("/post__query", (request, response, next) => {
   console.log(request);
   var object = {
-    username: request.body.username,
+    name: request.body.name,
     email: request.body.email,
     blockname: request.body.blockname,
     category: request.body.category,
     msg: request.body.msg,
     type: "feedback",
   };
+  console.log(object);
 
   dbconnection.insert2(object);
 });
@@ -202,7 +203,7 @@ app.get("/get_billofuser/:id", (request, response) => {
     },
   };
 
-  console.log("hi", request.params.id);
+  console.log(request.params.id);
   dbconnection.find(getBillUser, "housing-software").then((res) => {
     if (res) {
       response.send(res);

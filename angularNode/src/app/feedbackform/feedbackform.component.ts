@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
+import { ToastarserviceService } from '../toastarservice.service';
 
 @Component({
   selector: 'app-feedbackform',
@@ -12,20 +13,16 @@ export class FeedbackformComponent implements OnInit {
   feedbackForm!: FormGroup;
   value: boolean = true;
   feedbackform: any;
+
   constructor(
     private formbuilder: FormBuilder,
-    private api: ApiserviceService
-  ) {
+    private api: ApiserviceService,
+    private alert: ToastarserviceService
+  ) {}
+
+  ngOnInit(): void {
     this.feedbackForm = this.formbuilder.group({
-      username: ['', [Validators.required]],
-      phone: [
-        '',
-        [
-          Validators.required,
-          Validators.min(1000000000),
-          Validators.max(9999999999),
-        ],
-      ],
+      name: ['', [Validators.required]],
       email: [
         '',
         [Validators.required, Validators.pattern('[a-zA-Z0-9]*@gmail.com')],
@@ -36,14 +33,13 @@ export class FeedbackformComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
-
   sendFeedback(Formvalue: NgForm) {
     console.log(Formvalue);
     console.log('Feedback posted..!');
     this.api.feedbackdata(Formvalue).subscribe((data) => {
       console.log(data);
-      window.location.reload();
     });
+    this.alert.showSuccess('Bill posted successfully', '');
+    window.location.reload();
   }
 }
