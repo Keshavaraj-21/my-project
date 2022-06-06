@@ -60,8 +60,8 @@ export class UserloginComponent implements OnInit {
       this.toastr.success('Login success');
       this.router.navigate(['/userdashboard']);
     } else {
-      // this.toastr.error('invalid user');
-      // location.reload();
+      this.toastr.error('invalid user');
+      location.reload();
     }
   }
 }
