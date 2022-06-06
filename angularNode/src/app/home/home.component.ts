@@ -7,7 +7,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   booleantype: boolean = true;
-  constructor() {}
+  constructor() {
+    /* TODO document why this constructor is empty */
+  }
 
   ngOnInit(): void {
     this.booleantype = true;

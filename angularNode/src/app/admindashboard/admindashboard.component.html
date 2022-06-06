@@ -1,6 +1,5 @@
 <body>
   <div class="d-flex" id="wrapper">
-    <!-- Sidebar -->
     <div class="bg-white" id="sidebar-wrapper">
       <div
         class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"
@@ -42,9 +41,7 @@
         >
       </div>
     </div>
-    <!-- /#sidebar-wrapper -->
 
-    <!-- Page Content -->
     <div id="page-content-wrapper">
       <nav
         class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4"
@@ -160,7 +157,6 @@
                   <th scope="col">Contact Number</th>
                   <th scope="col">Email</th>
                   <th scope="col">Block name</th>
-                  <th scope="col">BillGeneration</th>
                   <th scope="col">Remove User</th>
                 </tr>
               </thead>
@@ -170,13 +166,6 @@
                   <td scope="row">{{ obj.phone }}</td>
                   <td scope="row">{{ obj.email }}</td>
                   <td scope="row">{{ obj.blockname }}</td>
-
-                  <td scope="row">
-                    <button class="btn btn-warning">
-                      <a routerLink="/userbill">Generate</a>
-                    </button>
-                  </td>
-
                   <td scope="row">
                     <button class="btn btn-dark" (click)="deluser(obj, obj)">
                       Delete
