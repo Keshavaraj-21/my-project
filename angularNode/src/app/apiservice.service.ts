@@ -8,7 +8,7 @@ export class ApiserviceService {
   constructor(private http: HttpClient) {}
 
   signupdata(formobject: any, blockid: any) {
-    var block: any = {
+    let block: any = {
       formobject: formobject,
       blockdetails: blockid,
     };
@@ -19,7 +19,7 @@ export class ApiserviceService {
     return this.http.post('http://localhost:8000/post_query', formobject);
   }
   billdata(formobject: any, userid: any) {
-    var user: any = {
+    let user: any = {
       formobject: formobject,
       useriddetails: userid,
     };

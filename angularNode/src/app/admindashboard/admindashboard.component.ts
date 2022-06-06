@@ -18,7 +18,7 @@ export class AdmindashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    /* TODO document why this method 'ngOnInit' is empty */
+    /* TO DO document why this method 'ngOnInit' is empty */
   }
 
   getuser() {
@@ -35,7 +35,7 @@ export class AdmindashboardComponent implements OnInit {
   }
 
   deluser(data: any, data1: any) {
-    this.api.remove(data._id, data1._rev).subscribe((res) => {
+    this.api.remove(data._id, data1._rev).subscribe((_res) => {
       alert('Your Data has been deleted from the database.');
       location.reload();
     });
