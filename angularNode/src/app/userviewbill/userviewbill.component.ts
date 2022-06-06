@@ -9,7 +9,9 @@ import { ApiserviceService } from '../apiservice.service';
 export class UserviewbillComponent implements OnInit {
   object: any = [];
   alldata: any;
-  constructor(private api: ApiserviceService) {}
+  constructor(private api: ApiserviceService) {
+    this.getbilluser();
+  }
 
   ngOnInit(): void {
     /* TODO document why this method 'ngOnInit' is empty */

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
 import { ToastarserviceService } from '../toastarservice.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userform',
@@ -17,7 +18,8 @@ export class UserformComponent implements OnInit {
   constructor(
     private formbuilder: FormBuilder,
     private api: ApiserviceService,
-    private alert: ToastarserviceService
+    private alert: ToastarserviceService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -55,7 +57,7 @@ export class UserformComponent implements OnInit {
       console.log(data);
     });
     this.alert.showSuccess('Registration is success..!', 'Thank you');
-    window.location.reload();
+    this.router.navigate(['/user']);
   }
 
   blocknameChange(arg: any) {

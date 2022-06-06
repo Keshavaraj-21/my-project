@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
-
 @Component({
   selector: 'app-feedbackrece',
   templateUrl: './feedbackrece.component.html',
@@ -10,9 +8,13 @@ import { ApiserviceService } from '../apiservice.service';
 export class FeedbackreceComponent implements OnInit {
   object: any = [];
   alldata: any;
-  constructor(private api: ApiserviceService) {}
+  constructor(private api: ApiserviceService) {
+    this.getfeedback();
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    /* TODO document why this method 'ngOnInit' is empty */
+  }
   getfeedback() {
     this.api.getFeedback().subscribe((data) => {
       console.log(data);

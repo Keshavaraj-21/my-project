@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
 
 @Component({
@@ -10,7 +9,9 @@ import { ApiserviceService } from '../apiservice.service';
 export class UserdashboardComponent implements OnInit {
   object: any = [];
   alldata: any;
-  constructor(private api: ApiserviceService) {}
+  constructor(private api: ApiserviceService) {
+    this.getdetails();
+  }
 
   ngOnInit(): void {
     /* TODO document why this method 'ngOnInit' is empty */
@@ -18,7 +19,6 @@ export class UserdashboardComponent implements OnInit {
   getdetails() {
     this.api.getbill().subscribe((data) => {
       console.log(data);
-      alert('Data was fetching....');
       this.alldata = data;
       this.alldata = this.alldata.docs;
       console.log(this.alldata);

@@ -13,7 +13,9 @@ export class AdmindashboardComponent implements OnInit {
   objectss: any = [];
   alldatass: any;
 
-  constructor(private api: ApiserviceService) {}
+  constructor(private api: ApiserviceService) {
+    this.getuser();
+  }
 
   ngOnInit(): void {
     /* TODO document why this method 'ngOnInit' is empty */
@@ -28,53 +30,6 @@ export class AdmindashboardComponent implements OnInit {
       for (const i of this.alldata) {
         console.log(i);
         this.object.push(i);
-      }
-    });
-  }
-
-  getblockuserA() {
-    var id = 'A';
-    this.api.getblockid(id).subscribe((data) => {
-      console.log(data);
-      alert('id fetching...');
-      this.alldatass = data;
-      this.alldatass = this.alldatass.docs;
-      console.log(this.alldatass);
-      for (const i of this.alldatass) {
-        console.log(i);
-        this.objectss.push(i);
-      }
-    });
-  }
-
-  getblockuserB() {
-    var id = 'B';
-
-    this.api.getblockid(id).subscribe((data) => {
-      console.log(data);
-      alert('id fetching...');
-
-      this.alldatass = data;
-      this.alldatass = this.alldatass.docs;
-      console.log(this.alldatass);
-      for (const i of this.alldatass) {
-        console.log(i);
-        this.objectss.push(i);
-      }
-    });
-  }
-
-  getblockuserC() {
-    var id = 'C';
-    this.api.getblockid(id).subscribe((data) => {
-      console.log(data);
-      alert('id fetching...');
-      this.alldatass = data;
-      this.alldatass = this.alldatass.docs;
-      console.log(this.alldatass);
-      for (const i of this.alldatass) {
-        console.log(i);
-        this.objectss.push(i);
       }
     });
   }
