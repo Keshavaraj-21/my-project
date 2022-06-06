@@ -11,7 +11,6 @@ import { UserdashboardComponent } from './userdashboard/userdashboard.component'
 import { BillingComponent } from './billing/billing.component';
 import { BillingdetailsComponent } from './billingdetails/billingdetails.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
-import { BillgeneratorComponent } from './billgenerator/billgenerator.component';
 import { FeedbackformComponent } from './feedbackform/feedbackform.component';
 import { FeedbackreceComponent } from './feedbackrece/feedbackrece.component';
 import { BillofuserComponent } from './billofuser/billofuser.component';
@@ -29,7 +28,6 @@ const routes: Routes = [
   { path: 'billing', component: BillingComponent },
   { path: 'billingdetails', component: BillingdetailsComponent },
   { path: 'admindashboard', component: AdmindashboardComponent },
-  { path: 'billgenerator', component: BillgeneratorComponent },
   { path: 'feedback', component: FeedbackformComponent },
   { path: 'receivefeedback', component: FeedbackreceComponent },
   { path: 'userbill', component: BillofuserComponent },
