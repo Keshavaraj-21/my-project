@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiserviceService } from '../apiservice.service';
 
@@ -30,7 +30,6 @@ export class AdminloginComponent implements OnInit {
     });
     this.api.getadmin().subscribe((data) => {
       console.log(data);
-      // console.log('Data was fetching....');
       this.alldata = data;
       this.alldata = this.alldata.docs;
       console.log(this.alldata);

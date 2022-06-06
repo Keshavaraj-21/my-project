@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +10,7 @@ import { UserloginComponent } from './userlogin/userlogin.component';
 import { HomeComponent } from './home/home.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomepageComponent } from './homepage/homepage.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
@@ -20,10 +21,13 @@ import { BillgeneratorComponent } from './billgenerator/billgenerator.component'
 import { FeedbackformComponent } from './feedbackform/feedbackform.component';
 import { FeedbackreceComponent } from './feedbackrece/feedbackrece.component';
 import { BillofuserComponent } from './billofuser/billofuser.component';
-// import { BrowserAnimationsModule } from '@angular/platform-browser-';
+import { CommonModule } from '@angular/common';
 
-import { ToastrModule } from 'ngx-toastr';
 import { UserviewbillComponent } from './userviewbill/userviewbill.component';
+import { HttpCallInterceptorService } from './interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +37,6 @@ import { UserviewbillComponent } from './userviewbill/userviewbill.component';
     HomeComponent,
     ContactusComponent,
     AboutusComponent,
-
     HomepageComponent,
     DashboardComponent,
     UserdashboardComponent,
@@ -47,16 +50,22 @@ import { UserviewbillComponent } from './userviewbill/userviewbill.component';
     UserviewbillComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // BrowserAnimationsModule,
-    // BrowserAnimationsModule,
+    CommonModule,
+    BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpCallInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

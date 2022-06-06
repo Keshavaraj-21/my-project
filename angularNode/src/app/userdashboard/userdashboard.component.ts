@@ -12,7 +12,9 @@ export class UserdashboardComponent implements OnInit {
   alldata: any;
   constructor(private api: ApiserviceService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    /* TODO document why this method 'ngOnInit' is empty */
+  }
   getdetails() {
     this.api.getbill().subscribe((data) => {
       console.log(data);

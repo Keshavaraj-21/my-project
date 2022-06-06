@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
 @Component({
   selector: 'app-billofuser',
@@ -38,7 +38,6 @@ export class BillofuserComponent implements OnInit {
       parking: ['', Validators.required],
       charity: ['', Validators.required],
     });
-    // console.log(this.billform);
   }
   postBill(Formvalue: any) {
     console.log(Formvalue);
@@ -46,9 +45,7 @@ export class BillofuserComponent implements OnInit {
     console.log(userid);
     Formvalue.userid = userid;
     alert('Your Data Posted....');
-    // this.billform.reset();
-    // console.log('data get reloaded');
-    // window.location.reload();
+
     this.api.billdata(Formvalue, '').subscribe((data) => {
       console.log(data);
     });

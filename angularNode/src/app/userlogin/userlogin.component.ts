@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiserviceService } from '../apiservice.service';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-userlogin',
   templateUrl: './userlogin.component.html',
@@ -16,7 +16,8 @@ export class UserloginComponent implements OnInit {
   constructor(
     private formbuilder: FormBuilder,
     private api: ApiserviceService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -56,10 +57,11 @@ export class UserloginComponent implements OnInit {
     }
 
     if (this.flag == 1) {
+      this.toastr.success('Login success');
       this.router.navigate(['/userdashboard']);
     } else {
-      alert('Not a valid user');
-      location.reload();
+      // this.toastr.error('invalid user');
+      // location.reload();
     }
   }
 }

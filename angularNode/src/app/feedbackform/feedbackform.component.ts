@@ -34,30 +34,16 @@ export class FeedbackformComponent implements OnInit {
       category: ['', Validators.required],
       msg: ['', Validators.required],
     });
-    this.feedbackform = localStorage.getItem('feedbackform');
-    this.parseduser = JSON.parse(this.feedbackform);
-    console.log(this.parseduser);
-    var name = this.parseduser.name;
-    this.feedbackForm.controls['username'].setValue(name);
-
-    var email = this.parseduser.email;
-    this.feedbackForm.controls['email'].setValue(email);
-    var blockname = this.parseduser.blockname;
-    this.feedbackForm.controls['phone'].setValue(blockname);
   }
 
   ngOnInit(): void {}
 
   sendFeedback(Formvalue: NgForm) {
     console.log(Formvalue);
-    this.feedbackForm.reset();
     console.log('Feedback posted..!');
-    window.location.reload();
     this.api.feedbackdata(Formvalue).subscribe((data) => {
       console.log(data);
+      window.location.reload();
     });
   }
-}
-function ngOnInit() {
-  throw new Error('Function not implemented.');
 }

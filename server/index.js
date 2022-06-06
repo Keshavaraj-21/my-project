@@ -58,7 +58,7 @@ app.post("/post_query", (request, response, next) => {
 app.post("/post__query", (request, response, next) => {
   console.log(request);
   var object = {
-    name: request.body.name,
+    username: request.body.username,
     email: request.body.email,
     blockname: request.body.blockname,
     category: request.body.category,
@@ -146,7 +146,6 @@ app.get("/getFeedback", (request, response) => {
 });
 
 app.get("/get_block/:id", (request, response) => {
-  // console.log("function calling");
   var getBlock = {
     selector: {
       type: "userid",
@@ -163,7 +162,6 @@ app.get("/get_block/:id", (request, response) => {
 });
 
 app.get("/get_user_id/:id", (request, response) => {
-  // console.log("function calling");
   var getUserId = {
     selector: {
       type: "userid",
