@@ -23,7 +23,7 @@ app.use(
 app.post("/postquery", (request, _response, _next) => {
   console.log(request);
 
-  var object = {
+  let object = {
     username: request.body.formobject.username,
     phone: request.body.formobject.phone,
     email: request.body.formobject.email,
@@ -40,7 +40,7 @@ app.post("/postquery", (request, _response, _next) => {
 
 app.post("/post_query", (request, _response, _next) => {
   console.log(request);
-  var object = {
+  let object = {
     block: request.body.block,
     maintainance: request.body.maintainance,
     housetax: request.body.housetax,
@@ -55,7 +55,7 @@ app.post("/post_query", (request, _response, _next) => {
 
 app.post("/post__query", (request, _response, _next) => {
   console.log(request);
-  var object = {
+  let object = {
     name: request.body.name,
     email: request.body.email,
     blockname: request.body.blockname,
@@ -70,7 +70,7 @@ app.post("/post__query", (request, _response, _next) => {
 
 app.post("/billquery", (request, _response, _next) => {
   console.log(request);
-  var object = {
+  let object = {
     username: request.body.username,
     userid: request.body.userid,
     phone: request.body.phone,
@@ -89,7 +89,7 @@ app.post("/billquery", (request, _response, _next) => {
 
 app.get("/getUser", (request, response) => {
   console.log(request);
-  var data = {
+  let data = {
     selector: {
       type: "userid",
     },
@@ -116,7 +116,7 @@ app.get("/getUserId/:id", (request, response) => {
 
 app.get("/getbill", (request, response) => {
   console.log(request);
-  var data = {
+  let data = {
     selector: {
       type: "bill",
     },
@@ -134,7 +134,7 @@ app.get("/getbill", (request, response) => {
 
 app.get("/getFeedback", (request, response) => {
   console.log(request);
-  var data = {
+  let data = {
     selector: {
       type: "feedback",
     },
@@ -153,7 +153,7 @@ app.get("/getFeedback", (request, response) => {
 });
 
 app.get("/get_block/:id", (request, response) => {
-  var getBlock = {
+  let getBlock = {
     selector: {
       type: "userid",
       blockname: request.params.id,
@@ -173,7 +173,7 @@ app.get("/get_block/:id", (request, response) => {
 });
 
 app.get("/get_user_id/:id", (request, response) => {
-  var getUserId = {
+  let getUserId = {
     selector: {
       type: "userid",
       username: request.params.id,
@@ -192,7 +192,7 @@ app.get("/get_user_id/:id", (request, response) => {
 
 app.get("/get_block_id/:id", (request, response) => {
   console.log("function calling");
-  var getBlocks = {
+  let getBlocks = {
     selector: {
       type: "bill",
       block: request.params.id,
@@ -210,7 +210,7 @@ app.get("/get_block_id/:id", (request, response) => {
 });
 
 app.get("/get_billofuser/:id", (request, response) => {
-  var getBillUser = {
+  let getBillUser = {
     selector: {
       type: "userbill",
       userid: request.params.id,
@@ -241,7 +241,7 @@ app.delete("/delete/:id/:id1", (request, response) => {
 
 app.get("/getadmin", (request, response) => {
   console.log(request);
-  var data = {
+  let data = {
     selector: {
       type: "adminid",
     },
