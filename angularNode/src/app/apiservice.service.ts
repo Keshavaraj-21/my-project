@@ -13,10 +13,10 @@ export class ApiserviceService {
       blockdetails: blockid,
     };
     console.log(block);
-    return this.http.post('http://localhost:8000/postquery', block);
+    return this.http.post('http://localhost:8000/postQuery', block);
   }
   billingdata(formobject: any) {
-    return this.http.post('http://localhost:8000/post_query', formobject);
+    return this.http.post('http://localhost:8000/post_Query', formobject);
   }
   billdata(formobject: any, userid: any) {
     let user: any = {
@@ -24,11 +24,11 @@ export class ApiserviceService {
       useriddetails: userid,
     };
     console.log(user);
-    return this.http.post('http://localhost:8000/billquery', formobject);
+    return this.http.post('http://localhost:8000/billQuery', formobject);
   }
   feedbackdata(formobject: any) {
     console.log('obj');
-    return this.http.post('http://localhost:8000/post__query', formobject);
+    return this.http.post('http://localhost:8000/post__Query', formobject);
   }
 
   getUser() {
@@ -39,27 +39,27 @@ export class ApiserviceService {
   }
 
   getbill() {
-    return this.http.get('http://localhost:8000/getbill/');
+    return this.http.get('http://localhost:8000/getBill/');
   }
 
   getuserid(id: any) {
-    return this.http.get('http://localhost:8000/get_user_id/' + id);
+    return this.http.get('http://localhost:8000/get_User_Id/' + id);
   }
 
   getFeedback() {
     return this.http.get('http://localhost:8000/getFeedback/');
   }
   getblockid(id: any) {
-    return this.http.get('http://localhost:8000/get_block/' + id);
+    return this.http.get('http://localhost:8000/get_Block/' + id);
   }
   getblock_id(id: any) {
-    return this.http.get('http://localhost:8000/get_block_id/' + id);
+    return this.http.get('http://localhost:8000/get_Block_Id/' + id);
   }
   getbillofuser(id: any) {
-    return this.http.get(`http://localhost:8000/get_billofuser/${id}`);
+    return this.http.get(`http://localhost:8000/get_billOfUser/${id}`);
   }
   getbilluserid(id: any) {
-    return this.http.get('http://localhost:8000/get_billuser_id/' + id);
+    return this.http.get('http://localhost:8000/get_BillUser_Id/' + id);
   }
 
   remove(id: any, id1: any) {
@@ -68,9 +68,9 @@ export class ApiserviceService {
 
   //admin
   getadmin() {
-    return this.http.get('http://localhost:8000/getadmin/');
+    return this.http.get('http://localhost:8000/getAdmin/');
   }
   getadminId(id: any) {
-    return this.http.get(`http://localhost:8000/getadminId/${id}`);
+    return this.http.get(`http://localhost:8000/getAdminId/${id}`);
   }
 }

@@ -58,7 +58,6 @@ export class BillofuserComponent implements OnInit {
     console.log(arg.target.value);
     this.api.getuserid(arg.target.value).subscribe((data) => {
       console.log(data);
-      alert('Data is fetching');
       this.alldata = data;
       this.alldata = this.alldata.docs;
       console.log(this.alldata);

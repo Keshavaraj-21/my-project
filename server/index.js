@@ -20,7 +20,7 @@ app.use(
   })
 );
 
-app.post("/postquery", (request, _response, _next) => {
+app.post("/postQuery", (request, _response, _next) => {
   console.log(request);
 
   let object = {
@@ -38,7 +38,7 @@ app.post("/postquery", (request, _response, _next) => {
   dbconnection.insert(object);
 });
 
-app.post("/post_query", (request, _response, _next) => {
+app.post("/post_Query", (request, _response, _next) => {
   console.log(request);
   let object = {
     block: request.body.block,
@@ -53,7 +53,7 @@ app.post("/post_query", (request, _response, _next) => {
   dbconnection.insert1(object);
 });
 
-app.post("/post__query", (request, _response, _next) => {
+app.post("/post__Query", (request, _response, _next) => {
   console.log(request);
   let object = {
     name: request.body.name,
@@ -68,7 +68,7 @@ app.post("/post__query", (request, _response, _next) => {
   dbconnection.insert2(object);
 });
 
-app.post("/billquery", (request, _response, _next) => {
+app.post("/billQuery", (request, _response, _next) => {
   console.log(request);
   let object = {
     username: request.body.username,
@@ -114,7 +114,7 @@ app.get("/getUserId/:id", (request, response) => {
   });
 });
 
-app.get("/getbill", (request, response) => {
+app.get("/getBill", (request, response) => {
   console.log(request);
   let data = {
     selector: {
@@ -152,7 +152,7 @@ app.get("/getFeedback", (request, response) => {
   });
 });
 
-app.get("/get_block/:id", (request, response) => {
+app.get("/get_Block/:id", (request, response) => {
   let getBlock = {
     selector: {
       type: "userid",
@@ -172,7 +172,7 @@ app.get("/get_block/:id", (request, response) => {
   });
 });
 
-app.get("/get_user_id/:id", (request, response) => {
+app.get("/get_User_Id/:id", (request, response) => {
   let getUserId = {
     selector: {
       type: "userid",
@@ -190,8 +190,7 @@ app.get("/get_user_id/:id", (request, response) => {
   });
 });
 
-app.get("/get_block_id/:id", (request, response) => {
-  console.log("function calling");
+app.get("/get_Block_Id/:id", (request, response) => {
   let getBlocks = {
     selector: {
       type: "bill",
@@ -209,7 +208,7 @@ app.get("/get_block_id/:id", (request, response) => {
   });
 });
 
-app.get("/get_billofuser/:id", (request, response) => {
+app.get("/get_BillOfUser/:id", (request, response) => {
   let getBillUser = {
     selector: {
       type: "userbill",
@@ -239,7 +238,7 @@ app.delete("/delete/:id/:id1", (request, response) => {
     });
 });
 
-app.get("/getadmin", (request, response) => {
+app.get("/getAdmin", (request, response) => {
   console.log(request);
   let data = {
     selector: {
@@ -256,7 +255,7 @@ app.get("/getadmin", (request, response) => {
     }
   });
 });
-app.get("/getadminId/:id", (request, response) => {
+app.get("/getAdminId/:id", (request, response) => {
   {
     dbconnection.getId(request.params.id, "housing-software").then((res) => {
       if (res) {
