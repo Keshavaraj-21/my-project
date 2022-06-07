@@ -14,4 +14,7 @@ export class ToastarserviceService {
   showSuccess(message: string | undefined, title: string | undefined) {
     this.notifyservice.success(message, title);
   }
+  showError(message: string | undefined, title: string | undefined) {
+    this.notifyservice.error(message, title);
+  }
 }

@@ -14,7 +14,6 @@ import { FeedbackformComponent } from './feedbackform/feedbackform.component';
 import { FeedbackreceComponent } from './feedbackrece/feedbackrece.component';
 import { BillofuserComponent } from './billofuser/billofuser.component';
 import { UserviewbillComponent } from './userviewbill/userviewbill.component';
-import { AuthGuardService } from './auth-guard.service';
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'homepage', component: HomepageComponent },
@@ -26,11 +25,7 @@ const routes: Routes = [
   { path: 'userdashboard', component: UserdashboardComponent },
   { path: 'billing', component: BillingComponent },
   { path: 'billingdetails', component: BillingdetailsComponent },
-  {
-    path: 'admindashboard',
-    component: AdmindashboardComponent,
-    canActivate: [AuthGuardService],
-  },
+  { path: 'admindashboard', component: AdmindashboardComponent },
   { path: 'feedback', component: FeedbackformComponent },
   { path: 'receivefeedback', component: FeedbackreceComponent },
   { path: 'userbill', component: BillofuserComponent },

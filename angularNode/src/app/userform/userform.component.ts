@@ -57,7 +57,7 @@ export class UserformComponent implements OnInit {
       console.log(data);
     });
     this.alert.showSuccess('Registration is success..!', 'Thank you');
-    this.router.navigate(['/user']);
+    window.location.reload();
   }
 
   blocknameChange(arg: any) {
