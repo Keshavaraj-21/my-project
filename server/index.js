@@ -104,10 +104,12 @@ app.get("/getUser", (request, response) => {
 });
 app.get("/getUserId/:id", (request, response) => {
   dbconnection.getId(request.params.id, "housing-software").then((res) => {
-    if (res) {
-      response.send(res);
-    } else {
-      response.send("error");
+    {
+      if (res) {
+        response.send(res);
+      } else {
+        response.send("error");
+      }
     }
   });
 });
@@ -120,10 +122,12 @@ app.get("/getbill", (request, response) => {
     },
   };
   dbconnection.get(data, "housing-software").then((res) => {
-    if (res) {
-      response.send(res);
-    } else {
-      response.send("error");
+    {
+      if (res) {
+        response.send(res);
+      } else {
+        response.send("error");
+      }
     }
   });
 });
@@ -136,10 +140,14 @@ app.get("/getFeedback", (request, response) => {
     },
   };
   dbconnection.get(data, "housing-software").then((res) => {
-    if (res) {
-      response.send(res);
-    } else {
-      response.send("error");
+    {
+      {
+        if (res) {
+          response.send(res);
+        } else {
+          response.send("error");
+        }
+      }
     }
   });
 });
@@ -152,10 +160,14 @@ app.get("/get_block/:id", (request, response) => {
     },
   };
   dbconnection.find(getBlock, "housing-software").then((res) => {
-    if (res) {
-      response.send(res);
-    } else {
-      response.send("error");
+    {
+      {
+        if (res) {
+          response.send(res);
+        } else {
+          response.send("error");
+        }
+      }
     }
   });
 });
@@ -168,10 +180,12 @@ app.get("/get_user_id/:id", (request, response) => {
     },
   };
   dbconnection.find(getUserId, "housing-software").then((res) => {
-    if (res) {
-      response.send(res);
-    } else {
-      response.send("error");
+    {
+      if (res) {
+        response.send(res);
+      } else {
+        response.send("error");
+      }
     }
   });
 });
@@ -185,10 +199,12 @@ app.get("/get_block_id/:id", (request, response) => {
     },
   };
   dbconnection.find(getBlocks, "housing-software").then((res) => {
-    if (res) {
-      response.send(res);
-    } else {
-      response.send("error");
+    {
+      if (res) {
+        response.send(res);
+      } else {
+        response.send("error");
+      }
     }
   });
 });
@@ -231,21 +247,25 @@ app.get("/getadmin", (request, response) => {
     },
   };
   dbconnection.get(data, "housing-software").then((res) => {
-    if (res) {
-      response.send(res);
-    } else {
-      response.send("error");
+    {
+      if (res) {
+        response.send(res);
+      } else {
+        response.send("error");
+      }
     }
   });
 });
 app.get("/getadminId/:id", (request, response) => {
-  dbconnection.getId(request.params.id, "housing-software").then((res) => {
-    if (res) {
-      response.send(res);
-    } else {
-      response.send("error");
-    }
-  });
+  {
+    dbconnection.getId(request.params.id, "housing-software").then((res) => {
+      if (res) {
+        response.send(res);
+      } else {
+        response.send("error");
+      }
+    });
+  }
 });
 
 app.listen(port, (err) => {
