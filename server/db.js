@@ -59,27 +59,27 @@ let insert3 = function (paramsvalue) {
     });
 };
 
-find = function (blockdata, dbname) {
+let find = function (blockdata, dbname) {
   return cloudant.use(dbname).find(blockdata);
 };
 
-find1 = function (userid, dbname) {
+let find1 = function (userid, dbname) {
   return cloudant.use(dbname).find(userid);
 };
-getbilluser = function (dbname) {
+let getbilluser = function (dbname) {
   return cloudant.use(dbname).list();
 };
 
-get = function (admindata, dbname) {
+let get = function (admindata, dbname) {
   return cloudant.use(dbname).find(admindata);
 };
-getbill = function (dbname) {
+let getbill = function (dbname) {
   return cloudant.use(dbname).list();
 };
-getId = function (id, dbname) {
+let getId = function (id, dbname) {
   return cloudant.use(dbname).get(id);
 };
-del_id = function (id, id1, dbname) {
+let del_id = function (id, id1, dbname) {
   return cloudant.use(dbname).destroy(id, id1);
 };
 module.exports = {
