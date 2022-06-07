@@ -6,7 +6,6 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UserformComponent } from './userform/userform.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 import { BillingComponent } from './billing/billing.component';
 import { BillingdetailsComponent } from './billingdetails/billingdetails.component';
@@ -15,6 +14,7 @@ import { FeedbackformComponent } from './feedbackform/feedbackform.component';
 import { FeedbackreceComponent } from './feedbackrece/feedbackrece.component';
 import { BillofuserComponent } from './billofuser/billofuser.component';
 import { UserviewbillComponent } from './userviewbill/userviewbill.component';
+import { AuthGuardService } from './auth-guard.service';
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'homepage', component: HomepageComponent },
@@ -23,11 +23,14 @@ const routes: Routes = [
   { path: 'signup', component: UserformComponent },
   { path: 'contact', component: ContactusComponent },
   { path: 'about', component: AboutusComponent },
-  { path: 'dashboard', component: DashboardComponent },
   { path: 'userdashboard', component: UserdashboardComponent },
   { path: 'billing', component: BillingComponent },
   { path: 'billingdetails', component: BillingdetailsComponent },
-  { path: 'admindashboard', component: AdmindashboardComponent },
+  {
+    path: 'admindashboard',
+    component: AdmindashboardComponent,
+    canActivate: [AuthGuardService],
+  },
   { path: 'feedback', component: FeedbackformComponent },
   { path: 'receivefeedback', component: FeedbackreceComponent },
   { path: 'userbill', component: BillofuserComponent },

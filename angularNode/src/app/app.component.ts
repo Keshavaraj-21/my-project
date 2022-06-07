@@ -7,11 +7,11 @@ import { ApiserviceService } from './apiservice.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = 'angularNode';
+  title = 'HousingSociety';
 
   constructor(private service: ApiserviceService) {}
 
   ngOnInit() {
-    /* TODO document why this method 'ngOnInit' is empty */
+    /* TO DO document why this method 'ngOnInit' is empty */
   }
 }

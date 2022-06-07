@@ -13,7 +13,7 @@ export class FeedbackreceComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    /* TODO document why this method 'ngOnInit' is empty */
+    /* TO DO document why this method 'ngOnInit' is empty */
   }
   getfeedback() {
     this.api.getFeedback().subscribe((data) => {

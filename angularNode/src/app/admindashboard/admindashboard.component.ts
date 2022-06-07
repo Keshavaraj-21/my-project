@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthserviceService } from '../authservice.service';
 
 import { ApiserviceService } from '../apiservice.service';
 
@@ -13,12 +15,21 @@ export class AdmindashboardComponent implements OnInit {
   objectss: any = [];
   alldatass: any;
 
-  constructor(private api: ApiserviceService) {
+  constructor(
+    private api: ApiserviceService,
+    private route: Router,
+    private authserve: AuthserviceService
+  ) {
     this.getuser();
   }
 
   ngOnInit(): void {
     /* TO DO document why this method 'ngOnInit' is empty */
+  }
+
+  logout() {
+    this.authserve.logout();
+    this.route.navigate(['admin']);
   }
 
   getuser() {

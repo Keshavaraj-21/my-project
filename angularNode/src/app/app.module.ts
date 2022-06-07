@@ -11,7 +11,6 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomepageComponent } from './homepage/homepage.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 import { BillingComponent } from './billing/billing.component';
 import { BillingdetailsComponent } from './billingdetails/billingdetails.component';
@@ -35,7 +34,6 @@ import { ToastrModule } from 'ngx-toastr';
     ContactusComponent,
     AboutusComponent,
     HomepageComponent,
-    DashboardComponent,
     UserdashboardComponent,
     BillingComponent,
     BillingdetailsComponent,

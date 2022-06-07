@@ -21,7 +21,7 @@ export class ContactusComponent implements OnInit {
   send(Formvalue: NgForm) {
     console.log('hi');
     console.log(Formvalue);
-    this.api.contact(Formvalue).subscribe((data) => {
+    this.api.contact(Formvalue).subscribe((_data) => {
       console.log(Formvalue);
     });
   }

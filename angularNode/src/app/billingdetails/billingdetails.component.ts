@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, NgForm } from '@angular/forms';
-import { Validators } from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
 @Component({
   selector: 'app-billingdetails',
@@ -13,7 +11,7 @@ export class BillingdetailsComponent implements OnInit {
   constructor(private api: ApiserviceService) {}
 
   ngOnInit(): void {
-    /* TODO document why this method 'ngOnInit' is empty */
+    /* TO DO document why this method 'ngOnInit' is empty */
   }
   getdetails() {
     this.api.getbill().subscribe((data) => {

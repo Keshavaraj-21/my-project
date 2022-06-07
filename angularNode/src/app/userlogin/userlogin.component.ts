@@ -49,7 +49,7 @@ export class UserloginComponent implements OnInit {
         i.username == formvalue.username &&
         i.password == formvalue.password
       ) {
-        var id = i._id;
+        let id = i._id;
         console.log(id);
         localStorage.setItem('user', i._id);
         this.flag = 1;

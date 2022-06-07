@@ -163,11 +163,11 @@
               </thead>
               <tbody>
                 <tr *ngFor="let obj of object">
-                  <td scope="row">{{ obj.username }}</td>
-                  <td scope="row">{{ obj.phone }}</td>
-                  <td scope="row">{{ obj.email }}</td>
-                  <td scope="row">{{ obj.blockname }}</td>
-                  <td scope="row">
+                  <td>{{ obj.username }}</td>
+                  <td>{{ obj.phone }}</td>
+                  <td>{{ obj.email }}</td>
+                  <td>{{ obj.blockname }}</td>
+                  <td>
                     <button class="btn btn-dark" (click)="deluser(obj, obj)">
                       Delete
                     </button>

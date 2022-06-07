@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutusComponent implements OnInit {
   constructor() {
-    /* TODO document why this constructor is empty */
+    /* TO DO document why this constructor is empty */
   }
 
   ngOnInit(): void {
-    /* TODO document why this method 'ngOnInit' is empty */
+    /* TO DO document why this method 'ngOnInit' is empty */
   }
 }
