@@ -1,6 +1,6 @@
 const { getbilluser } = require("../db");
 const { loggergenerate } = require("../logger/logger");
-let userdetails = async (req, res) => {
+let userdetails = async (req, _res) => {
   console.log("####", req);
   try {
     let result = await getUser(req)

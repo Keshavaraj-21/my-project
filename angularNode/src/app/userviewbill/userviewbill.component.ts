@@ -14,7 +14,7 @@ export class UserviewbillComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    /* TODO document why this method 'ngOnInit' is empty */
+    /* TO DO document why this method 'ngOnInit' is empty */
   }
 
   getbilluser() {

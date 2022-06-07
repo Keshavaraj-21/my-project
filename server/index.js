@@ -8,9 +8,7 @@ const winlogger = require("./logger/logger");
 
 var login = {};
 const file = require("fs");
-const { request, get } = require("http");
-const { response } = require("express");
-const { nextTick } = require("process");
+
 const cors = require("cors");
 const dbconnection = require("./db");
 app.use(express.static("public"));
@@ -22,7 +20,7 @@ app.use(
   })
 );
 
-app.post("/postquery", (request, response, next) => {
+app.post("/postquery", (request, _response, _next) => {
   console.log(request);
 
   var object = {
@@ -40,7 +38,7 @@ app.post("/postquery", (request, response, next) => {
   dbconnection.insert(object);
 });
 
-app.post("/post_query", (request, response, next) => {
+app.post("/post_query", (request, _response, _next) => {
   console.log(request);
   var object = {
     block: request.body.block,
@@ -55,7 +53,7 @@ app.post("/post_query", (request, response, next) => {
   dbconnection.insert1(object);
 });
 
-app.post("/post__query", (request, response, next) => {
+app.post("/post__query", (request, _response, _next) => {
   console.log(request);
   var object = {
     name: request.body.name,
@@ -70,7 +68,7 @@ app.post("/post__query", (request, response, next) => {
   dbconnection.insert2(object);
 });
 
-app.post("/billquery", (request, response, next) => {
+app.post("/billquery", (request, _response, _next) => {
   console.log(request);
   var object = {
     username: request.body.username,

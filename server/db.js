@@ -1,13 +1,13 @@
 const Cloudant = require("@cloudant/cloudant");
 const { data } = require("./logger/logger");
-var url =
+let url =
   "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud";
-var username = "apikey-v2-1kdtmo28t5uulevcbb5m8mifmj5bd962vbuc18qwa0m4";
-var password = "3589b77ff4cc367d60ae67e1f7dada03";
+let username = "apikey-v2-1kdtmo28t5uulevcbb5m8mifmj5bd962vbuc18qwa0m4";
+let password = "3589b77ff4cc367d60ae67e1f7dada03";
 
-var cloudant = Cloudant({ url: url, username: username, password: password });
+let cloudant = Cloudant({ url: url, username: username, password: password });
 
-insert = function (paramsvalue) {
+let insert = function (paramsvalue) {
   console.log(paramsvalue);
   cloudant
     .use("housing-software")
@@ -20,7 +20,7 @@ insert = function (paramsvalue) {
     });
 };
 
-insert1 = function (paramsvalue) {
+let insert1 = function (paramsvalue) {
   console.log(paramsvalue);
   cloudant
     .use("housing-software")
@@ -33,7 +33,7 @@ insert1 = function (paramsvalue) {
     });
 };
 
-insert2 = function (paramsvalue) {
+let insert2 = function (paramsvalue) {
   console.log(paramsvalue);
   cloudant
     .use("housing-software")
@@ -46,7 +46,7 @@ insert2 = function (paramsvalue) {
     });
 };
 
-insert3 = function (paramsvalue) {
+let insert3 = function (paramsvalue) {
   console.log(paramsvalue);
   cloudant
     .use("housing-software")
