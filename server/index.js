@@ -6,7 +6,7 @@ app.use(express.static("public"));
 const port = 8000;
 const winlogger = require("./logger/logger");
 
-var login = {};
+let login = {};
 const file = require("fs");
 
 const cors = require("cors");

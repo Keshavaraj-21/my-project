@@ -13,11 +13,11 @@ app.use(
   })
 );
 
-app.get("/", function (request, response) {
+app.get("/", function (_request, response) {
   response.json({ name: "Keshavaraj" });
 });
 
-app.post("/mail", (request, response, next) => {
+app.post("/mail", (request, _response, _next) => {
   console.log("mmm");
 
   var object = {
