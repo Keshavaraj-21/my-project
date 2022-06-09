@@ -89,94 +89,35 @@
         </div>
       </nav>
 
-      <div class="container-fluid px-4">
-        <div class="row g-3 my-2">
-          <div class="col-md-3">
-            <div
-              class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded"
-            >
-              <div>
-                <h3 class="fs-2">720</h3>
-                <p class="fs-5">Houses</p>
-              </div>
-              <em
-                class="bi bi-building primary-text border rounded-full secondary-bg p-3"
-              ></em>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div
-              class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded"
-            >
-              <div>
-                <h3 class="fs-2">3</h3>
-                <p class="fs-5">Blocks</p>
-              </div>
-              <em
-                class="bi bi-box2 primary-text border rounded-full secondary-bg p-3"
-              ></em>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div
-              class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded"
-            >
-              <div>
-                <h3 class="fs-2">2103</h3>
-                <p class="fs-5">People</p>
-              </div>
-              <em
-                class="bi bi-people primary-text border rounded-full secondary-bg p-3"
-              ></em>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div
-              class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded"
-            >
-              <div>
-                <h3 class="fs-2">%25</h3>
-                <p class="fs-5">Increase</p>
-              </div>
-              <em
-                class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"
-              ></em>
-            </div>
-          </div>
-        </div>
-        <div class="row my-5">
-          <h3 class="fs-4 mb-3">Total User Signup Credentials</h3>
-          <div class="col">
-            <table class="table bg-white rounded shadow-sm table-hover">
-              <caption></caption>
-              <thead>
-                <tr>
-                  <th scope="col">Username</th>
-                  <th scope="col">Contact Number</th>
-                  <th scope="col">Email</th>
-                  <th scope="col">Block name</th>
-                  <th scope="col">Remove User</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let obj of object">
-                  <td>{{ obj.username }}</td>
-                  <td>{{ obj.phone }}</td>
-                  <td>{{ obj.email }}</td>
-                  <td>{{ obj.blockname }}</td>
-                  <td>
-                    <button class="btn btn-dark" (click)="deluser(obj, obj)">
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <br />
-          </div>
+      <div class="row my-5">
+        <h3 class="fs-4 mb-3">Total User Signup Credentials</h3>
+        <div class="col">
+          <table class="table bg-white rounded shadow-sm table-hover">
+            <caption></caption>
+            <thead>
+              <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Contact Number</th>
+                <th scope="col">Email</th>
+                <th scope="col">Block name</th>
+                <th scope="col">Remove User</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let obj of object">
+                <td>{{ obj.username }}</td>
+                <td>{{ obj.phone }}</td>
+                <td>{{ obj.email }}</td>
+                <td>{{ obj.blockname }}</td>
+                <td>
+                  <button class="btn btn-dark" (click)="deluser(obj, obj)">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
         </div>
       </div>
     </div>
