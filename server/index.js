@@ -5,7 +5,9 @@ const app = connection();
 app.use(express.static("public"));
 const port = 8000;
 const winlogger = require("./logger/logger");
-
+const validation = require("./validation/signup.schema");
+const validation1 = require("./validation/billing.schema");
+const validation2 = require("./validation/feedback.schema");
 let login = {};
 const file = require("fs");
 
@@ -34,8 +36,18 @@ app.post("/userData", (request, _response, _next) => {
     confirmpassword: request.body.formobject.confirmpassword,
     type: "userid",
   };
-
-  dbconnection.insert(object);
+  const value = validation.userformschema.validate(request.body);
+  if (value.error) {
+    console.log(value);
+    _response.json({
+      success: 0,
+      message: value.error.details[0].message,
+    });
+  } else {
+    dbconnection.insert(object).then((res) => {
+      _response.send(res);
+    });
+  }
 });
 
 app.post("/billingData", (request, _response, _next) => {
@@ -103,15 +115,20 @@ app.get("/getUserdetails", (request, response) => {
   });
 });
 app.get("/getUserId/:id", (request, response) => {
-  dbconnection.getId(request.params.id, "housing-software").then((res) => {
-    {
-      if (res) {
-        response.send(res);
-      } else {
-        response.send("error");
+  dbconnection
+    .getId(request.params.id, "housing-software")
+    .then((res) => {
+      {
+        if (res) {
+          response.send(res);
+        } else {
+          response.send("error");
+        }
       }
-    }
-  });
+    })
+    .catch((err) => {
+      console.log("UserNot exist!!!", err);
+    });
 });
 
 app.get("/getBill", (request, response) => {
@@ -159,17 +176,22 @@ app.get("/get_Block/:id", (request, response) => {
       blockname: request.params.id,
     },
   };
-  dbconnection.find(getBlock, "housing-software").then((res) => {
-    {
+  dbconnection
+    .find(getBlock, "housing-software")
+    .then((res) => {
       {
-        if (res) {
-          response.send(res);
-        } else {
-          response.send("error");
+        {
+          if (res) {
+            response.send(res);
+          } else {
+            response.send("error");
+          }
         }
       }
-    }
-  });
+    })
+    .catch((err) => {
+      console.log("BlockNot exist!!!", err);
+    });
 });
 
 app.get("/get_User_Id/:id", (request, response) => {
@@ -179,15 +201,20 @@ app.get("/get_User_Id/:id", (request, response) => {
       username: request.params.id,
     },
   };
-  dbconnection.find(getUserId, "housing-software").then((res) => {
-    {
-      if (res) {
-        response.send(res);
-      } else {
-        response.send("error");
+  dbconnection
+    .find(getUserId, "housing-software")
+    .then((res) => {
+      {
+        if (res) {
+          response.send(res);
+        } else {
+          response.send("error");
+        }
       }
-    }
-  });
+    })
+    .catch((err) => {
+      console.log("UserNot exist!!!", err);
+    });
 });
 
 app.get("/get_Block_Id/:id", (request, response) => {
@@ -197,15 +224,20 @@ app.get("/get_Block_Id/:id", (request, response) => {
       block: request.params.id,
     },
   };
-  dbconnection.find(getBlocks, "housing-software").then((res) => {
-    {
-      if (res) {
-        response.send(res);
-      } else {
-        response.send("error");
+  dbconnection
+    .find(getBlocks, "housing-software")
+    .then((res) => {
+      {
+        if (res) {
+          response.send(res);
+        } else {
+          response.send("error");
+        }
       }
-    }
-  });
+    })
+    .catch((err) => {
+      console.log("Block does not exist!!!", err);
+    });
 });
 
 app.get("/get_BillOfUser/:id", (request, response) => {
@@ -260,13 +292,18 @@ app.get("/getAdmin", (request, response) => {
 });
 app.get("/getAdminId/:id", (request, response) => {
   {
-    dbconnection.getId(request.params.id, "housing-software").then((res) => {
-      if (res) {
-        response.send(res);
-      } else {
-        response.send("error");
-      }
-    });
+    dbconnection
+      .getId(request.params.id, "housing-software")
+      .then((res) => {
+        if (res) {
+          response.send(res);
+        } else {
+          response.send("error");
+        }
+      })
+      .catch((err) => {
+        console.log("UserNot exist!!!", err);
+      });
   }
 });
 
