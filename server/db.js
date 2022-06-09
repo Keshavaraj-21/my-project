@@ -20,7 +20,7 @@ let insert = function (paramsvalue) {
     });
 };
 
-let insert1 = function (paramsvalue) {
+let insertBlockBill = function (paramsvalue) {
   console.log(paramsvalue);
   cloudant
     .use("housing-software")
@@ -33,7 +33,7 @@ let insert1 = function (paramsvalue) {
     });
 };
 
-let insert2 = function (paramsvalue) {
+let insertFeedback = function (paramsvalue) {
   console.log(paramsvalue);
   cloudant
     .use("housing-software")
@@ -46,7 +46,7 @@ let insert2 = function (paramsvalue) {
     });
 };
 
-let insert3 = function (paramsvalue) {
+let insertUserBill = function (paramsvalue) {
   console.log(paramsvalue);
   cloudant
     .use("housing-software")
@@ -87,9 +87,9 @@ module.exports = {
   getId,
   insert,
   getbill,
-  insert1,
-  insert2,
-  insert3,
+  insertBlockBill,
+  insertFeedback,
+  insertUserBill,
   getbilluser,
   find,
   find1,
