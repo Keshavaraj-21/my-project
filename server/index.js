@@ -105,10 +105,10 @@ app.get("/getUserdetails", (request, response) => {
 app.get("/getUserId/:id", (request, response) => {
   dbconnection
     .getId(request.params.id, "housing-software")
-    .then((res) => {
+    .then((res__) => {
       {
-        if (res) {
-          response.send(res);
+        if (res__) {
+          response.send(res__);
         } else {
           response.send("error");
         }
@@ -126,10 +126,10 @@ app.get("/getBill", (request, response) => {
       type: "bill",
     },
   };
-  dbconnection.get(data, "housing-software").then((res) => {
+  dbconnection.get(data, "housing-software").then((_res) => {
     {
-      if (res) {
-        response.send(res);
+      if (_res) {
+        response.send(_res);
       } else {
         response.send("error");
       }
@@ -144,11 +144,11 @@ app.get("/getFeedback", (request, response) => {
       type: "feedback",
     },
   };
-  dbconnection.get(data, "housing-software").then((res) => {
+  dbconnection.get(data, "housing-software").then((__res) => {
     {
       {
-        if (res) {
-          response.send(res);
+        if (__res) {
+          response.send(__res);
         } else {
           response.send("error");
         }
@@ -166,11 +166,11 @@ app.get("/get_Block/:id", (request, response) => {
   };
   dbconnection
     .find(getBlock, "housing-software")
-    .then((res) => {
+    .then((res_1) => {
       {
         {
-          if (res) {
-            response.send(res);
+          if (res_1) {
+            response.send(res_1);
           } else {
             response.send("error");
           }
@@ -191,10 +191,10 @@ app.get("/get_User_Id/:id", (request, response) => {
   };
   dbconnection
     .find(getUserId, "housing-software")
-    .then((res) => {
+    .then((res_2) => {
       {
-        if (res) {
-          response.send(res);
+        if (res_2) {
+          response.send(res_2);
         } else {
           response.send("error");
         }
@@ -214,10 +214,10 @@ app.get("/get_Block_Id/:id", (request, response) => {
   };
   dbconnection
     .find(getBlocks, "housing-software")
-    .then((res) => {
+    .then((res_3) => {
       {
-        if (res) {
-          response.send(res);
+        if (res_3) {
+          response.send(res_3);
         } else {
           response.send("error");
         }
@@ -237,9 +237,9 @@ app.get("/get_BillOfUser/:id", (request, response) => {
   };
 
   console.log(request.params.id);
-  dbconnection.find(getBillUser, "housing-software").then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.find(getBillUser, "housing-software").then((res_4) => {
+    if (res_4) {
+      response.send(res_4);
     } else {
       response.send("error");
     }
@@ -249,9 +249,9 @@ app.get("/get_BillOfUser/:id", (request, response) => {
 app.delete("/delete/:id/:id1", (request, response) => {
   dbconnection
     .del_id(request.params.id, request.params.id1, "housing-software")
-    .then((res) => {
-      if (res) {
-        response.send(res);
+    .then((res_5) => {
+      if (res_5) {
+        response.send(res_5);
       } else {
         response.send("error");
       }
@@ -268,10 +268,10 @@ app.get("/getAdmin", (request, response) => {
       type: "adminid",
     },
   };
-  dbconnection.get(data, "housing-software").then((res) => {
+  dbconnection.get(data, "housing-software").then((res_6) => {
     {
-      if (res) {
-        response.send(res);
+      if (res_6) {
+        response.send(res_6);
       } else {
         response.send("error");
       }
@@ -282,9 +282,9 @@ app.get("/getAdminId/:id", (request, response) => {
   {
     dbconnection
       .getId(request.params.id, "housing-software")
-      .then((res) => {
-        if (res) {
-          response.send(res);
+      .then((res_7) => {
+        if (res_7) {
+          response.send(res_7);
         } else {
           response.send("error");
         }
