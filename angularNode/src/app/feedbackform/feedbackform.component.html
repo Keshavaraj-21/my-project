@@ -16,7 +16,7 @@
               placeholder="Write your name"
               required
               minlength="3"
-              pattern="^[A-Za-z]*[0-9]*[A-Za-z]"
+              pattern="[A-Za-z]"
             />
             <span
               class="text-danger"
@@ -47,6 +47,15 @@
             >
               *Enter Valid Email!!</span
             >
+            <span
+              class="text-danger"
+              *ngIf="
+                feedbackForm.controls['email'].dirty &&
+                feedbackForm.hasError('pattern', 'email')
+              "
+            >
+              *Enter format must be correct!!</span
+            >
           </div>
 
           <div class="field">
@@ -66,6 +75,15 @@
               "
             >
               *Block Name is required!!</span
+            >
+            <span
+              class="text-danger"
+              *ngIf="
+                feedbackForm.controls['blockname'].touched &&
+                feedbackForm.hasError('pattern', 'blockname')
+              "
+            >
+              *Block Name must be correct format!!</span
             >
           </div>
 
@@ -91,6 +109,15 @@
             >
               *Category is required!!</span
             >
+            <span
+              class="text-danger"
+              *ngIf="
+                feedbackForm.controls['category'].dirty &&
+                feedbackForm.hasError('pattern', 'category')
+              "
+            >
+              *Category must be satisfied!!</span
+            >
           </div>
           <div>
             <label for="msg">Please leave your feedback below</label>
@@ -113,13 +140,21 @@
             >
               * Message is required!!</span
             >
+            <span
+              class="text-danger"
+              *ngIf="
+                feedbackForm.controls['msg'].dirty &&
+                feedbackForm.hasError('pattern', 'msg')
+              "
+            >
+              * Message is required!!</span
+            >
           </div>
           <div class="form-group text-right">
             <button
               class="btn btn-primary pull-right"
               type="submit"
               (click)="sendFeedback(this.feedbackForm.value)"
-              [disabled]="!feedbackForm.valid"
             >
               Submit
             </button>

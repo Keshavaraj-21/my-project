@@ -26,6 +26,15 @@
             >
               *Name is required!!</span
             >
+            <span
+              class="text-danger"
+              *ngIf="
+                registerForm.controls['username'].dirty &&
+                registerForm.hasError('pattern', 'uername')
+              "
+            >
+              *Name not match</span
+            >
           </div>
 
           <div class="field">
@@ -49,6 +58,15 @@
             >
               *Phone Number must be in 10 Digits!!</span
             >
+            <span
+              class="text-danger"
+              *ngIf="
+                registerForm.controls['username'].dirty &&
+                registerForm.hasError('pattern', 'uername')
+              "
+            >
+              *Phone number does not match</span
+            >
           </div>
 
           <div class="field">
@@ -69,6 +87,15 @@
               "
             >
               *Enter Valid Email</span
+            >
+            <span
+              class="text-danger"
+              *ngIf="
+                registerForm.controls['email'].dirty &&
+                registerForm.hasError('pattern', 'email')
+              "
+            >
+              *Email format must be correct</span
             >
           </div>
           <div class="field">
@@ -95,6 +122,15 @@
             >
               *Block Name is required!!</span
             >
+            <span
+              class="text-danger"
+              *ngIf="
+                registerForm.controls['email'].dirty &&
+                registerForm.hasError('pattern', 'email')
+              "
+            >
+              *Blockname must be correct</span
+            >
           </div>
 
           <div class="field">
@@ -109,6 +145,24 @@
               maxlength="12"
               pattern="[A-Za-z0-9@!_]{8,}"
             />
+            <span
+              class="text-danger"
+              *ngIf="
+                registerForm.controls['password'].touched &&
+                registerForm.hasError('required', 'password')
+              "
+            >
+              *Password is required!!</span
+            >
+            <span
+              class="text-danger"
+              *ngIf="
+                registerForm.controls['password'].dirty &&
+                registerForm.hasError('pattern', 'password')
+              "
+            >
+              *Password must be correct format!!</span
+            >
           </div>
 
           <div class="field">
@@ -124,6 +178,24 @@
               maxlength="12"
               pattern="[A-Za-z0-9@!_]{8,}"
             />
+            <span
+              class="text-danger"
+              *ngIf="
+                registerForm.controls['confirmpassword'].touched &&
+                registerForm.hasError('required', 'confirmpassword')
+              "
+            >
+              *Confirm Password is required!!</span
+            >
+            <span
+              class="text-danger"
+              *ngIf="
+                registerForm.controls['confirmpassword'].dirty &&
+                registerForm.hasError('pattern', 'confirmpassword')
+              "
+            >
+              *Confirm Password must be correct format!!</span
+            >
           </div>
 
           <div class="buttons text-center">

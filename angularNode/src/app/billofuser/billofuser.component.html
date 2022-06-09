@@ -27,6 +27,15 @@
             >
               *Name is required!!</span
             >
+            <span
+              class="text-danger"
+              *ngIf="
+                billForm.controls['username'].touched &&
+                billForm.hasError('pattern', 'username')
+              "
+            >
+              *Name must be satisfied!!</span
+            >
           </div>
 
           <div class="field">
@@ -50,6 +59,15 @@
             >
               *Phone Number must be in 10 Digits!!</span
             >
+            <span
+              class="text-danger"
+              *ngIf="
+                billForm.controls['phone'].dirty &&
+                billForm.hasError('pattern', 'phone')
+              "
+            >
+              *Phone Number must be correct format!!</span
+            >
           </div>
 
           <div class="field">
@@ -71,6 +89,15 @@
             >
               *Enter Valid Gmail!!</span
             >
+            <span
+              class="text-danger"
+              *ngIf="
+                billForm.controls['email'].dirty &&
+                billForm.hasError('pattern', 'email')
+              "
+            >
+              *Email must be correct format!!</span
+            >
           </div>
 
           <div class="field">
@@ -87,16 +114,6 @@
               <option value="B-Block">B-Block</option>
               <option value="C-Block">C-Block</option>
             </select>
-
-            <span
-              class="text-danger"
-              *ngIf="
-                billForm.controls['blockname'].touched &&
-                billForm.hasError('required', 'blockname')
-              "
-            >
-              *Block Name is required!!</span
-            >
           </div>
           <div>
             <label for="maintainance" class="text-light"
@@ -114,6 +131,15 @@
               *ngIf="
                 billForm.controls['maintainance'].touched &&
                 billForm.hasError('required', 'maintainance')
+              "
+            >
+              *Maintainance is required!!</span
+            >
+            <span
+              class="text-danger"
+              *ngIf="
+                billForm.controls['maintainance'].dirty &&
+                billForm.hasError('pattern', 'maintainance')
               "
             >
               *Maintainance is required!!</span
