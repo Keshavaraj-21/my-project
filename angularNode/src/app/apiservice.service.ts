@@ -13,10 +13,10 @@ export class ApiserviceService {
       blockdetails: blockid,
     };
     console.log(block);
-    return this.http.post('http://localhost:8000/postQuery', block);
+    return this.http.post('http://localhost:8000/userData', block);
   }
   billingdata(formobject: any) {
-    return this.http.post('http://localhost:8000/post_Query', formobject);
+    return this.http.post('http://localhost:8000/billingData', formobject);
   }
   billdata(formobject: any, userid: any) {
     let user: any = {
@@ -24,15 +24,15 @@ export class ApiserviceService {
       useriddetails: userid,
     };
     console.log(user);
-    return this.http.post('http://localhost:8000/billQuery', formobject);
+    return this.http.post('http://localhost:8000/billidQuery', formobject);
   }
   feedbackdata(formobject: any) {
     console.log('obj');
-    return this.http.post('http://localhost:8000/post__Query', formobject);
+    return this.http.post('http://localhost:8000/postFeedback', formobject);
   }
 
   getUser() {
-    return this.http.get('http://localhost:8000/getUser/');
+    return this.http.get('http://localhost:8000/getUserdetails/');
   }
   getUserId(id: any) {
     return this.http.get(`http://localhost:8000/getUserId/${id}`);

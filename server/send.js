@@ -11,7 +11,7 @@ module.exports.getemail = function (params) {
     from: "krhousingsociety3021@gmail.com",
     to: params,
     subject: "node email",
-    text: "Hello everyone...! Welcome to our Housing society software",
+    text: "Hello everyone...! Welcome to our KR Housing society software",
   };
   sender.sendMail(composemail, function (err, res) {
     if (err) {

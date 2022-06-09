@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AdminloginComponent implements OnInit {
   object: any = [];
-  alldata: any;
+  allData: any;
   flag = 0;
   adminform!: FormGroup;
 
@@ -32,10 +32,10 @@ export class AdminloginComponent implements OnInit {
     });
     this.api.getadmin().subscribe((data) => {
       console.log(data);
-      this.alldata = data;
-      this.alldata = this.alldata.docs;
-      console.log(this.alldata);
-      for (const i of this.alldata) {
+      this.allData = data;
+      this.allData = this.allData.docs;
+      console.log(this.allData);
+      for (const i of this.allData) {
         console.log(i);
         this.object.push(i);
       }

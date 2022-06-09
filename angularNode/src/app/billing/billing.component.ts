@@ -7,7 +7,7 @@ import { ApiserviceService } from '../apiservice.service';
   styleUrls: ['./billing.component.css'],
 })
 export class BillingComponent implements OnInit {
-  billingform!: FormGroup;
+  billingForm!: FormGroup;
   value: boolean = true;
   constructor(
     private formbuilder: FormBuilder,
@@ -15,7 +15,7 @@ export class BillingComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.billingform = this.formbuilder.group({
+    this.billingForm = this.formbuilder.group({
       block: ['', Validators.required],
       maintainance: ['', Validators.required],
       housetax: ['', Validators.required],
@@ -23,12 +23,12 @@ export class BillingComponent implements OnInit {
       parking: ['', Validators.required],
       charity: ['', Validators.required],
     });
-    console.log(this.billingform);
+    console.log(this.billingForm);
   }
   post(Formvalue: NgForm) {
     console.log(Formvalue);
 
-    this.billingform.reset();
+    this.billingForm.reset();
     console.log('data get reloaded');
     window.location.reload();
 

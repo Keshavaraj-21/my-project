@@ -15,8 +15,8 @@ let insert = function (paramsvalue) {
     .then((data) => {
       console.log("Data Inserted into Cloud database" + data);
     })
-    .catch((err) => {
-      console.log(err);
+    .catch((_err) => {
+      console.log("Data posting error");
     });
 };
 
@@ -28,8 +28,8 @@ let insert1 = function (paramsvalue) {
     .then((data) => {
       console.log("Data Inserted into Cloud database" + data);
     })
-    .catch((err) => {
-      console.log(err);
+    .catch((_err) => {
+      console.log("Data posting error");
     });
 };
 
@@ -41,8 +41,8 @@ let insert2 = function (paramsvalue) {
     .then((data) => {
       console.log("Feedback posted to cloud database" + data);
     })
-    .catch((err) => {
-      console.log(err);
+    .catch((_err) => {
+      console.log("Feedback posting error");
     });
 };
 
@@ -54,8 +54,8 @@ let insert3 = function (paramsvalue) {
     .then((data) => {
       console.log("Data posted to cloud database" + data);
     })
-    .catch((err) => {
-      console.log(err);
+    .catch((_err) => {
+      console.log("Data posting error");
     });
 };
 

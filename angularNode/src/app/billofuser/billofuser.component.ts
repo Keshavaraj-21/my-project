@@ -9,7 +9,7 @@ import { ToastarserviceService } from '../toastarservice.service';
   styleUrls: ['./billofuser.component.css'],
 })
 export class BillofuserComponent implements OnInit {
-  billform!: FormGroup;
+  billForm!: FormGroup;
   value: boolean = true;
   object: any = [];
   alldata: any;
@@ -20,7 +20,7 @@ export class BillofuserComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.billform = this.formbuilder.group({
+    this.billForm = this.formbuilder.group({
       username: ['', [Validators.required]],
       phone: [
         '',

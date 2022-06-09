@@ -5,7 +5,7 @@
         <h1 class="text-center text-light">User Login</h1>
       </div>
       <div class="card-body mx-auto">
-        <form class="myform" [formGroup]="userform">
+        <form class="myform" [formGroup]="userForm">
           <div class="field">
             <label for="username" class="text-light">Username :</label>
             <input
@@ -18,8 +18,8 @@
             <span
               class="text-danger"
               *ngIf="
-                userform.controls['username'].touched &&
-                userform.hasError('required', 'username')
+                userForm.controls['username'].touched &&
+                userForm.hasError('required', 'username')
               "
               >* Name is required!!</span
             >
@@ -37,8 +37,8 @@
             <span
               class="text-danger"
               *ngIf="
-                userform.controls['password'].dirty &&
-                userform.hasError('required', 'password')
+                userForm.controls['password'].dirty &&
+                userForm.hasError('required', 'password')
               "
             >
               *Password is required!!</span
@@ -49,8 +49,8 @@
             <button
               id="btn"
               class="btn btn-dark"
-              (click)="userFormData(this.userform.value)"
-              [disabled]="!userform.valid"
+              (click)="userFormData(this.userForm.value)"
+              [disabled]="!userForm.valid"
             >
               Login
             </button>

@@ -34,8 +34,6 @@ export class FeedbackformComponent implements OnInit {
   }
 
   sendFeedback(Formvalue: NgForm) {
-    console.log(Formvalue);
-    console.log('Feedback posted..!');
     this.api.feedbackdata(Formvalue).subscribe((data) => {
       console.log(data);
     });

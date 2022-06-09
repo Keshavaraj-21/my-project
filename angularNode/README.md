@@ -4,11 +4,7 @@
 
 # DESCRIPTION:
 
-    A Housing society management software assists in managing all society management activities online such as facility management system,
-
-handling society matters, society accounting, and society billing, etc. This system is developed to manage day-to-day activities of any co-operative
-housing society. Generally, in society all the work is manually. As all work is done on paper so it is very difficult to manage and keep track of all
-the work expenses in the society.
+    A Housing society management software assists in managing all society management activities online such as facility management system,handling society matters, society accounting, and society billing, etc. This system is developed to manage day-to-day activities of any co-operativehousing society. Generally, in society all the work is manually. As all work is done on paper so it is very difficult to manage and keep track of all the work expenses in the society.
 
 # TOOLS USED:
 

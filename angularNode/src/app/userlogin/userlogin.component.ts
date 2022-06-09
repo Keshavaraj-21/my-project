@@ -9,10 +9,10 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./userlogin.component.css'],
 })
 export class UserloginComponent implements OnInit {
-  alldata: any;
+  allData: any;
   flag = 0;
   object: any = [];
-  userform!: FormGroup;
+  userForm!: FormGroup;
   constructor(
     private formbuilder: FormBuilder,
     private api: ApiserviceService,
@@ -21,7 +21,7 @@ export class UserloginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.userform = this.formbuilder.group({
+    this.userForm = this.formbuilder.group({
       username: ['', [Validators.required]],
       password: [
         '',
@@ -32,10 +32,10 @@ export class UserloginComponent implements OnInit {
     this.api.getUser().subscribe((data) => {
       console.log(data);
       console.log('Data was fetching');
-      this.alldata = data;
-      this.alldata = this.alldata.docs;
-      console.log(this.alldata);
-      for (const i of this.alldata) {
+      this.allData = data;
+      this.allData = this.allData.docs;
+      console.log(this.allData);
+      for (const i of this.allData) {
         this.object.push(i);
         console.log('Fetched successfuly');
       }

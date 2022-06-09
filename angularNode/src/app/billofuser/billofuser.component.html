@@ -5,7 +5,7 @@
         <h1 class="text-center text-light">User Billing Form</h1>
       </div>
       <div class="card-body mx-auto">
-        <form class="myform" [formGroup]="billform">
+        <form class="myform" [formGroup]="billForm">
           <div class="field">
             <label for="username" class="text-light">User Name :</label>
             <input
@@ -19,8 +19,8 @@
             <span
               class="text-danger"
               *ngIf="
-                billform.controls['username'].touched &&
-                billform.hasError('required', 'username')
+                billForm.controls['username'].touched &&
+                billForm.hasError('required', 'username')
               "
             >
               *Name is required!!</span
@@ -39,8 +39,8 @@
             <span
               class="text-danger"
               *ngIf="
-                billform.controls['phone'].touched &&
-                billform.hasError('required', 'phone')
+                billForm.controls['phone'].touched &&
+                billForm.hasError('required', 'phone')
               "
             >
               *Phone Number must be in 10 Digits!!</span
@@ -59,8 +59,8 @@
             <span
               class="text-danger"
               *ngIf="
-                billform.controls['email'].touched &&
-                billform.hasError('required', 'email')
+                billForm.controls['email'].touched &&
+                billForm.hasError('required', 'email')
               "
             >
               *Enter Valid Gmail!!</span
@@ -85,8 +85,8 @@
             <span
               class="text-danger"
               *ngIf="
-                billform.controls['blockname'].touched &&
-                billform.hasError('required', 'blockname')
+                billForm.controls['blockname'].touched &&
+                billForm.hasError('required', 'blockname')
               "
             >
               *Block Name is required!!</span
@@ -106,8 +106,8 @@
             <span
               class="text-danger"
               *ngIf="
-                billform.controls['maintainance'].touched &&
-                billform.hasError('required', 'maintainance')
+                billForm.controls['maintainance'].touched &&
+                billForm.hasError('required', 'maintainance')
               "
             >
               *Maintainance is required!!</span
@@ -125,8 +125,8 @@
             <span
               class="text-danger"
               *ngIf="
-                billform.controls['housetax'].touched &&
-                billform.hasError('required', 'housetax')
+                billForm.controls['housetax'].touched &&
+                billForm.hasError('required', 'housetax')
               "
             >
               *Housetax is required!!</span
@@ -144,8 +144,8 @@
             <span
               class="text-danger"
               *ngIf="
-                billform.controls['watertax'].touched &&
-                billform.hasError('required', 'watertax')
+                billForm.controls['watertax'].touched &&
+                billForm.hasError('required', 'watertax')
               "
             >
               *Watertax is required!!</span
@@ -164,8 +164,8 @@
             <span
               class="text-danger"
               *ngIf="
-                billform.controls['parking'].touched &&
-                billform.hasError('required', 'parking')
+                billForm.controls['parking'].touched &&
+                billForm.hasError('required', 'parking')
               "
             >
               *Parking Charges is required!!</span
@@ -183,8 +183,8 @@
             <span
               class="text-danger"
               *ngIf="
-                billform.controls['charity'].touched &&
-                billform.hasError('required', 'charity')
+                billForm.controls['charity'].touched &&
+                billForm.hasError('required', 'charity')
               "
             >
               *Charity fund is required!!</span
@@ -195,8 +195,8 @@
             <button
               type="submit"
               class="btn btn-dark"
-              (click)="postBill(this.billform.value)"
-              [disabled]="!billform.valid"
+              (click)="postBill(this.billForm.value)"
+              [disabled]="!billForm.valid"
             >
               PostBill
             </button>

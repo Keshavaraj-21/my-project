@@ -5,7 +5,7 @@
         <h1 class="text-center text-light">User Sign-up Form</h1>
       </div>
       <div class="card-body mx-auto">
-        <form class="myform" [formGroup]="registerform">
+        <form class="myform" [formGroup]="registerForm">
           <div class="field">
             <label for="username" class="text-light">User Name :</label>
             <input
@@ -18,8 +18,8 @@
             <span
               class="text-danger"
               *ngIf="
-                registerform.controls['username'].touched &&
-                registerform.hasError('required', 'username')
+                registerForm.controls['username'].touched &&
+                registerForm.hasError('required', 'username')
               "
             >
               *Name is required!!</span
@@ -38,8 +38,8 @@
             <span
               class="text-danger"
               *ngIf="
-                registerform.controls['phone'].touched &&
-                registerform.hasError('required', 'phone')
+                registerForm.controls['phone'].touched &&
+                registerForm.hasError('required', 'phone')
               "
             >
               *Phone Number must be in 10 Digits!!</span
@@ -58,8 +58,8 @@
             <span
               class="text-danger"
               *ngIf="
-                registerform.controls['email'].touched &&
-                registerform.hasError('required', 'email')
+                registerForm.controls['email'].touched &&
+                registerForm.hasError('required', 'email')
               "
             >
               *Enter Valid Email</span
@@ -83,8 +83,8 @@
             <span
               class="text-danger"
               *ngIf="
-                registerform.controls['blockname'].touched &&
-                registerform.hasError('required', 'blockname')
+                registerForm.controls['blockname'].touched &&
+                registerForm.hasError('required', 'blockname')
               "
             >
               *Block Name is required!!</span
@@ -120,7 +120,7 @@
             <button
               type="submit"
               class="btn btn-dark"
-              (click)="register(this.registerform.value)"
+              (click)="register(this.registerForm.value)"
             >
               Register
             </button>

@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./userform.component.css'],
 })
 export class UserformComponent implements OnInit {
-  registerform!: FormGroup;
+  registerForm!: FormGroup;
   value: boolean = true;
   objectss: any = [];
-  alldataas: any;
+  allDataas: any;
 
   constructor(
     private formbuilder: FormBuilder,
@@ -23,7 +23,7 @@ export class UserformComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.registerform = this.formbuilder.group({
+    this.registerForm = this.formbuilder.group({
       username: ['', [Validators.required]],
       phone: [
         '',
@@ -64,11 +64,11 @@ export class UserformComponent implements OnInit {
     console.log(arg.target.value);
     this.api.getblock_id(arg.target.value).subscribe((data) => {
       console.log(data);
-      this.alldataas = data;
-      this.alldataas = this.alldataas.docs;
-      console.log(this.alldataas);
+      this.allDataas = data;
+      this.allDataas = this.allDataas.docs;
+      console.log(this.allDataas);
 
-      for (const i of this.alldataas) {
+      for (const i of this.allDataas) {
         console.log(i._id);
         localStorage.setItem('block', i._id);
         this.objectss.push(i);

@@ -7,12 +7,12 @@ import { DashboardService } from '../dashboard.service';
   styleUrls: ['./contactus.component.css'],
 })
 export class ContactusComponent implements OnInit {
-  contactform!: FormGroup;
+  contactForm!: FormGroup;
   value: boolean = true;
   constructor(private api: DashboardService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    this.contactform = this.fb.group({
+    this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', Validators.required],
       message: ['', Validators.required],

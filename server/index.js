@@ -20,7 +20,7 @@ app.use(
   })
 );
 
-app.post("/postQuery", (request, _response, _next) => {
+app.post("/userData", (request, _response, _next) => {
   console.log(request);
 
   let object = {
@@ -38,7 +38,7 @@ app.post("/postQuery", (request, _response, _next) => {
   dbconnection.insert(object);
 });
 
-app.post("/post_Query", (request, _response, _next) => {
+app.post("/billingData", (request, _response, _next) => {
   console.log(request);
   let object = {
     block: request.body.block,
@@ -53,7 +53,7 @@ app.post("/post_Query", (request, _response, _next) => {
   dbconnection.insert1(object);
 });
 
-app.post("/post__Query", (request, _response, _next) => {
+app.post("/postFeedback", (request, _response, _next) => {
   console.log(request);
   let object = {
     name: request.body.name,
@@ -68,7 +68,7 @@ app.post("/post__Query", (request, _response, _next) => {
   dbconnection.insert2(object);
 });
 
-app.post("/billQuery", (request, _response, _next) => {
+app.post("/billidQuery", (request, _response, _next) => {
   console.log(request);
   let object = {
     username: request.body.username,
@@ -87,7 +87,7 @@ app.post("/billQuery", (request, _response, _next) => {
   dbconnection.insert3(object);
 });
 
-app.get("/getUser", (request, response) => {
+app.get("/getUserdetails", (request, response) => {
   console.log(request);
   let data = {
     selector: {

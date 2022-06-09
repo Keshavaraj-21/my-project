@@ -5,7 +5,7 @@
         <h1 class="text-center text-light">User Billing Form</h1>
       </div>
       <div class="card-body mx-auto">
-        <form class="myform" [formGroup]="billingform">
+        <form class="myform" [formGroup]="billingForm">
           <div class="field">
             <label for="block" class="text-light">Block Name :</label>
 
@@ -23,8 +23,8 @@
             <span
               class="text-danger"
               *ngIf="
-                billingform.controls['block'].touched &&
-                billingform.hasError('required', 'block')
+                billingForm.controls['block'].touched &&
+                billingForm.hasError('required', 'block')
               "
             >
               *Block Name is required!!</span
@@ -44,8 +44,8 @@
             <span
               class="text-danger"
               *ngIf="
-                billingform.controls['maintainance'].touched &&
-                billingform.hasError('required', 'maintainance')
+                billingForm.controls['maintainance'].touched &&
+                billingForm.hasError('required', 'maintainance')
               "
             >
               *Maintainance is required!!</span
@@ -63,8 +63,8 @@
             <span
               class="text-danger"
               *ngIf="
-                billingform.controls['housetax'].touched &&
-                billingform.hasError('required', 'housetax')
+                billingForm.controls['housetax'].touched &&
+                billingForm.hasError('required', 'housetax')
               "
             >
               *Housetax is required!!</span
@@ -82,8 +82,8 @@
             <span
               class="text-danger"
               *ngIf="
-                billingform.controls['watertax'].touched &&
-                billingform.hasError('required', 'watertax')
+                billingForm.controls['watertax'].touched &&
+                billingForm.hasError('required', 'watertax')
               "
             >
               *Watertax is required!!</span
@@ -102,8 +102,8 @@
             <span
               class="text-danger"
               *ngIf="
-                billingform.controls['parking'].touched &&
-                billingform.hasError('required', 'parking')
+                billingForm.controls['parking'].touched &&
+                billingForm.hasError('required', 'parking')
               "
             >
               *Parking Charges is required!!</span
@@ -121,8 +121,8 @@
             <span
               class="text-danger"
               *ngIf="
-                billingform.controls['charity'].touched &&
-                billingform.hasError('required', 'charity')
+                billingForm.controls['charity'].touched &&
+                billingForm.hasError('required', 'charity')
               "
             >
               *Charity fund is required!!</span
@@ -132,8 +132,8 @@
             <button
               type="submit"
               id="btn btn-dark"
-              (click)="post(this.billingform.value)"
-              [disabled]="!billingform.valid"
+              (click)="post(this.billingForm.value)"
+              [disabled]="!billingForm.valid"
             >
               Submit
             </button>

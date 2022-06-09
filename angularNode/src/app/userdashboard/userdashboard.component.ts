@@ -8,7 +8,7 @@ import { ApiserviceService } from '../apiservice.service';
 })
 export class UserdashboardComponent implements OnInit {
   object: any = [];
-  alldata: any;
+  allData: any;
   constructor(private api: ApiserviceService) {
     this.getdetails();
   }
@@ -19,10 +19,10 @@ export class UserdashboardComponent implements OnInit {
   getdetails() {
     this.api.getbill().subscribe((data) => {
       console.log(data);
-      this.alldata = data;
-      this.alldata = this.alldata.docs;
-      console.log(this.alldata);
-      for (const i of this.alldata) {
+      this.allData = data;
+      this.allData = this.allData.docs;
+      console.log(this.allData);
+      for (const i of this.allData) {
         console.log(i);
         this.object.push(i);
       }
