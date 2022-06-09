@@ -12,7 +12,7 @@ let insert = function (paramsvalue) {
   cloudant
     .use("housing-software")
     .insert(paramsvalue)
-    .then((data) => {
+    .then((_data) => {
       console.log("Data Inserted into Cloud database" + data);
     })
     .catch((_err) => {
@@ -25,7 +25,7 @@ let insertBlockBill = function (paramsvalue) {
   cloudant
     .use("housing-software")
     .insert(paramsvalue)
-    .then((data) => {
+    .then((_data) => {
       console.log("Data Inserted into Cloud database" + data);
     })
     .catch((_err) => {
@@ -38,7 +38,7 @@ let insertFeedback = function (paramsvalue) {
   cloudant
     .use("housing-software")
     .insert(paramsvalue)
-    .then((data) => {
+    .then((_data) => {
       console.log("Feedback posted to cloud database" + data);
     })
     .catch((_err) => {
@@ -51,8 +51,8 @@ let insertUserBill = function (paramsvalue) {
   cloudant
     .use("housing-software")
     .insert(paramsvalue)
-    .then((data) => {
-      console.log("Data posted to cloud database" + data);
+    .then((_data) => {
+      console.log("Data posted to cloud database" + _data);
     })
     .catch((_err) => {
       console.log("Data posting error");
