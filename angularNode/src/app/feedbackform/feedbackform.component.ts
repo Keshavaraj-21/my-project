@@ -36,7 +36,7 @@ export class FeedbackformComponent implements OnInit {
     this.api.feedbackdata(Formvalue).subscribe((data) => {
       console.log(data);
     });
-    this.alert.showSuccess('Bill posted successfully', '');
+    this.alert.showSuccess('FeedBack posted successfully', '');
     window.location.reload();
   }
 }
