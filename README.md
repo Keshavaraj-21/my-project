@@ -1,4 +1,4 @@
-# my-project:
+# Project-Name:
 
     INTEGRATED HOUSING SOCIETY SOFTWARE
 
