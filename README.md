@@ -2,11 +2,11 @@
 
     INTEGRATED HOUSING SOCIETY SOFTWARE
 
-# DESCRIPTION:
+# Description:
 
     A Housing society management software assists in managing all society management activities online such as facility management system,handling society matters, society accounting, and society billing, etc. This system is developed to manage day-to-day activities of any co-operativehousing society. Generally, in society all the work is manually. As all work is done on paper so it is very difficult to manage and keep track of all the work expenses in the society.
 
-# TOOLS USED:
+# Tools used:
 
 -> HTML 5
 -> CSS 3
@@ -15,7 +15,7 @@
 -> NODE JS
 -> COUCH DATABASE
 
-# FEATURES:
+# Features:
 
 -> ADMIN LOGIN
 -> USER SIGNUP/USERLOGIN
@@ -25,20 +25,20 @@
 -> FEEDBACKS FROM USER
 -> VIEWING FEEDBACKS FROM USERS
 
-# ADMIN TASKS
+# Admin Tasks
 
 -> BILLING REGISTRATION
 -> USER SIGNUP CREDENTIALS
 -> BILL OF PARTICULAR USER
 -> VIEWING FEEDBACKS FROM USERS
 
-# USER TASKS
+# User Tasks
 
 -> VIEWING BILLING DETAILS OF ALL BLOCKS
 -> VIEWING BILL OF HIM/HER
 -> POSTING FEEDBACKS OF HOUSES
 
-# BILLING DETAILS
+# Billing Details
 
 -> Maintainance charges
 -> House Tax
