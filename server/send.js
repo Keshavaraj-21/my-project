@@ -10,7 +10,7 @@ module.exports.getemail = function (params) {
   let composemail = {
     from: "krhousingsociety3021@gmail.com",
     to: params,
-    subject: "node email",
+    subject: "Housing Society",
     text: "Hello everyone...! Welcome to our KR Housing society software",
   };
   sender.sendMail(composemail, function (err, res) {

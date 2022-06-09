@@ -235,6 +235,9 @@ app.delete("/delete/:id/:id1", (request, response) => {
       } else {
         response.send("error");
       }
+    })
+    .catch((err) => {
+      console.log("UserNot exist!!!", err);
     });
 });
 
