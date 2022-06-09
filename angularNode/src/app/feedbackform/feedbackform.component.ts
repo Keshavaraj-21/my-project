@@ -24,11 +24,11 @@ export class FeedbackformComponent implements OnInit {
 
   ngOnInit(): void {
     this.feedbackForm = this.formbuilder.group({
-      name: ['', [Validators.required]],
-      email: ['', [Validators.required]],
-      blockname: ['', [Validators.required]],
-      category: ['', [Validators.required]],
-      msg: ['', [Validators.required]],
+      name: ['', Validators.required],
+      email: ['', Validators.required],
+      blockname: ['', Validators.required],
+      category: ['', Validators.required],
+      msg: ['', Validators.required],
     });
   }
 

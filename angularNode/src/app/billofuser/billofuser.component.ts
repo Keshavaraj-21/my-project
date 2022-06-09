@@ -23,15 +23,15 @@ export class BillofuserComponent implements OnInit {
 
   ngOnInit(): void {
     this.billForm = this.formbuilder.group({
-      username: ['', [Validators.required]],
-      phone: ['', [Validators.required]],
-      email: ['', [Validators.required]],
-      blockname: ['', [Validators.required]],
-      maintainance: ['', [Validators.required]],
-      housetax: ['', [Validators.required]],
-      watertax: ['', [Validators.required]],
-      parking: ['', [Validators.required]],
-      charity: ['', [Validators.required]],
+      username: ['', Validators.required],
+      phone: ['', Validators.required],
+      email: ['', Validators.required],
+      blockname: ['', Validators.required],
+      maintainance: ['', Validators.required],
+      housetax: ['', Validators.required],
+      watertax: ['', Validators.required],
+      parking: ['', Validators.required],
+      charity: ['', Validators.required],
     });
   }
   postBill(Formvalue: any) {

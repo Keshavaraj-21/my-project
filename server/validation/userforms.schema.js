@@ -1,10 +1,10 @@
 const Joi = require("joi");
 
 const userformschema = Joi.object({
-  username: Joi.string()
-    .regex(/[a-zA-Z]*/)
-    .min(3)
-    .required(),
+  // username: Joi.string()
+  //   .regex(/[a-zA-Z]*/)
+  //   .min(3)
+  //   .required(),
   phone: Joi.string()
     .max(10)
     .regex(/[+0]{0,2}(91)?\d{10}/)

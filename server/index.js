@@ -30,23 +30,12 @@ app.post("/userData", (request, _response, _next) => {
     email: request.body.formobject.email,
     blockname: request.body.formobject.blockname,
     blockid: request.body.blockdetails,
-
     password: request.body.formobject.password,
     confirmpassword: request.body.formobject.confirmpassword,
     type: "userid",
   };
-  const value = validation.userformschema.validate(request.body);
-  if (value.error) {
-    console.log(value);
-    _response.json({
-      success: 0,
-      message: value.error.details[0].message,
-    });
-  } else {
-    dbconnection.insert(object).then((res) => {
-      _response.send(res);
-    });
-  }
+
+  dbconnection.insert(object);
 });
 
 app.post("/billingData", (request, _response, _next) => {

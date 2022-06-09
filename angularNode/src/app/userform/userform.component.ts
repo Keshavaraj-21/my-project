@@ -26,12 +26,12 @@ export class UserformComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.formbuilder.group({
-      username: ['', [Validators.required]],
-      phone: ['', [Validators.required]],
-      email: ['', [Validators.required]],
-      blockname: ['', [Validators.required]],
-      password: ['', [Validators.required]],
-      confirmpassword: ['', [Validators.required]],
+      username: ['', Validators.required],
+      phone: ['', Validators.required],
+      email: ['', Validators.required],
+      blockname: ['', Validators.required],
+      password: ['', Validators.required],
+      confirmpassword: ['', Validators.required],
     });
   }
   register(Formvalue: NgForm) {
