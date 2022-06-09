@@ -27,27 +27,11 @@ export class UserformComponent implements OnInit {
   ngOnInit(): void {
     this.registerForm = this.formbuilder.group({
       username: ['', [Validators.required]],
-      phone: [
-        '',
-        [
-          Validators.required,
-          Validators.min(1000000000),
-          Validators.max(9999999999),
-        ],
-      ],
-      email: [
-        '',
-        [Validators.required, Validators.pattern('[a-zA-Z0-9]*@gmail.com')],
-      ],
+      phone: ['', [Validators.required]],
+      email: ['', [Validators.required]],
       blockname: ['', [Validators.required]],
-      password: [
-        '',
-        [Validators.required, Validators.pattern('[A-Za-z0-9@!_]{6,}')],
-      ],
-      confirmpassword: [
-        '',
-        [Validators.required, Validators.pattern('[A-Za-z0-9@!_]{6,}')],
-      ],
+      password: ['', [Validators.required]],
+      confirmpassword: ['', [Validators.required]],
     });
   }
   register(Formvalue: NgForm) {

@@ -15,6 +15,8 @@
               formControlName="name"
               placeholder="Write your name"
               required
+              minlength="3"
+              pattern="^[A-Za-z]*[0-9]*[A-Za-z]"
             />
             <span
               class="text-danger"
@@ -33,7 +35,8 @@
               type="text"
               class="form-control"
               formControlName="email"
-              placeholder="Write your email"
+              placeholder="Enter your Email"
+              pattern="^([\w]*[\w\.]*(?!\.)@gmail.com)"
             />
             <span
               class="text-danger"

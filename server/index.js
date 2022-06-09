@@ -5,9 +5,8 @@ const app = connection();
 app.use(express.static("public"));
 const port = 8000;
 const winlogger = require("./logger/logger");
-const validation = require("./validation/signup.schema");
-const validation1 = require("./validation/billing.schema");
-const validation2 = require("./validation/feedback.schema");
+const validation = require("./validation/userforms.schema");
+
 let login = {};
 const file = require("fs");
 
