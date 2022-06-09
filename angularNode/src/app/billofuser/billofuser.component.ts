@@ -17,7 +17,9 @@ export class BillofuserComponent implements OnInit {
     private formbuilder: FormBuilder,
     private api: ApiserviceService,
     private alert: ToastarserviceService
-  ) {}
+  ) {
+    /* TO DO document why this constructor is empty */
+  }
 
   ngOnInit(): void {
     this.billForm = this.formbuilder.group({

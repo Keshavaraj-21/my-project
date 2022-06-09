@@ -29,7 +29,6 @@ export class BillingComponent implements OnInit {
     console.log(Formvalue);
 
     this.billingForm.reset();
-    console.log('data get reloaded');
     window.location.reload();
 
     this.api.billingdata(Formvalue).subscribe((data) => {

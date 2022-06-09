@@ -8,7 +8,9 @@ import { ApiserviceService } from '../apiservice.service';
 export class BillingdetailsComponent implements OnInit {
   object: any = [];
   allData: any;
-  constructor(private api: ApiserviceService) {}
+  constructor(private api: ApiserviceService) {
+    /* TO DO document why this constructor is empty */
+  }
 
   ngOnInit(): void {
     /* TO DO document why this method 'ngOnInit' is empty */

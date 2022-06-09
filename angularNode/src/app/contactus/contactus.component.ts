@@ -9,7 +9,9 @@ import { DashboardService } from '../dashboard.service';
 export class ContactusComponent implements OnInit {
   contactForm!: FormGroup;
   value: boolean = true;
-  constructor(private api: DashboardService, private fb: FormBuilder) {}
+  constructor(private api: DashboardService, private fb: FormBuilder) {
+    /* TO DO document why this constructor is empty */
+  }
 
   ngOnInit(): void {
     this.contactForm = this.fb.group({
