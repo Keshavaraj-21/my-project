@@ -20,45 +20,6 @@ let insert = function (paramsvalue) {
     });
 };
 
-let insertBlockBill = function (paramsvalue) {
-  console.log(paramsvalue);
-  cloudant
-    .use("housing-software")
-    .insert(paramsvalue)
-    .then((_data) => {
-      console.log("Data Inserted into Cloud database" + data);
-    })
-    .catch((_err) => {
-      console.log("Data posting error");
-    });
-};
-
-let insertFeedback = function (paramsvalue) {
-  console.log(paramsvalue);
-  cloudant
-    .use("housing-software")
-    .insert(paramsvalue)
-    .then((_data) => {
-      console.log("Feedback posted to cloud database" + data);
-    })
-    .catch((_err) => {
-      console.log("Feedback posting error");
-    });
-};
-
-let insertUserBill = function (paramsvalue) {
-  console.log(paramsvalue);
-  cloudant
-    .use("housing-software")
-    .insert(paramsvalue)
-    .then((_data) => {
-      console.log("Data posted to cloud database" + _data);
-    })
-    .catch((_err) => {
-      console.log("Data posting error");
-    });
-};
-
 let find = function (blockdata, dbname) {
   return cloudant.use(dbname).find(blockdata);
 };
@@ -87,9 +48,6 @@ module.exports = {
   getId,
   insert,
   getbill,
-  insertBlockBill,
-  insertFeedback,
-  insertUserBill,
   getbilluser,
   find,
   find1,

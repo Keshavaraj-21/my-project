@@ -50,7 +50,7 @@ app.post("/billingData", (request, _response, _next) => {
     type: "bill",
   };
 
-  dbconnection.insertBlockBill(object);
+  dbconnection.insert(object);
 });
 
 app.post("/postFeedback", (request, _response, _next) => {
@@ -65,7 +65,7 @@ app.post("/postFeedback", (request, _response, _next) => {
   };
   console.log(object);
 
-  dbconnection.insertFeedback(object);
+  dbconnection.insert(object);
 });
 
 app.post("/billidQuery", (request, _response, _next) => {
@@ -84,7 +84,7 @@ app.post("/billidQuery", (request, _response, _next) => {
     type: "userbill",
   };
 
-  dbconnection.insertUserBill(object);
+  dbconnection.insert(object);
 });
 
 app.get("/getUserdetails", (request, response) => {
