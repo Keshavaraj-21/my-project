@@ -94,9 +94,9 @@ app.get("/getUserdetails", (request, response) => {
       type: "userid",
     },
   };
-  dbconnection.get(data, "housing-software").then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.get(data, "housing-software").then((res_) => {
+    if (res_) {
+      response.send(res_);
     } else {
       response.send("error");
     }
