@@ -17,8 +17,6 @@ export class FeedbackreceComponent implements OnInit {
   }
   getfeedback() {
     this.api.getFeedback().subscribe((data) => {
-      console.log(data);
-      alert('Data was fetching....');
       this.allData = data;
       this.allData = this.allData.docs;
       console.log(this.allData);

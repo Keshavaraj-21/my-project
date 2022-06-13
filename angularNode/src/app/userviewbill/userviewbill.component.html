@@ -1,37 +1,38 @@
 <br />
 <br />
-
-<div class="row my-5">
-  <h3 class="fs-4 mb-3" style="text-align: center">Billing details</h3>
-  <div class="col">
-    <table class="table bg-white rounded shadow-sm table-hover">
-      <caption></caption>
-      <thead>
-        <tr>
-          <th scope="col">Username</th>
-          <th scope="col">Email</th>
-          <th scope="col">BlockName</th>
-          <th scope="col">MaintainaceCharges</th>
-          <th scope="col">HouseTax</th>
-          <th scope="col">WaterTax</th>
-          <th scope="col">ParkingCharges</th>
-          <th scope="col">CharityFund</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let obj of object">
-          <td>{{ obj.username }}</td>
-          <td>{{ obj.email }}</td>
-          <td>{{ obj.blockname }}</td>
-          <td>{{ obj.maintainance }}</td>
-          <td>{{ obj.housetax }}</td>
-          <td>{{ obj.watertax }}</td>
-          <td>{{ obj.parking }}</td>
-          <td>{{ obj.charity }}</td>
-        </tr>
-        <br />
-      </tbody>
-    </table>
-    <br />
+<body>
+  <div class="row my-5">
+    <h3 class="fs-4 mb-3" style="text-align: center">Billing details</h3>
+    <div class="col">
+      <table class="table bg-white rounded shadow-sm table-hover">
+        <caption></caption>
+        <thead>
+          <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">BlockName</th>
+            <th scope="col">MaintainaceCharges</th>
+            <th scope="col">HouseTax</th>
+            <th scope="col">WaterTax</th>
+            <th scope="col">ParkingCharges</th>
+            <th scope="col">CharityFund</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let obj of object">
+            <td>{{ obj.username }}</td>
+            <td>{{ obj.email }}</td>
+            <td>{{ obj.blockname }}</td>
+            <td>{{ obj.maintainance }}</td>
+            <td>{{ obj.housetax }}</td>
+            <td>{{ obj.watertax }}</td>
+            <td>{{ obj.parking }}</td>
+            <td>{{ obj.charity }}</td>
+          </tr>
+          <br />
+        </tbody>
+      </table>
+      <br />
+    </div>
   </div>
-</div>
+</body>
