@@ -18,8 +18,6 @@ app.get("/", function (_request, response) {
 });
 
 app.post("/mail", (request, _response, _next) => {
-  console.log("mmm");
-
   let object = {
     name: request.body.name,
     email: request.body.email,

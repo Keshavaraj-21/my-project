@@ -6,7 +6,6 @@ app.use(express.static("public"));
 const port = 8000;
 const winlogger = require("./logger/logger");
 const validation = require("./validation/userforms.schema");
-const email = require("./mail");
 const cors = require("cors");
 const dbconnection = require("./db");
 app.use(express.static("public"));
