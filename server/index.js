@@ -18,7 +18,7 @@ app.use(
   })
 );
 
-app.post("/userData", (request, _response, _next) => {
+app.post("/userData", (_request, _response, _next) => {
   console.log(request);
 
   let object = {
@@ -35,7 +35,7 @@ app.post("/userData", (request, _response, _next) => {
   dbconnection.insert(object);
 });
 
-app.post("/billingData", (request, _response, _next) => {
+app.post("/billingData", (_request, _response, _next) => {
   console.log(request);
   let object = {
     block: request.body.block,
@@ -50,7 +50,7 @@ app.post("/billingData", (request, _response, _next) => {
   dbconnection.insert(object);
 });
 
-app.post("/postFeedback", (request, _response, _next) => {
+app.post("/postFeedback", (_request, _response, _next) => {
   console.log(request);
   let object = {
     name: request.body.name,
@@ -65,7 +65,7 @@ app.post("/postFeedback", (request, _response, _next) => {
   dbconnection.insert(object);
 });
 
-app.post("/billidQuery", (request, _response, _next) => {
+app.post("/billidQuery", (_request, _response, _next) => {
   console.log(request);
   let object = {
     username: request.body.username,
@@ -84,7 +84,7 @@ app.post("/billidQuery", (request, _response, _next) => {
   dbconnection.insert(object);
 });
 
-app.post("/postFeedResponse", (request, _response, _next) => {
+app.post("/postFeedResponse", (_request, _response, _next) => {
   console.log(request);
   let object = {
     username: request.body.username,
