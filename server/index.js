@@ -95,7 +95,7 @@ app.post("/postFeedResponse", (_request, _response, _next) => {
   dbconnection.insert(object);
 });
 
-app.get("/getUserdetails", (request, response) => {
+app.get("/getUserdetails", (_request, response) => {
   console.log(request);
   let data = {
     selector: {
@@ -110,7 +110,7 @@ app.get("/getUserdetails", (request, response) => {
     }
   });
 });
-app.get("/getUserId/:id", (request, response) => {
+app.get("/getUserId/:id", (_request, response) => {
   dbconnection
     .getId(request.params.id, "housing-software")
     .then((res__) => {
@@ -127,7 +127,7 @@ app.get("/getUserId/:id", (request, response) => {
     });
 });
 
-app.get("/getBill", (request, response) => {
+app.get("/getBill", (_request, response) => {
   console.log(request);
   let data = {
     selector: {
@@ -145,7 +145,7 @@ app.get("/getBill", (request, response) => {
   });
 });
 
-app.get("/getFeedback", (request, response) => {
+app.get("/getFeedback", (_request, response) => {
   console.log(request);
   let data = {
     selector: {
@@ -165,7 +165,7 @@ app.get("/getFeedback", (request, response) => {
   });
 });
 
-app.get("/get_Block/:id", (request, response) => {
+app.get("/get_Block/:id", (_request, response) => {
   let getBlock = {
     selector: {
       type: "userid",
@@ -190,7 +190,7 @@ app.get("/get_Block/:id", (request, response) => {
     });
 });
 
-app.get("/get_User_Id/:id", (request, response) => {
+app.get("/get_User_Id/:id", (_request, response) => {
   let getUserId = {
     selector: {
       type: "userid",
@@ -213,7 +213,7 @@ app.get("/get_User_Id/:id", (request, response) => {
     });
 });
 
-app.get("/get_feedbackReceive_Id/:id", (request, response) => {
+app.get("/get_feedbackReceive_Id/:id", (_request, response) => {
   let getfeedbackrecieveId = {
     selector: {
       type: "userid",
@@ -236,7 +236,7 @@ app.get("/get_feedbackReceive_Id/:id", (request, response) => {
     });
 });
 
-app.get("/get_Block_Id/:id", (request, response) => {
+app.get("/get_Block_Id/:id", (_request, response) => {
   let getBlocks = {
     selector: {
       type: "bill",
@@ -259,7 +259,7 @@ app.get("/get_Block_Id/:id", (request, response) => {
     });
 });
 
-app.get("/get_BillOfUser/:id", (request, response) => {
+app.get("/get_BillOfUser/:id", (_request, response) => {
   let getBillUser = {
     selector: {
       type: "userbill",
@@ -277,7 +277,7 @@ app.get("/get_BillOfUser/:id", (request, response) => {
   });
 });
 
-app.get("/get_recievefeedBackOfUser/:id", (request, response) => {
+app.get("/get_recievefeedBackOfUser/:id", (_request, response) => {
   let getfeedbackUser = {
     selector: {
       type: "feedbackReceive",
@@ -295,7 +295,7 @@ app.get("/get_recievefeedBackOfUser/:id", (request, response) => {
   });
 });
 
-app.delete("/delete/:id/:id1", (request, response) => {
+app.delete("/delete/:id/:id1", (_request, response) => {
   dbconnection
     .del_id(request.params.id, request.params.id1, "housing-software")
     .then((res_5) => {
@@ -310,7 +310,7 @@ app.delete("/delete/:id/:id1", (request, response) => {
     });
 });
 
-app.get("/getAdmin", (request, response) => {
+app.get("/getAdmin", (_request, response) => {
   console.log(request);
   let data = {
     selector: {
@@ -327,7 +327,7 @@ app.get("/getAdmin", (request, response) => {
     }
   });
 });
-app.get("/getAdminId/:id", (request, response) => {
+app.get("/getAdminId/:id", (_request, response) => {
   {
     dbconnection
       .getId(request.params.id, "housing-software")
