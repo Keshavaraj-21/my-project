@@ -62,7 +62,7 @@
               class="text-danger"
               *ngIf="
                 registerForm.controls['username'].dirty &&
-                registerForm.hasError('pattern', 'uername')
+                registerForm.hasError('pattern', 'phone')
               "
             >
               *Phone number does not match</span
@@ -126,7 +126,7 @@
               class="text-danger"
               *ngIf="
                 registerForm.controls['email'].dirty &&
-                registerForm.hasError('pattern', 'email')
+                registerForm.hasError('pattern', 'blockname')
               "
             >
               *Blockname must be correct</span
