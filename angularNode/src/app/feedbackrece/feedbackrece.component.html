@@ -11,6 +11,7 @@
             <th scope="col">Blockname</th>
             <th scope="col">Category</th>
             <th scope="col">Message</th>
+            <th scope="col">Respond to Feedbacks</th>
           </tr>
         </thead>
         <tbody>
@@ -20,6 +21,11 @@
             <td>{{ obj.blockname }}</td>
             <td>{{ obj.category }}</td>
             <td>{{ obj.msg }}</td>
+            <td>
+              <a routerLink="/feeds">
+                <button class="btn btn-dark">Respond</button>
+              </a>
+            </td>
           </tr>
         </tbody>
       </table>

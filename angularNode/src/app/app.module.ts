@@ -23,6 +23,8 @@ import { UserviewbillComponent } from './userviewbill/userviewbill.component';
 import { HttpCallInterceptorService } from './interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { FeedComponent } from './feed/feed.component';
+import { ResponseComponent } from './response/response.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { ToastrModule } from 'ngx-toastr';
     FeedbackreceComponent,
     BillofuserComponent,
     UserviewbillComponent,
+    FeedComponent,
+    ResponseComponent,
   ],
   imports: [
     AppRoutingModule,

@@ -1,0 +1,62 @@
+<body>
+  <div class="container mt-5">
+    <div class="card mx-auto">
+      <div class="card-header">
+        <h1 class="text-center text-light">Feedback Responding Form</h1>
+      </div>
+      <div class="card-body mx-auto">
+        <form class="myform" [formGroup]="feedForm">
+          <div class="field">
+            <label for="username" class="text-light">Username :</label>
+            <input
+              type="text"
+              formControlName="username"
+              class="form-control"
+              id="username"
+              placeholder="Enter your username or email"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                feedForm.controls['username'].touched &&
+                feedForm.hasError('required', 'username')
+              "
+              >* Name is required!!</span
+            >
+          </div>
+
+          <div class="field">
+            <label for="password" class="text-light">FeedbackResponse :</label>
+            <input
+              type="text"
+              formControlName="feedback"
+              id="text"
+              placeholder="Enter your response"
+              class="form-control"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                feedForm.controls['feedback'].dirty &&
+                feedForm.hasError('required', 'feedback')
+              "
+            >
+              *feedback is required!!</span
+            >
+          </div>
+
+          <div class="buttons text-center">
+            <button
+              id="btn"
+              class="btn btn-dark"
+              (click)="feedFormData(this.feedForm.value)"
+              [disabled]="!feedForm.valid"
+            >
+              Post
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

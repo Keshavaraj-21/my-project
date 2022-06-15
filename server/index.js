@@ -8,6 +8,7 @@ const winlogger = require("./logger/logger");
 const validation = require("./validation/userforms.schema");
 const cors = require("cors");
 const dbconnection = require("./db");
+const { request } = require("express");
 app.use(express.static("public"));
 app.use(connection.static("public"));
 app.use(bodyparser.json());
@@ -80,6 +81,17 @@ app.post("/billidQuery", (request, _response, _next) => {
     type: "userbill",
   };
 
+  dbconnection.insert(object);
+});
+
+app.post("/postFeedResponse", (request, _response, _next) => {
+  console.log(request);
+  let object = {
+    username: request.body.username,
+    userid: request.body.userid,
+    feedback: request.body.feedback,
+    type: "feedbackReceive",
+  };
   dbconnection.insert(object);
 });
 
@@ -201,6 +213,29 @@ app.get("/get_User_Id/:id", (request, response) => {
     });
 });
 
+app.get("/get_feedbackReceive_Id/:id", (request, response) => {
+  let getfeedbackrecieveId = {
+    selector: {
+      type: "userid",
+      username: request.params.id,
+    },
+  };
+  dbconnection
+    .find(getfeedbackrecieveId, "housing-software")
+    .then((res_9) => {
+      {
+        if (res_9) {
+          response.send(res_9);
+        } else {
+          response.send("error");
+        }
+      }
+    })
+    .catch((err) => {
+      console.log("UserNot exist!!!", err);
+    });
+});
+
 app.get("/get_Block_Id/:id", (request, response) => {
   let getBlocks = {
     selector: {
@@ -236,6 +271,24 @@ app.get("/get_BillOfUser/:id", (request, response) => {
   dbconnection.find(getBillUser, "housing-software").then((res_4) => {
     if (res_4) {
       response.send(res_4);
+    } else {
+      response.send("error");
+    }
+  });
+});
+
+app.get("/get_recievefeedBackOfUser/:id", (request, response) => {
+  let getfeedbackUser = {
+    selector: {
+      type: "feedbackReceive",
+      userid: request.params.id,
+    },
+  };
+
+  console.log(request.params.id);
+  dbconnection.find(getfeedbackUser, "housing-software").then((res_8) => {
+    if (res_8) {
+      response.send(res_8);
     } else {
       response.send("error");
     }
